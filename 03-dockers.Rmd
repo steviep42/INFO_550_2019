@@ -202,8 +202,7 @@ $ docker run --rm -v /Users/esteban:/home/esteban -e PASSWORD='steve' \
 
 ## RShiny
 
-So let's see within my home folder I have a folder with Server.R and UI.R files. This is a very simple application.
-Let's look at the content of the files:
+Note that the "rocker" project has lots of Docker stuff relative to R. Check out https://github.com/rocker-org/shiny for more information. So let's see within my home folder I have a folder with Server.R and UI.R files. This is a very simple application. Let's look at the content of the files:
 
 ```{r eval=FALSE}
 
@@ -259,3 +258,107 @@ $ docker run -p 3838:3838 -v /Users/esteban/appdir/:/srv/shiny-server/ rocker/sh
 Nezt let's lood the Shiny App
 
 ![](./PICS/shiny.png){width=500}
+
+## Making Your Own Image
+
+The last thing we will discuss is how to build upon an existing image to create your own image that you
+could then publish to Docker Hub to distribute to others. Let's use one of the rocker images as a base
+for installing some specific packages. This will be a trivial example but you could make significant 
+additions to an image if you wanted to. The advantage of this approach is that you don't have to 
+build everything from scratch. For example, let's 
+
+1) Run the rocker/verse image
+2) Install a package (e.g. data.table)
+3) Commit the changes to the image
+4) Give it a new name 
+5) Push our new image up to Docker hub.
+
+```{r eval=FALSE}
+# This will launch an Rstudio session from which we can install the data.table package
+$ docker run --rm -e PASSWORD='steve' -p 8787:8787 rocker/verse
+
+```
+
+So now we will commit changes to this image since the next time we start it we would like for it to 
+have the data.table package already installed. This is a basic example but imagine if we had installed
+a lot of packages. We wouldn't want to do this every time. 
+
+```{r eval=FALSE}
+# Get the Container ID
+$ docker ps | awk '{print $1," ",$2}'
+CONTAINER   ID
+439385c073f8   rocker/verse
+
+# Commit the changes we made to it (i.e. the package install)
+$ docker commit 439385c073f8 steviep42/r-rocker-datatable
+sha256:f75857b7fb0060c31cbead22fdc6e37dc341bcea111b570d990d1b31cb88d67f
+(base) Steves-MBP:~ esteban$ docker push steviep42/r-rocker-datatable
+The push refers to repository [docker.io/steviep42/r-rocker-datatable]
+15b389285a52: Pushed 
+d466632838cf: Mounted from rocker/verse 
+395ecd3ce103: Mounted from rocker/verse 
+23fc0d314261: Mounted from rocker/verse 
+9142a472c042: Mounted from rocker/verse 
+2b40fab709d4: Mounted from rocker/verse 
+f453344be0c3: Mounted from rocker/verse 
+0fef5c3c51c6: Mounted from rocker/verse 
+e8481c9f7465: Mounted from rocker/shiny 
+fbb641a8b943: Mounted from rocker/tidyverse 
+latest: digest: sha256:368dd8950a433cc14ba799f6c4a39b812eff904b670563fd33ecad64d8a61c85 size: 2422
+
+
+```
+
+![](./PICS/docker_hub.png){width=550}
+
+
+### There is Another Way
+
+We can create what is known as a Dockerfile which can contain the instructions to do what we did above except
+in a more convenient way. Make a folder called **build**. Note that this is arbitrary.
+
+```{r eval=FALSE}
+$ mkdir build
+$ cd build
+
+# This next step will create a file called Dockerfile
+$ vi Dockerfile
+```
+
+Give your Docker file the following contents
+
+```{r eval=FALSE}
+FROM rocker/verse:latest
+
+RUN  echo 'install.packages(c("data.table"), \
+repos="http://cran.us.r-project.org", \
+dependencies=TRUE)' > /tmp/packages.R \
+  && Rscript /tmp/packages.R
+
+EXPOSE 8787 
+```
+
+Next, we can build a new image that is based on rocker/verse:latest. This is cool because we don't have to go to the trouble of installing all the underlying packages used to make that image. We just build on what we already have.
+
+```{r eval=FALSE}
+$ docker build -t steviep42/test .
+Sending build context to Docker daemon  2.048kB
+Step 1/3 : FROM rocker/verse:latest
+ ---> ed004402fcbc
+Step 2/3 : RUN  echo 'install.packages(c("data.table"), repos="http://cran.us.r-project.org", dependencies=TRUE)' > /tmp/packages.R   && Rscript /tmp/packages.R
+ ---> Using cache
+ ---> 518dd192faf4
+Step 3/3 : EXPOSE 8787
+ ---> Using cache
+ ---> ddf2c7ed59dc
+Successfully built ddf2c7ed59dc
+Successfully tagged steviep42/test:latest
+```
+
+Now we can test it out:
+
+```{r eval=FALSE}
+docker run -e PASSWORD='steve' -p 8787:8787 steviep42/test
+```
+
+![](./PICS/arrow.png)

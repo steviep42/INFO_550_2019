@@ -158,6 +158,9 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="3.3.1" data-path="dockers-1.html"><a href="dockers-1.html#images"><i class="fa fa-check"></i><b>3.3.1</b> Images</a></li>
 </ul></li>
 <li class="chapter" data-level="3.4" data-path="dockers-1.html"><a href="dockers-1.html#rshiny"><i class="fa fa-check"></i><b>3.4</b> RShiny</a></li>
+<li class="chapter" data-level="3.5" data-path="dockers-1.html"><a href="dockers-1.html#making-your-own-image"><i class="fa fa-check"></i><b>3.5</b> Making Your Own Image</a><ul>
+<li class="chapter" data-level="3.5.1" data-path="dockers-1.html"><a href="dockers-1.html#there-is-another-way"><i class="fa fa-check"></i><b>3.5.1</b> There is Another Way</a></li>
+</ul></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -334,7 +337,7 @@ optimistic_cori</code></pre></div>
 </div>
 <div id="rshiny" class="section level2">
 <h2><span class="header-section-number">3.4</span> RShiny</h2>
-<p>So let’s see within my home folder I have a folder with Server.R and UI.R files. This is a very simple application. Let’s look at the content of the files:</p>
+<p>Note that the “rocker” project has lots of Docker stuff relative to R. Check out <a href="https://github.com/rocker-org/shiny" class="uri">https://github.com/rocker-org/shiny</a> for more information. So let’s see within my home folder I have a folder with Server.R and UI.R files. This is a very simple application. Let’s look at the content of the files:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">$</span><span class="st"> </span>cd appdir<span class="op">/</span>
 <span class="er">$</span><span class="st"> </span>ls
 Server.R    UI.R
@@ -381,7 +384,83 @@ Server.R    UI.R
 <img src="PICS/shiny.png" width="500" />
 
 </div>
+</div>
+<div id="making-your-own-image" class="section level2">
+<h2><span class="header-section-number">3.5</span> Making Your Own Image</h2>
+<p>The last thing we will discuss is how to build upon an existing image to create your own image that you could then publish to Docker Hub to distribute to others. Let’s use one of the rocker images as a base for installing some specific packages. This will be a trivial example but you could make significant additions to an image if you wanted to. The advantage of this approach is that you don’t have to build everything from scratch. For example, let’s</p>
+<ol style="list-style-type: decimal">
+<li>Run the rocker/verse image</li>
+<li>Install a package (e.g. data.table)</li>
+<li>Commit the changes to the image</li>
+<li>Give it a new name</li>
+<li>Push our new image up to Docker hub.</li>
+</ol>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># This will launch an Rstudio session from which we can install the data.table package</span>
+<span class="op">$</span><span class="st"> </span>docker run <span class="op">--</span>rm <span class="op">-</span>e PASSWORD=<span class="st">&#39;steve&#39;</span> <span class="op">-</span>p <span class="dv">8787</span><span class="op">:</span><span class="dv">8787</span> rocker<span class="op">/</span>verse</code></pre></div>
+<p>So now we will commit changes to this image since the next time we start it we would like for it to have the data.table package already installed. This is a basic example but imagine if we had installed a lot of packages. We wouldn’t want to do this every time.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Get the Container ID</span>
+<span class="op">$</span><span class="st"> </span>docker ps <span class="op">|</span><span class="st"> </span>awk <span class="st">&#39;{print $1,&quot; &quot;,$2}&#39;</span>
+CONTAINER   ID
+439385c073f8   rocker<span class="op">/</span>verse
 
+<span class="co"># Commit the changes we made to it (i.e. the package install)</span>
+<span class="op">$</span><span class="st"> </span>docker commit 439385c073f8 steviep42<span class="op">/</span>r<span class="op">-</span>rocker<span class="op">-</span>datatable
+sha256<span class="op">:</span>f75857b7fb0060c31cbead22fdc6e37dc341bcea111b570d990d1b31cb88d67f
+(base) Steves<span class="op">-</span>MBP<span class="op">:</span><span class="er">~</span><span class="st"> </span>esteban<span class="op">$</span><span class="st"> </span>docker push steviep42<span class="op">/</span>r<span class="op">-</span>rocker<span class="op">-</span>datatable
+The push refers to repository [docker.io<span class="op">/</span>steviep42<span class="op">/</span>r<span class="op">-</span>rocker<span class="op">-</span>datatable]
+15b389285a52<span class="op">:</span><span class="st"> </span>Pushed 
+d466632838cf<span class="op">:</span><span class="st"> </span>Mounted from rocker<span class="op">/</span>verse 
+395ecd3ce103<span class="op">:</span><span class="st"> </span>Mounted from rocker<span class="op">/</span>verse 
+23fc0d314261<span class="op">:</span><span class="st"> </span>Mounted from rocker<span class="op">/</span>verse 
+9142a472c042<span class="op">:</span><span class="st"> </span>Mounted from rocker<span class="op">/</span>verse 
+2b40fab709d4<span class="op">:</span><span class="st"> </span>Mounted from rocker<span class="op">/</span>verse 
+f453344be0c3<span class="op">:</span><span class="st"> </span>Mounted from rocker<span class="op">/</span>verse 
+0fef5c3c51c6<span class="op">:</span><span class="st"> </span>Mounted from rocker<span class="op">/</span>verse 
+e8481c9f7465<span class="op">:</span><span class="st"> </span>Mounted from rocker<span class="op">/</span>shiny 
+fbb641a8b943<span class="op">:</span><span class="st"> </span>Mounted from rocker<span class="op">/</span>tidyverse 
+latest<span class="op">:</span><span class="st"> </span>digest<span class="op">:</span><span class="st"> </span>sha256<span class="op">:</span>368dd8950a433cc14ba799f6c4a39b812eff904b670563fd33ecad64d8a61c85 size<span class="op">:</span><span class="st"> </span><span class="dv">2422</span></code></pre></div>
+<div class="figure">
+<img src="PICS/docker_hub.png" width="550" />
+
+</div>
+<div id="there-is-another-way" class="section level3">
+<h3><span class="header-section-number">3.5.1</span> There is Another Way</h3>
+<p>We can create what is known as a Dockerfile which can contain the instructions to do what we did above except in a more convenient way. Make a folder called <strong>build</strong>. Note that this is arbitrary.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">$</span><span class="st"> </span>mkdir build
+<span class="op">$</span><span class="st"> </span>cd build
+
+<span class="co"># This next step will create a file called Dockerfile</span>
+<span class="op">$</span><span class="st"> </span>vi Dockerfile</code></pre></div>
+<p>Give your Docker file the following contents</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">FROM rocker<span class="op">/</span>verse<span class="op">:</span>latest
+
+RUN  echo <span class="st">&#39;install.packages(c(&quot;data.table&quot;), \</span>
+<span class="st">repos=&quot;http://cran.us.r-project.org&quot;, \</span>
+<span class="st">dependencies=TRUE)&#39;</span> <span class="op">&gt;</span><span class="st"> </span><span class="er">/</span>tmp<span class="op">/</span>packages.R \
+  <span class="op">&amp;&amp;</span><span class="st"> </span>Rscript <span class="op">/</span>tmp<span class="op">/</span>packages.R
+
+EXPOSE <span class="dv">8787</span> </code></pre></div>
+<p>Next, we can build a new image that is based on rocker/verse:latest. This is cool because we don’t have to go to the trouble of installing all the underlying packages used to make that image. We just build on what we already have.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">$</span><span class="st"> </span>docker build <span class="op">-</span>t steviep42<span class="op">/</span>test .
+Sending build context to Docker daemon  <span class="fl">2.</span>048kB
+Step <span class="dv">1</span><span class="op">/</span><span class="dv">3</span> <span class="op">:</span><span class="st"> </span>FROM rocker<span class="op">/</span>verse<span class="op">:</span>latest
+ <span class="op">--</span>-&gt;<span class="st"> </span>ed004402fcbc
+Step <span class="dv">2</span><span class="op">/</span><span class="dv">3</span> <span class="op">:</span><span class="st"> </span>RUN  echo <span class="st">&#39;install.packages(c(&quot;data.table&quot;), repos=&quot;http://cran.us.r-project.org&quot;, dependencies=TRUE)&#39;</span> <span class="op">&gt;</span><span class="st"> </span><span class="er">/</span>tmp<span class="op">/</span>packages.R   <span class="op">&amp;&amp;</span><span class="st"> </span>Rscript <span class="op">/</span>tmp<span class="op">/</span>packages.R
+ <span class="op">--</span>-&gt;<span class="st"> </span>Using cache
+ <span class="op">--</span>-&gt;<span class="st"> </span>518dd192faf4
+Step <span class="dv">3</span><span class="op">/</span><span class="dv">3</span> <span class="op">:</span><span class="st"> </span>EXPOSE <span class="dv">8787</span>
+ <span class="op">--</span>-&gt;<span class="st"> </span>Using cache
+ <span class="op">--</span>-&gt;<span class="st"> </span>ddf2c7ed59dc
+Successfully built ddf2c7ed59dc
+Successfully tagged steviep42<span class="op">/</span>test<span class="op">:</span>latest</code></pre></div>
+<p>Now we can test it out:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">docker run <span class="op">-</span>e PASSWORD=<span class="st">&#39;steve&#39;</span> <span class="op">-</span>p <span class="dv">8787</span><span class="op">:</span><span class="dv">8787</span> steviep42<span class="op">/</span>test</code></pre></div>
+<div class="figure">
+<img src="PICS/arrow.png" />
+
+</div>
+
+</div>
 </div>
 </div>
             </section>
