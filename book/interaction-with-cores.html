@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Chapter 4 Interaction with Cores | Intro To Cloud Computing</title>
+  <meta name="description" content="Cloud Computing">
+  <meta name="generator" content="bookdown  and GitBook 2.6.7">
+
+  <meta property="og:title" content="Chapter 4 Interaction with Cores | Intro To Cloud Computing" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Cloud Computing" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 4 Interaction with Cores | Intro To Cloud Computing" />
+  
+  <meta name="twitter:description" content="Cloud Computing" />
+  
+
+<meta name="author" content="Steve Pittard">
+
+
+<meta name="date" content="2019-03-25">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="operating-systems-for-research.html">
+
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Hercules Exposome Research Center</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Preface</a><ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#the-too-long-didnt-read-version"><i class="fa fa-check"></i><b>1.1</b> The “Too Long, Didn’t Read” Version</a><ul>
+<li class="chapter" data-level="1.1.1" data-path="index.html"><a href="index.html#what-an-it-person-would-say"><i class="fa fa-check"></i><b>1.1.1</b> What an IT person would say</a></li>
+<li class="chapter" data-level="1.1.2" data-path="index.html"><a href="index.html#what-a-researcher-would-say"><i class="fa fa-check"></i><b>1.1.2</b> What a Researcher would say</a></li>
+<li class="chapter" data-level="1.1.3" data-path="index.html"><a href="index.html#the-gap-as-viewed-by-researchers"><i class="fa fa-check"></i><b>1.1.3</b> The Gap as viewed by Researchers</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#big-data"><i class="fa fa-check"></i><b>1.2</b> Big Data</a></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#first-steps"><i class="fa fa-check"></i><b>1.3</b> First Steps</a><ul>
+<li class="chapter" data-level="1.3.1" data-path="index.html"><a href="index.html#lift-and-shift"><i class="fa fa-check"></i><b>1.3.1</b> Lift and Shift</a></li>
+</ul></li>
+<li class="chapter" data-level="1.4" data-path="index.html"><a href="index.html#the-interview-process"><i class="fa fa-check"></i><b>1.4</b> The Interview Process</a></li>
+<li class="chapter" data-level="1.5" data-path="index.html"><a href="index.html#executive-summary-and-initial-recommendations"><i class="fa fa-check"></i><b>1.5</b> Executive Summary and Initial Recommendations:</a><ul>
+<li class="chapter" data-level="1.5.1" data-path="index.html"><a href="index.html#data-hosting-and-management"><i class="fa fa-check"></i><b>1.5.1</b> Data Hosting and Management</a></li>
+<li class="chapter" data-level="1.5.2" data-path="index.html"><a href="index.html#using-data-lakes"><i class="fa fa-check"></i><b>1.5.2</b> Using Data Lakes</a></li>
+<li class="chapter" data-level="1.5.3" data-path="index.html"><a href="index.html#managed-data-and-computation"><i class="fa fa-check"></i><b>1.5.3</b> Managed Data and Computation</a></li>
+<li class="chapter" data-level="1.5.4" data-path="index.html"><a href="index.html#hercules-data-science-resource"><i class="fa fa-check"></i><b>1.5.4</b> HERCULES Data Science Resource</a></li>
+<li class="chapter" data-level="1.5.5" data-path="index.html"><a href="index.html#software-literacy"><i class="fa fa-check"></i><b>1.5.5</b> Software Literacy</a></li>
+<li class="chapter" data-level="1.5.6" data-path="index.html"><a href="index.html#student-recruitment"><i class="fa fa-check"></i><b>1.5.6</b> Student Recruitment</a></li>
+</ul></li>
+<li class="chapter" data-level="1.6" data-path="index.html"><a href="index.html#related-topic-areas"><i class="fa fa-check"></i><b>1.6</b> Related Topic Areas</a><ul>
+<li class="chapter" data-level="1.6.1" data-path="index.html"><a href="index.html#research-desktop-support"><i class="fa fa-check"></i><b>1.6.1</b> Research Desktop Support</a></li>
+<li class="chapter" data-level="1.6.2" data-path="index.html"><a href="index.html#the-promise-of-cloud-computing"><i class="fa fa-check"></i><b>1.6.2</b> The Promise of Cloud Computing</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="data-management.html"><a href="data-management.html"><i class="fa fa-check"></i><b>2</b> Data Management</a><ul>
+<li class="chapter" data-level="2.1" data-path="data-management.html"><a href="data-management.html#data-hosting"><i class="fa fa-check"></i><b>2.1</b> Data Hosting</a></li>
+<li class="chapter" data-level="2.2" data-path="data-management.html"><a href="data-management.html#project-contuniuty-and-the-role-of-the-data-manager"><i class="fa fa-check"></i><b>2.2</b> Project Contuniuty and The Role of The Data Manager</a></li>
+<li class="chapter" data-level="2.3" data-path="data-management.html"><a href="data-management.html#the-role-of-the-data-lake"><i class="fa fa-check"></i><b>2.3</b> The Role of the Data Lake</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="operating-systems-for-research.html"><a href="operating-systems-for-research.html"><i class="fa fa-check"></i><b>3</b> Operating Systems for Research</a><ul>
+<li class="chapter" data-level="3.1" data-path="operating-systems-for-research.html"><a href="operating-systems-for-research.html#what-do-the-top-sites-use"><i class="fa fa-check"></i><b>3.1</b> What Do the Top Sites Use ?</a></li>
+<li class="chapter" data-level="3.2" data-path="operating-systems-for-research.html"><a href="operating-systems-for-research.html#division-of-labor"><i class="fa fa-check"></i><b>3.2</b> Division of Labor</a><ul>
+<li class="chapter" data-level="3.2.1" data-path="operating-systems-for-research.html"><a href="operating-systems-for-research.html#mixing-work-and-pleasure"><i class="fa fa-check"></i><b>3.2.1</b> Mixing Work and Pleasure</a></li>
+<li class="chapter" data-level="3.2.2" data-path="operating-systems-for-research.html"><a href="operating-systems-for-research.html#mixing-e-mail-and-research"><i class="fa fa-check"></i><b>3.2.2</b> Mixing E-Mail and Research ?</a></li>
+<li class="chapter" data-level="3.2.3" data-path="operating-systems-for-research.html"><a href="operating-systems-for-research.html#youll-do-it-anyway"><i class="fa fa-check"></i><b>3.2.3</b> You’ll Do It Anyway</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="operating-systems-for-research.html"><a href="operating-systems-for-research.html#popular-data-science-languages"><i class="fa fa-check"></i><b>3.3</b> Popular Data Science Languages</a></li>
+<li class="chapter" data-level="3.4" data-path="operating-systems-for-research.html"><a href="operating-systems-for-research.html#is-windows-good-for-computation"><i class="fa fa-check"></i><b>3.4</b> Is Windows Good For Computation ?</a></li>
+<li class="chapter" data-level="3.5" data-path="operating-systems-for-research.html"><a href="operating-systems-for-research.html#whats-wrong-with-windows"><i class="fa fa-check"></i><b>3.5</b> What’s Wrong with Windows ?</a><ul>
+<li class="chapter" data-level="3.5.1" data-path="operating-systems-for-research.html"><a href="operating-systems-for-research.html#windows-security-virus-and-performance-issues"><i class="fa fa-check"></i><b>3.5.1</b> Windows Security, Virus, and Performance Issues</a></li>
+<li class="chapter" data-level="3.5.2" data-path="operating-systems-for-research.html"><a href="operating-systems-for-research.html#windows-reboots-and-updates"><i class="fa fa-check"></i><b>3.5.2</b> Windows Reboots and Updates</a></li>
+<li class="chapter" data-level="3.5.3" data-path="operating-systems-for-research.html"><a href="operating-systems-for-research.html#is-linux-really-better"><i class="fa fa-check"></i><b>3.5.3</b> Is Linux Really Better ?</a></li>
+<li class="chapter" data-level="3.5.4" data-path="operating-systems-for-research.html"><a href="operating-systems-for-research.html#cool-things-about-linux"><i class="fa fa-check"></i><b>3.5.4</b> Cool Things About Linux</a></li>
+<li class="chapter" data-level="3.5.5" data-path="operating-systems-for-research.html"><a href="operating-systems-for-research.html#linux-is-the-native-environment-for-development."><i class="fa fa-check"></i><b>3.5.5</b> Linux is The Native Environment for Development.</a></li>
+<li class="chapter" data-level="3.5.6" data-path="operating-systems-for-research.html"><a href="operating-systems-for-research.html#command-line-knowledge-is-next-level-stuff"><i class="fa fa-check"></i><b>3.5.6</b> Command Line Knowledge is Next Level Stuff</a></li>
+<li class="chapter" data-level="3.5.7" data-path="operating-systems-for-research.html"><a href="operating-systems-for-research.html#is-there-hope-for-windows-users"><i class="fa fa-check"></i><b>3.5.7</b> Is There Hope For Windows Users ?</a></li>
+</ul></li>
+<li class="chapter" data-level="3.6" data-path="operating-systems-for-research.html"><a href="operating-systems-for-research.html#is-there-a-middle-ground"><i class="fa fa-check"></i><b>3.6</b> Is There a Middle Ground ?</a><ul>
+<li class="chapter" data-level="3.6.1" data-path="operating-systems-for-research.html"><a href="operating-systems-for-research.html#virtualized-systems"><i class="fa fa-check"></i><b>3.6.1</b> Virtualized Systems</a></li>
+<li class="chapter" data-level="3.6.2" data-path="operating-systems-for-research.html"><a href="operating-systems-for-research.html#dockers"><i class="fa fa-check"></i><b>3.6.2</b> Dockers</a></li>
+<li class="chapter" data-level="3.6.3" data-path="operating-systems-for-research.html"><a href="operating-systems-for-research.html#anaconda"><i class="fa fa-check"></i><b>3.6.3</b> Anaconda</a></li>
+</ul></li>
+<li class="chapter" data-level="3.7" data-path="operating-systems-for-research.html"><a href="operating-systems-for-research.html#apple-osx-macos"><i class="fa fa-check"></i><b>3.7</b> Apple OSX / macOS ?</a><ul>
+<li class="chapter" data-level="3.7.1" data-path="operating-systems-for-research.html"><a href="operating-systems-for-research.html#the-dark-years-of-apple"><i class="fa fa-check"></i><b>3.7.1</b> The Dark Years of Apple</a></li>
+<li class="chapter" data-level="3.7.2" data-path="operating-systems-for-research.html"><a href="operating-systems-for-research.html#apple-osx-vs-previous-apple-operating-systems"><i class="fa fa-check"></i><b>3.7.2</b> Apple OSX vs Previous Apple Operating Systems</a></li>
+<li class="chapter" data-level="3.7.3" data-path="operating-systems-for-research.html"><a href="operating-systems-for-research.html#lets-go-shopping"><i class="fa fa-check"></i><b>3.7.3</b> Let’s Go Shopping !</a></li>
+<li class="chapter" data-level="3.7.4" data-path="operating-systems-for-research.html"><a href="operating-systems-for-research.html#managing-software-locally"><i class="fa fa-check"></i><b>3.7.4</b> Managing Software Locally</a></li>
+<li class="chapter" data-level="3.7.5" data-path="operating-systems-for-research.html"><a href="operating-systems-for-research.html#rstudio"><i class="fa fa-check"></i><b>3.7.5</b> RStudio</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="interaction-with-cores.html"><a href="interaction-with-cores.html"><i class="fa fa-check"></i><b>4</b> Interaction with Cores</a><ul>
+<li class="chapter" data-level="4.1" data-path="interaction-with-cores.html"><a href="interaction-with-cores.html#expectations-of-cores"><i class="fa fa-check"></i><b>4.1</b> Expectations of Cores</a></li>
+<li class="chapter" data-level="4.2" data-path="interaction-with-cores.html"><a href="interaction-with-cores.html#understanding-results"><i class="fa fa-check"></i><b>4.2</b> Understanding Results</a></li>
+<li class="chapter" data-level="4.3" data-path="interaction-with-cores.html"><a href="interaction-with-cores.html#need-for-more-consultation"><i class="fa fa-check"></i><b>4.3</b> Need for More Consultation</a></li>
+<li class="chapter" data-level="4.4" data-path="interaction-with-cores.html"><a href="interaction-with-cores.html#possible-solutions"><i class="fa fa-check"></i><b>4.4</b> Possible Solutions</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Intro To Cloud Computing</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="interaction-with-cores" class="section level1">
+<h1><span class="header-section-number">Chapter 4</span> Interaction with Cores</h1>
+<p><strong>Summary:</strong> Some researchers would like more up front support from Cores in addition to back end consultation to better understand results. Faculty also understand that they have a responsibility to acquire the requisite knowledge to speak intelligently about newer data types and experiments but will need help to get up to speed.</p>
+<div id="expectations-of-cores" class="section level2">
+<h2><span class="header-section-number">4.1</span> Expectations of Cores</h2>
+<div id="the-knowledge-gap---communication-with-cores" class="section level4">
+<h4><span class="header-section-number">4.1.0.1</span> The Knowledge Gap - Communication With Cores</h4>
+<p>Core facilities, both local and external, are challenged to produce actionable results at a reasonable cost though clients of these facilities (Microbiome and Metabolomics in particular) typically want more in terms of explanation and follow-up support as they progress towards publishable conclusions. While most of those interviewed felt comfortable with Core results being returned from Cores, some had yet to fully engage these services so could not comment on the experience. One investigator, Donghai Liang, reports satisfaction with the Metabolomics core though points out that he has worked extensively with this type of data during his Post doc experience so he has perspective that others do not. Non coincidentally, he is asked to assist with questions about metabolomics data and while he is willing to help he is increasingly engaged with his new duties.</p>
+<p>The Cores generally do not have the personnel or time to offer ongoing support which has produced something of a gap that is usually addressed by drafting in resources such as post docs, Georgia Tech students, collaborators, and peers at other institutions. Addressing this gap involves a combination of activities involving the development of domain expertise by investigators (or their proxy) along with greater willingness by the Cores to treat engagements holistically as opposed to “one-and-done” transactions. This is why HERCULES should consider the formation of a data science support group to perform the necessary triage and hand offs between the group. Note that this support group isn’t intended to be a “drop off” service that insulates investigators from the realities of data analysis and Core products but rather a junction point where concerns can be captured and addressed according to Center priorities and resources.</p>
+</div>
+</div>
+<div id="understanding-results" class="section level2">
+<h2><span class="header-section-number">4.2</span> Understanding Results</h2>
+<p>The following figure captures the essence of the challenges when interacting with Core facilities. The best situation occurs when there is a strong intersection of knowledge between the facility and the investigator to the point wherein questions and concerns are easily addressed. Both sides have a sufficient background to ask pointed questions about software pipelines used in the process as well as some knowledge of the domain from which the data was generated (e.g. Microbiome, Metabolomics, Lipidomics).</p>
+<div class="figure">
+<img src="PICS/core.png" />
+
+</div>
+<p>The second case represents the case wherein the investigator has some knowledge of at least one of the areas but needs significantly more help in other areas. This situation is more common than the first. There is light intersection of shared knowledge which subsequently provokes more questions (sometimes more advanced, sometimes basic and remedial).</p>
+<div class="figure">
+<img src="PICS/core2.png" />
+
+</div>
+</div>
+<div id="need-for-more-consultation" class="section level2">
+<h2><span class="header-section-number">4.3</span> Need for More Consultation</h2>
+<p>Additional consultation from the Cores is required given that researchers might not be well trained in a specific technique or field. This is true for both study and experimental design as well as result interpretation. Additionally, being able to point to vital working relationships to local Cores is very helpful when applying for grants. In absence of that type of relationship then external providers must be considered. One problem with core facilities is the recruitment and retention of the necessary domain expertise to complete a number of projects on time. Typically, core facilities are staffed with junior level faculty who are on their way to other career opportunities or staff who are working (many times temporarily) for less than market salaries perhaps because a partner or spouse is employed elsewhere within the institution. Lack of advancement and funding for professional development can dissuade otherwise qualified personnel from pursuing such positions. Universities such as Vanderbilt have begun to establish job descriptions and promotion and tenure policies relevant to the issue of career tracks for core directors and personnel.</p>
+</div>
+<div id="possible-solutions" class="section level2">
+<h2><span class="header-section-number">4.4</span> Possible Solutions</h2>
+<p>In response to faculty input the following figure represents a type of interaction with internal cores that can help. It assumes that supplemental expertise can be assigned or mobilized in parallel (to the extent that can currently be achieved) to fully leverage results coming back from a Core. Some investigators might already have this relationship in some form (e.g. postdocs, junior faculty working on the project) but it’s not a common scenario nor is it one that is realistic for junior faculty.</p>
+<div class="figure">
+<img src="PICS/coresol.png" />
+
+</div>
+<p>The following figure represents a distillation of input from faculty wherein there is ready access to a group of integrated professionals who can manage interactions (where requested) and fulfill some of the needs that is typically pushed back onto the investigator. In this scenario investigators still retain the ability to go directly to a Core or leverage the strengths of the internal Core who can manage relationships, organize training, and intelligently allocate personnel for various tasks. Obviously, this will involve recruitment and possible reorganization of existing resources (those who aren’t already fully funded).</p>
+<div class="figure">
+<img src="PICS/coresol3.png" width="450" />
+
+</div>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="operating-systems-for-research.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"download": ["Nursing Report.pdf", "Nursing Report.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

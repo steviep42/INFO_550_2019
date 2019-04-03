@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Chapter 5 Computation | Hercules Exposome Informatics Report</title>
+  <meta name="description" content="This is a summary report of Hercules Exposome Interviews">
+  <meta name="generator" content="bookdown  and GitBook 2.6.7">
+
+  <meta property="og:title" content="Chapter 5 Computation | Hercules Exposome Informatics Report" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="This is a summary report of Hercules Exposome Interviews" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 5 Computation | Hercules Exposome Informatics Report" />
+  
+  <meta name="twitter:description" content="This is a summary report of Hercules Exposome Interviews" />
+  
+
+<meta name="author" content="Steve Pittard">
+
+
+<meta name="date" content="2019-02-27">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="interaction-with-cores.html">
+
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Hercules Exposome Research Center</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Preface</a><ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#background"><i class="fa fa-check"></i><b>1.1</b> Background</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#the-interview-process"><i class="fa fa-check"></i><b>1.2</b> The Interview Process</a></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#executive-summary-and-initial-recommendations"><i class="fa fa-check"></i><b>1.3</b> Executive Summary and Initial Recommendations:</a><ul>
+<li class="chapter" data-level="1.3.1" data-path="index.html"><a href="index.html#data-hosting-and-management"><i class="fa fa-check"></i><b>1.3.1</b> Data Hosting and Management</a></li>
+<li class="chapter" data-level="1.3.2" data-path="index.html"><a href="index.html#using-data-lakes"><i class="fa fa-check"></i><b>1.3.2</b> Using Data Lakes</a></li>
+<li class="chapter" data-level="1.3.3" data-path="index.html"><a href="index.html#managed-data-and-computation"><i class="fa fa-check"></i><b>1.3.3</b> Managed Data and Computation</a></li>
+<li class="chapter" data-level="1.3.4" data-path="index.html"><a href="index.html#hercules-data-science-resource"><i class="fa fa-check"></i><b>1.3.4</b> HERCULES Data Science Resource</a></li>
+<li class="chapter" data-level="1.3.5" data-path="index.html"><a href="index.html#software-literacy"><i class="fa fa-check"></i><b>1.3.5</b> Software Literacy</a></li>
+<li class="chapter" data-level="1.3.6" data-path="index.html"><a href="index.html#student-recruitment"><i class="fa fa-check"></i><b>1.3.6</b> Student Recruitment</a></li>
+</ul></li>
+<li class="chapter" data-level="1.4" data-path="index.html"><a href="index.html#related-topic-areas"><i class="fa fa-check"></i><b>1.4</b> Related Topic Areas</a><ul>
+<li class="chapter" data-level="1.4.1" data-path="index.html"><a href="index.html#research-desktop-support"><i class="fa fa-check"></i><b>1.4.1</b> Research Desktop Support</a></li>
+<li class="chapter" data-level="1.4.2" data-path="index.html"><a href="index.html#the-promise-of-cloud-computing"><i class="fa fa-check"></i><b>1.4.2</b> The Promise of Cloud Computing</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="data-management.html"><a href="data-management.html"><i class="fa fa-check"></i><b>2</b> Data Management</a><ul>
+<li class="chapter" data-level="2.1" data-path="data-management.html"><a href="data-management.html#data-hosting"><i class="fa fa-check"></i><b>2.1</b> Data Hosting</a></li>
+<li class="chapter" data-level="2.2" data-path="data-management.html"><a href="data-management.html#project-contuniuty-and-the-role-of-the-data-manager"><i class="fa fa-check"></i><b>2.2</b> Project Contuniuty and The Role of The Data Manager</a></li>
+<li class="chapter" data-level="2.3" data-path="data-management.html"><a href="data-management.html#the-role-of-the-data-lake"><i class="fa fa-check"></i><b>2.3</b> The Role of the Data Lake</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="software-literacy-1.html"><a href="software-literacy-1.html"><i class="fa fa-check"></i><b>3</b> Software Literacy</a><ul>
+<li class="chapter" data-level="3.1" data-path="software-literacy-1.html"><a href="software-literacy-1.html#concerns-about-falling-behind"><i class="fa fa-check"></i><b>3.1</b> Concerns About Falling Behind</a></li>
+<li class="chapter" data-level="3.2" data-path="software-literacy-1.html"><a href="software-literacy-1.html#open-source-tools"><i class="fa fa-check"></i><b>3.2</b> Open Source Tools</a></li>
+<li class="chapter" data-level="3.3" data-path="software-literacy-1.html"><a href="software-literacy-1.html#attracting-software-literate-students"><i class="fa fa-check"></i><b>3.3</b> Attracting Software Literate Students</a></li>
+<li class="chapter" data-level="3.4" data-path="software-literacy-1.html"><a href="software-literacy-1.html#source-code-maintenance"><i class="fa fa-check"></i><b>3.4</b> Source Code Maintenance</a></li>
+<li class="chapter" data-level="3.5" data-path="software-literacy-1.html"><a href="software-literacy-1.html#notebooks-and-reproducible-research"><i class="fa fa-check"></i><b>3.5</b> Notebooks and Reproducible Research</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="interaction-with-cores.html"><a href="interaction-with-cores.html"><i class="fa fa-check"></i><b>4</b> Interaction with Cores</a><ul>
+<li class="chapter" data-level="4.1" data-path="interaction-with-cores.html"><a href="interaction-with-cores.html#expectations-of-cores"><i class="fa fa-check"></i><b>4.1</b> Expectations of Cores</a></li>
+<li class="chapter" data-level="4.2" data-path="interaction-with-cores.html"><a href="interaction-with-cores.html#understanding-results"><i class="fa fa-check"></i><b>4.2</b> Understanding Results</a></li>
+<li class="chapter" data-level="4.3" data-path="interaction-with-cores.html"><a href="interaction-with-cores.html#need-for-more-consultation"><i class="fa fa-check"></i><b>4.3</b> Need for More Consultation</a></li>
+<li class="chapter" data-level="4.4" data-path="interaction-with-cores.html"><a href="interaction-with-cores.html#possible-solutions"><i class="fa fa-check"></i><b>4.4</b> Possible Solutions</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="computation.html"><a href="computation.html"><i class="fa fa-check"></i><b>5</b> Computation</a><ul>
+<li class="chapter" data-level="5.1" data-path="computation.html"><a href="computation.html#data-management-and-computation"><i class="fa fa-check"></i><b>5.1</b> Data Management and Computation</a></li>
+<li class="chapter" data-level="5.2" data-path="computation.html"><a href="computation.html#cloud-vs-local-resources"><i class="fa fa-check"></i><b>5.2</b> Cloud vs Local Resources</a><ul>
+<li class="chapter" data-level="5.2.1" data-path="computation.html"><a href="computation.html#onboarding-cloud-support"><i class="fa fa-check"></i><b>5.2.1</b> Onboarding Cloud Support</a></li>
+<li class="chapter" data-level="5.2.2" data-path="computation.html"><a href="computation.html#post-project-data-archival"><i class="fa fa-check"></i><b>5.2.2</b> Post Project Data Archival</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="computation.html"><a href="computation.html#desktop-support-for-open-source-analysis-tools"><i class="fa fa-check"></i><b>5.3</b> Desktop Support for Open Source Analysis Tools</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Hercules Exposome Informatics Report</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="computation" class="section level1">
+<h1><span class="header-section-number">Chapter 5</span> Computation</h1>
+<p><strong>Summary:</strong> Computation underlies research analytics and faculty use whatever resources they can find. Lots of code and data winds up on the laptops of collaborators and students which works against reproducibility, security, and project continuity.</p>
+<div id="data-management-and-computation" class="section level2">
+<h2><span class="header-section-number">5.1</span> Data Management and Computation</h2>
+<p>Smaller projects can in fact be completed using laptops and desktops though the trend has rapidly moved towards more samples per project thus being able to easily and conveniently compute against multiple data sources is very important. This is a limitation of Emory Box in that the data cannot be directly accessed via APIs (Application Programming Interfaces). It might be more convenient for it to be in Amazon S3 bucket or a folder attached to a compute node, or in a system such as <a href="https://www.dnanexus.com/">DNANexus</a> or <a href="https://www.sevenbridges.com/">Seven Bridges</a> both of which are enterprise frameworks for data management, analysis, and computation. These are currently being considered by WCI in support of their ORIEN <a href="http://oriencancer.org/#about" class="uri">http://oriencancer.org/#about</a> project though it is quite possible that HERCULES could benefit from using the license also since it would provide a standard tool for management, analysis, and compute. However, embracing these tools would still involve formal training and orientation to ensure productivity.</p>
+</div>
+<div id="cloud-vs-local-resources" class="section level2">
+<h2><span class="header-section-number">5.2</span> Cloud vs Local Resources</h2>
+<p>All of those interviewed are aware of resources such as Amazon or Google but lack the training to reasonably approach these resources directly unless “chaperoned” by someone more knowledgeable or by involving a funded collaborator. A minority of those interviewed express an interest in knowing how to configure cloud resources at a “nuts and bolts” level though most do not see immediate value in that. Although they do understand that being more facile at the UNIX command line and with R and Python can only help them. In the end, faculty are not fixated on a specific architecture or method of computation as long as it is readily available and accessible using standard, documented methods. Many faculty are getting their computational work done “by hook or by crook” so they are open to a standard, well supported setup that doesn’t require them to “jump around” to different resources throughout the project life cycle.</p>
+<div id="onboarding-cloud-support" class="section level3">
+<h3><span class="header-section-number">5.2.1</span> Onboarding Cloud Support</h3>
+<p>On boarding to the Cloud is a problem. The cloud’s ability to match the scope of most any research project is indeed a true convenience which, however, requires significant knowledge to fully exploit. Knowing how to responsibly provision storage, “spin up” instances, create databases, and effectively close out projects are important skills. It has been difficult getting a clear message from the institution as to when a service offering would be official and what precisely the support mechanism would provide particularly as it relates to hands on support and assistance with managing cloud-based instances. A soft opening was announced for Fall of 2018 though the service arrival date is now “early 2019”.</p>
+<p>Investigators will need assistance and/or proxies to handle the foundational work which would typically involve students although a more official, permanent, and reliable form of support is essential since students and post docs eventually move on. In absence of enthusiastic end-user support, Amazon or Google will likely not be heavily used except by those already knowledgeable and/or funded specifically to the do such work. At this point, investigators have the impression that they are expected to “self-educate” though they would like a base level of support from LITS or Rollins IT upon which more specific forms of research support could be built.</p>
+</div>
+<div id="post-project-data-archival" class="section level3">
+<h3><span class="header-section-number">5.2.2</span> Post Project Data Archival</h3>
+<p>Research evolves over time and involves input from collaborators (statisticians, analysts, bioinformatics etc.) which means that the data must remain resident on the cloud as the project evolves. This ongoing occupancy involves costs and while someone could move the data off to cheaper storage and then move it back to EBS, this is inconvenient and also interrupts continuity. Being able to maintain data on the Amazon cloud is an interest especially with the attractive life cycle management tools that can push data out to cheaper levels of storage and, in terms of archival data, Amazon Glacier. Additionally, Amazon provides versioning, flexible permission schemes, and tiers for infrequently accessed data though intelligent use of these features will require support from the institution. It is not apparent that LITS is supporting this direction given that the preferred storage platforms are Emory Box and the Isilon storage systems. Putting data in Box is “okay” but 1) it cannot be computed against and 2) if the institution is truly moving towards a cloud-first solution then investigators should be allocated Amazon S3 storage equivalent in size to the free Emory Box offering.</p>
+</div>
+</div>
+<div id="desktop-support-for-open-source-analysis-tools" class="section level2">
+<h2><span class="header-section-number">5.3</span> Desktop Support for Open Source Analysis Tools</h2>
+<p>Faculty have expressed concern at the level of IT desktop support they receive which is limited when considering that they need to conduct analyses on their desktops using open source tools. Being able to install and update opensource tools (e.g. R, Python, add-on packages) and receive troubleshooting assistance is a common need although it has been challenging to obtain such help. While faculty (or their proxy) use the Rollins cluster there will always be a need for desktop computation simply to try things out and/or do trial runs of pipelines found in literature. To this end having more liberal policies for installing tools on the desk top is desired. Note that faculty are NOT expecting the IT group to provide research advice or debug programming issues. However, they should be able to troubleshoot basic installation problems and be able to assist in the updating of packages and generally be aware of desktop issues as it relates to research.</p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="interaction-with-cores.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"download": ["Nursing Report.pdf", "Nursing Report.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

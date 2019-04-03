@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Intro To Research Computing</title>
+  <meta name="description" content="Cloud Computing">
+  <meta name="generator" content="bookdown  and GitBook 2.6.7">
+
+  <meta property="og:title" content="Intro To Research Computing" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Cloud Computing" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Intro To Research Computing" />
+  
+  <meta name="twitter:description" content="Cloud Computing" />
+  
+
+<meta name="author" content="Steve Pittard">
+
+
+<meta name="date" content="2019-04-02">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+
+<link rel="next" href="virtualization.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Hercules Exposome Research Center</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Computation In Research</a><ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#what-do-the-top-sites-use"><i class="fa fa-check"></i><b>1.1</b> What Do the Top Sites Use ?</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#division-of-labor"><i class="fa fa-check"></i><b>1.2</b> Division of Labor</a><ul>
+<li class="chapter" data-level="1.2.1" data-path="index.html"><a href="index.html#mixing-work-and-pleasure"><i class="fa fa-check"></i><b>1.2.1</b> Mixing Work and Pleasure</a></li>
+<li class="chapter" data-level="1.2.2" data-path="index.html"><a href="index.html#mixing-e-mail-and-research"><i class="fa fa-check"></i><b>1.2.2</b> Mixing E-Mail and Research ?</a></li>
+<li class="chapter" data-level="1.2.3" data-path="index.html"><a href="index.html#youll-do-it-anyway"><i class="fa fa-check"></i><b>1.2.3</b> You’ll Do It Anyway</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#popular-data-science-languages"><i class="fa fa-check"></i><b>1.3</b> Popular Data Science Languages</a></li>
+<li class="chapter" data-level="1.4" data-path="index.html"><a href="index.html#is-windows-good-for-computation"><i class="fa fa-check"></i><b>1.4</b> Is Windows Good For Computation ?</a></li>
+<li class="chapter" data-level="1.5" data-path="index.html"><a href="index.html#whats-wrong-with-windows"><i class="fa fa-check"></i><b>1.5</b> What’s Wrong with Windows ?</a><ul>
+<li class="chapter" data-level="1.5.1" data-path="index.html"><a href="index.html#windows-security-virus-and-performance-issues"><i class="fa fa-check"></i><b>1.5.1</b> Windows Security, Virus, and Performance Issues</a></li>
+<li class="chapter" data-level="1.5.2" data-path="index.html"><a href="index.html#windows-reboots-and-updates"><i class="fa fa-check"></i><b>1.5.2</b> Windows Reboots and Updates</a></li>
+<li class="chapter" data-level="1.5.3" data-path="index.html"><a href="index.html#is-linux-really-better"><i class="fa fa-check"></i><b>1.5.3</b> Is Linux Really Better ?</a></li>
+<li class="chapter" data-level="1.5.4" data-path="index.html"><a href="index.html#cool-things-about-linux"><i class="fa fa-check"></i><b>1.5.4</b> Cool Things About Linux</a></li>
+<li class="chapter" data-level="1.5.5" data-path="index.html"><a href="index.html#linux-is-the-native-environment-for-development."><i class="fa fa-check"></i><b>1.5.5</b> Linux is The Native Environment for Development.</a></li>
+<li class="chapter" data-level="1.5.6" data-path="index.html"><a href="index.html#command-line-knowledge-is-next-level-stuff"><i class="fa fa-check"></i><b>1.5.6</b> Command Line Knowledge is Next Level Stuff</a></li>
+<li class="chapter" data-level="1.5.7" data-path="index.html"><a href="index.html#is-there-hope-for-windows-users"><i class="fa fa-check"></i><b>1.5.7</b> Is There Hope For Windows Users ?</a></li>
+</ul></li>
+<li class="chapter" data-level="1.6" data-path="index.html"><a href="index.html#is-there-a-middle-ground"><i class="fa fa-check"></i><b>1.6</b> Is There a Middle Ground ?</a><ul>
+<li class="chapter" data-level="1.6.1" data-path="index.html"><a href="index.html#virtualized-systems"><i class="fa fa-check"></i><b>1.6.1</b> Virtualized Systems</a></li>
+<li class="chapter" data-level="1.6.2" data-path="index.html"><a href="index.html#dockers"><i class="fa fa-check"></i><b>1.6.2</b> Dockers</a></li>
+<li class="chapter" data-level="1.6.3" data-path="index.html"><a href="index.html#anaconda"><i class="fa fa-check"></i><b>1.6.3</b> Anaconda</a></li>
+</ul></li>
+<li class="chapter" data-level="1.7" data-path="index.html"><a href="index.html#apple-osx-macos"><i class="fa fa-check"></i><b>1.7</b> Apple OSX / macOS ?</a><ul>
+<li class="chapter" data-level="1.7.1" data-path="index.html"><a href="index.html#the-dark-years-of-apple"><i class="fa fa-check"></i><b>1.7.1</b> The Dark Years of Apple</a></li>
+<li class="chapter" data-level="1.7.2" data-path="index.html"><a href="index.html#apple-osx-vs-previous-apple-operating-systems"><i class="fa fa-check"></i><b>1.7.2</b> Apple OSX vs Previous Apple Operating Systems</a></li>
+<li class="chapter" data-level="1.7.3" data-path="index.html"><a href="index.html#lets-go-shopping"><i class="fa fa-check"></i><b>1.7.3</b> Let’s Go Shopping !</a></li>
+<li class="chapter" data-level="1.7.4" data-path="index.html"><a href="index.html#managing-software-locally"><i class="fa fa-check"></i><b>1.7.4</b> Managing Software Locally</a></li>
+<li class="chapter" data-level="1.7.5" data-path="index.html"><a href="index.html#rstudio"><i class="fa fa-check"></i><b>1.7.5</b> RStudio</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="virtualization.html"><a href="virtualization.html"><i class="fa fa-check"></i><b>2</b> Virtualization</a><ul>
+<li class="chapter" data-level="2.1" data-path="virtualization.html"><a href="virtualization.html#virtual-box"><i class="fa fa-check"></i><b>2.1</b> Virtual Box</a></li>
+<li class="chapter" data-level="2.2" data-path="virtualization.html"><a href="virtualization.html#using-virtualization-farms"><i class="fa fa-check"></i><b>2.2</b> Using Virtualization Farms</a></li>
+<li class="chapter" data-level="2.3" data-path="virtualization.html"><a href="virtualization.html#running-rstudio-on-amazon"><i class="fa fa-check"></i><b>2.3</b> Running RStudio on Amazon</a><ul>
+<li class="chapter" data-level="2.3.1" data-path="virtualization.html"><a href="virtualization.html#why-ubuntu"><i class="fa fa-check"></i><b>2.3.1</b> Why Ubuntu ?</a></li>
+<li class="chapter" data-level="2.3.2" data-path="virtualization.html"><a href="virtualization.html#start-an-instance"><i class="fa fa-check"></i><b>2.3.2</b> Start An Instance</a></li>
+<li class="chapter" data-level="2.3.3" data-path="virtualization.html"><a href="virtualization.html#add-some-storage"><i class="fa fa-check"></i><b>2.3.3</b> Add Some Storage</a></li>
+<li class="chapter" data-level="2.3.4" data-path="virtualization.html"><a href="virtualization.html#get-a-key"><i class="fa fa-check"></i><b>2.3.4</b> Get A Key</a></li>
+<li class="chapter" data-level="2.3.5" data-path="virtualization.html"><a href="virtualization.html#installing-r"><i class="fa fa-check"></i><b>2.3.5</b> Installing R</a></li>
+<li class="chapter" data-level="2.3.6" data-path="virtualization.html"><a href="virtualization.html#installing-rstudio-server"><i class="fa fa-check"></i><b>2.3.6</b> Installing RStudio Server</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="virtualization.html"><a href="virtualization.html#accessing-your-instance"><i class="fa fa-check"></i><b>2.4</b> Accessing Your Instance</a></li>
+<li class="chapter" data-level="2.5" data-path="virtualization.html"><a href="virtualization.html#getting-data-into-your-instance"><i class="fa fa-check"></i><b>2.5</b> Getting Data Into Your Instance</a></li>
+<li class="chapter" data-level="2.6" data-path="virtualization.html"><a href="virtualization.html#accessing-s3-from-ec2-instances"><i class="fa fa-check"></i><b>2.6</b> Accessing S3 from EC2 Instances</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="virtualization-1.html"><a href="virtualization-1.html"><i class="fa fa-check"></i><b>3</b> Virtualization</a><ul>
+<li class="chapter" data-level="3.1" data-path="virtualization-1.html"><a href="virtualization-1.html#virtual-box-1"><i class="fa fa-check"></i><b>3.1</b> Virtual Box</a></li>
+<li class="chapter" data-level="3.2" data-path="virtualization-1.html"><a href="virtualization-1.html#using-virtualization-farms-1"><i class="fa fa-check"></i><b>3.2</b> Using Virtualization Farms</a></li>
+<li class="chapter" data-level="3.3" data-path="virtualization-1.html"><a href="virtualization-1.html#running-rstudio-on-amazon-1"><i class="fa fa-check"></i><b>3.3</b> Running RStudio on Amazon</a><ul>
+<li class="chapter" data-level="3.3.1" data-path="virtualization-1.html"><a href="virtualization-1.html#why-ubuntu-1"><i class="fa fa-check"></i><b>3.3.1</b> Why Ubuntu ?</a></li>
+<li class="chapter" data-level="3.3.2" data-path="virtualization-1.html"><a href="virtualization-1.html#start-an-instance-1"><i class="fa fa-check"></i><b>3.3.2</b> Start An Instance</a></li>
+<li class="chapter" data-level="3.3.3" data-path="virtualization-1.html"><a href="virtualization-1.html#add-some-storage-1"><i class="fa fa-check"></i><b>3.3.3</b> Add Some Storage</a></li>
+<li class="chapter" data-level="3.3.4" data-path="virtualization-1.html"><a href="virtualization-1.html#get-a-key-1"><i class="fa fa-check"></i><b>3.3.4</b> Get A Key</a></li>
+<li class="chapter" data-level="3.3.5" data-path="virtualization-1.html"><a href="virtualization-1.html#installing-r-1"><i class="fa fa-check"></i><b>3.3.5</b> Installing R</a></li>
+<li class="chapter" data-level="3.3.6" data-path="virtualization-1.html"><a href="virtualization-1.html#installing-rstudio-server-1"><i class="fa fa-check"></i><b>3.3.6</b> Installing RStudio Server</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="virtualization-1.html"><a href="virtualization-1.html#accessing-your-instance-1"><i class="fa fa-check"></i><b>3.4</b> Accessing Your Instance</a></li>
+<li class="chapter" data-level="3.5" data-path="virtualization-1.html"><a href="virtualization-1.html#getting-data-into-your-instance-1"><i class="fa fa-check"></i><b>3.5</b> Getting Data Into Your Instance</a></li>
+<li class="chapter" data-level="3.6" data-path="virtualization-1.html"><a href="virtualization-1.html#accessing-s3-from-ec2-instances-1"><i class="fa fa-check"></i><b>3.6</b> Accessing S3 from EC2 Instances</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Intro To Research Computing</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="header">
+<h1 class="title">Intro To Research Computing</h1>
+<p class="author"><em>Steve Pittard</em></p>
+<p class="date"><em>2019-04-02</em></p>
+</div>
+<div id="computation-in-research" class="section level1">
+<h1><span class="header-section-number">Chapter 1</span> Computation In Research</h1>
+<p>Biomedical and Public Health Research is increasingly reliant upon computation to achieve its aims. There are a number of considerations to make when thinking about how best to conduct computationally-assisted work. This also includes ideas on how to develop, maintain, and implement software pipelines. When doing literature reviews it is increasingly common to see references to programs written in R, Python, Java as associations with databases, REST APIs, and various cloud architectures. What this means is that it is incumbent upon researchers to learn something about analytics tools and supporting development languages to be competitive. Hopefully, this information can clear up some confusion and provide some basic ideas on how to be productive.</p>
+<p><strong>Summary:</strong> Linux and UNIX (considered here as one in the same although technically that’s not true) has the largest market share by far when considering computational research. If you intend on pursing research and want to use computation at scale then Linux is the way to go. You can still use OSX or Windows as a way to access Linux servers or you could use a Linux desktop. We’ll learn about accessing remote LINUX servers and cloud instances.</p>
+<p>It’s always helpful to understand the trends to see where things are going. At one time most of the world’s computing took place on privately owned resources. It turns out that that is still the case. Check out the following:</p>
+<div id="what-do-the-top-sites-use" class="section level2">
+<h2><span class="header-section-number">1.1</span> What Do the Top Sites Use ?</h2>
+<p>If you are fortunate then you have access to a professionally maintained computational cluster that has all the packages and languages you need along with a highly responsive staff who will answer questions for you and provide assistance in the design of large scale runs. Most people do not have access to such resources or if they do it is basic access to a cluster with little or no add on support. It depends on your department and institution.</p>
+<p>Consider the site <a href="https://www.top500.org/project/introduction/">Top 500</a> website whose mission is to provide information on the Top 500 most significant computational installations in the world. This is important not just from an enthusiast or geek point of view but as an indicator of what it takes to support aggressive types of computational research.</p>
+<blockquote>
+<p>Statistics on high-performance computers are of major interest to manufacturers, users, and potential users. These people wish to know not only the number of systems installed, but also the location of the various supercomputers within the high-performance computing community and the applications for which a computer system is being used. Such statistics can facilitate the establishment of collaborations, the exchange of data and software, and provide a better understanding of the high-performance computer market.</p>
+</blockquote>
+<div class="figure">
+<img src="PICS/linuxos.png" />
+
+</div>
+<div class="figure">
+<img src="PICS/top5.png" />
+
+</div>
+<div class="figure">
+<img src="PICS/type.png" />
+
+</div>
+</div>
+<div id="division-of-labor" class="section level2">
+<h2><span class="header-section-number">1.2</span> Division of Labor</h2>
+<p>There is a natural tendency to use one’s laptop or desktop computer to do some analysis which, in a general sense, is okay. This can be very useful for learning a particular approach or becoming familiar with a package you read about in a research paper. The laptop can also be a great place to work on creating prototypical applications that are modest in size with the idea of eventually moving them to larger infrastructure for scaling.</p>
+<div id="mixing-work-and-pleasure" class="section level3">
+<h3><span class="header-section-number">1.2.1</span> Mixing Work and Pleasure</h3>
+<p>When getting a desktop or laptop everyone starts out with the best of intentions by wanting to devote the computer to a specific set of tasks. Although over time the laptop becomes a mixture of work and pleasure along with some activities that involve both. If you organize your hard drive well then you can easily make distinctions between personal and work data but eventually it becomes unclear as to what is what. Also keep in mind that most laptops and desktops are configured and optimized to support general office productivity such as accessing the Internet, reading E-Mail, and preparing documents. One can also install applications such as SAS, SPSS, or R-Studio to do some analysis and if the size of the input data is manageable then this is fine.</p>
+</div>
+<div id="mixing-e-mail-and-research" class="section level3">
+<h3><span class="header-section-number">1.2.2</span> Mixing E-Mail and Research ?</h3>
+<p>The trouble starts when you have to install tools that require additional configuration or adjustments to system permissions which might then impact other programs on the system. Usually this isn’t the case but I’ve filled up my hard drive with data files on a system that is ostensibly for personal productivity. So not only does the system become unwieldy for analysis but then I have no room for my office stuff. Let’s put it another way, you do not want to be doing serious research and computation on the same computer you normally read e-mail on. I’ve seen people trying to open e-mail attachments that causes the system to reboot thus destroying a long running process.</p>
+</div>
+<div id="youll-do-it-anyway" class="section level3">
+<h3><span class="header-section-number">1.2.3</span> You’ll Do It Anyway</h3>
+<p>The lesson here is that once you hit a certain threshold of analytics activity or start managing large data sets that gobble up most of you hard drive then it’s reasonable to consider using a <strong>server</strong> or external computer that is optimized for analysis and data storage. At a minimum, you should move your data files over to a shared drive (if one is available) and refer to that location when doing work. Obviously, when going home you will need to make local copies or use the VPN to attach to the shared drive from home.</p>
+</div>
+</div>
+<div id="popular-data-science-languages" class="section level2">
+<h2><span class="header-section-number">1.3</span> Popular Data Science Languages</h2>
+<p>Let’s take a look at one survey that rates the most popular languages and frameworks used in Data Science. This is from the <a href="https://www.kdnuggets.com/">KDNuggets</a> website. These aren’t the only languages and there are some languages like <a href="https://www.kdnuggets.com/">Julia</a> that are gaining some market share. The way to think about lists like this is that if you need a lot of these then you are probably heading in a direction that would benefit from using a Linux based server or a virtual machine or Docker of some type. Especially if you have lots of data to clean and transform. But you could install most of these tools on a laptop running Windows or OSX. Also remember that you would also use things like SAS, SPSS, Systat, Minitab, etc.</p>
+<center>
+<img src="PICS/kdnug.png" />
+</center>
+</div>
+<div id="is-windows-good-for-computation" class="section level2">
+<h2><span class="header-section-number">1.4</span> Is Windows Good For Computation ?</h2>
+<p>The Windows Operating System has a rich history as a desktop operating system for consumer level activity but this does not then mean that it’s the best platform for accomplishing research. Most of the personal computers and laptops sold today come with some version of Windows which then implies that most people have will have a degree of familiarity with it. You can also install things like SAS, SPSS, Systat but those are also available on Mac OS which we will get to soon enough.</p>
+<div class="figure">
+<img src="PICS/windows_share.png" width="500" />
+
+</div>
+</div>
+<div id="whats-wrong-with-windows" class="section level2">
+<h2><span class="header-section-number">1.5</span> What’s Wrong with Windows ?</h2>
+<p>Nothing - as long as you like getting viruses and having to install a never ending series of software updates that seem to only compound the very problems that the updates alleged to address in the first place. For many people, it’s a fine Operating System for general office productivity. Information Technology managers <strong>LOVE</strong> it because it’s what “everyone else uses” even if that’s not a particularly good reason to do something.</p>
+<div id="windows-security-virus-and-performance-issues" class="section level3">
+<h3><span class="header-section-number">1.5.1</span> Windows Security, Virus, and Performance Issues</h3>
+<p>Do I <strong>REALLY</strong> need to convince you of this ? Windows has many security and virus problems to the extent that you MUST have Anti Virus tools installed that itself frequently prevents the installation of packages. Lots of IT managers will deprive the user of management permissions which requires the user to then go get help simply to install a package or tool. Default permissions are usually set to prevent most anything from being installed to make administration easier.</p>
+<p>There are some good IT people and I’m speaking in general here. It’s just that the typical Windows support person does not have a research or computation background so their interest in helping is probably going to be restricted to the “bread and butter” activities such as keeping the system healthy for running other MS products, accessing the web, email and calendering. On the other hand that should tell you everything you need to know - that industry and academia tend to view MS Windows as an office productivity setup so they rarely devote research support resources (but they should offer reasonable alternatives).</p>
+</div>
+<div id="windows-reboots-and-updates" class="section level3">
+<h3><span class="header-section-number">1.5.2</span> Windows Reboots and Updates</h3>
+<p>Have you ever encountered the Windows Update screen that holds your computer captive, sometimes for hours, to install updates that no one other than Microsoft knows what they are actually for ? Well, they do have a site you can go to that describes the “fixes”. And then there are the times when the updates failed so you have to disable virus protection and repeat the process. And then you have to remember to re-enable virus protection. Windows Update is always there waiting for you to restart your system - and you will because inevitably your system will slow down for unknown reasons and of course the recourse is always to reboot. But Windows Update is ALWAYS watching:</p>
+<center>
+<img src="PICS/goodgood.png" width="400" />
+</center>
+</div>
+<div id="is-linux-really-better" class="section level3">
+<h3><span class="header-section-number">1.5.3</span> Is Linux Really Better ?</h3>
+<p>Bioinformatics thrives on open source tools the vast majority of which are built on Linux/UNIX. However, frameworks like R and Python will run on Windows so you CAN in fact do some things on Windows assuming you have control of your computer to install things. Linux offers an excellent package management system to help install specific tools (compilers and databases) you might need to develop code. It all depends on what you want to do. Most people who use Linux do not also run general office productivity apps on the same system although you could certainly do this.</p>
+<p>The typical Linux user is a scientist or developer who uses open source tools as part of their daily work. Let’s say that you read a research paper and see that there is a cool package or tool that was developed using open source so you want to run it. If you are lucky then it’s in the form a package that can be run under, for example, R in which case you can implement it on your Windows or Apple system.</p>
+<p><strong>The problems come in when you want to “Scale Up” your activities and run tens, hundreds, or thousands of jobs at which point Linux is required</strong>. If you think that your computational activities will remain at a modest level then maybe you don’t need to learn or use Linux but in the era of “Big Data” that is something of a gamble. Amazon and Google both provide pre-made Linux images that come pre-installed with a number of tools likely to be of interest to a statistician or bioinformatics person. But you will still need to learn something about Linux administration be productive. However, a little knowledge will go a very long way</p>
+</div>
+<div id="cool-things-about-linux" class="section level3">
+<h3><span class="header-section-number">1.5.4</span> Cool Things About Linux</h3>
+<p>See <a href="https://www.gotothings.com/unix/unix-features-and-advantages.htm" class="uri">https://www.gotothings.com/unix/unix-features-and-advantages.htm</a> for a long list some of which are summarized here:</p>
+<p><strong>Portability:</strong></p>
+<p>The system is written in high-level language making it easier to read, understand, change and, therefore move to other machines. The code can be changed and complied on a new machine. Customers can then choose from a wide variety of hardware vendors without being locked in with a particular vendor.</p>
+<p><strong>Machine-independence:</strong></p>
+<p>The System hides the machine architecture from the user, making it easier to write applications that can run on micros, mins and mainframes.</p>
+<p><strong>Multi-Tasking:</strong></p>
+<p>Unix is a powerful multi-tasking operating system; it means when a active task in in process, there can be a simultaneous background process working too. Unix handles these active and background threads efficiently and manages the system resources in a fair-share manner.</p>
+<p><strong>Multi-User Operations:</strong></p>
+<p>UNIX is a multi-user system designed to support a group of users simultaneously. The system allows for the sharing of processing power and peripheral resources, white at the same time providing excellent security features.</p>
+<p><strong>Hierarchical File System:</strong></p>
+<p>UNIX uses a hierarchical file structure to store information. This structure has the maximum flexibility in grouping information in a way that reflects its natural state. It allows for easy maintenance and efficient implementation.</p>
+<p><strong>UNIX shell:</strong></p>
+<p>UNIX has a simple user interface called the shell that has the power to provide the services that the user wants. It protects the user from having to know the intricate hardware details.</p>
+</div>
+<div id="linux-is-the-native-environment-for-development." class="section level3">
+<h3><span class="header-section-number">1.5.5</span> Linux is The Native Environment for Development.</h3>
+<p>Linux provides support for almost any programming language you can think of. This includes Python, C/C++, Java, Perl, Ruby, FORTRAN, R, and many, many more. There are compilers and toolkits for using these languages on Windows assuming you can get the permission to install them and you know how to work the “Command Shell” in Windows. There are also IDEs (such as R Studio) that will run on Windows to insulate you from the command line but if you want to work on the domain of “Big Data” you will inevitably need to use the command line.</p>
+<p>Ironically, Microsoft, as a company, got its start by providing compilers for developing software products. They strayed from that mission (much to their financial advantage) to become the premier consumer operating system. Clearly this move worked out quite well for Bill Gates but the company took a direction guided by the needs of the mass market. Can’t say that I blame him for that. Anyway, bask in the glory of the splash screen for Microsoft Quick Basic which at one time was really cool if only for a short time. By then 1985 there were other compilers for “better” languages such as Pascal and C.</p>
+<center>
+<img src="PICS/quickbasic.png" width="450" />
+</center>
+</div>
+<div id="command-line-knowledge-is-next-level-stuff" class="section level3">
+<h3><span class="header-section-number">1.5.6</span> Command Line Knowledge is Next Level Stuff</h3>
+<p>Linux offers the “Terminal Window” which is the primary interface to the operating system although Linux also provides a number of “nice” GUIs (Graphical User Interfaces) to interact with your files. Using the command line though becomes a very powerful way to create code and run it. Things like R Studio insulate you from having to do this but even that provides a way to interact with the “command line”.</p>
+<p>Windows command line support is terrible. In fact, Windows was designed to keep the end user AWAY from the command line which is massively inconvenient for those with a programming background or a general need to be productive with code. They do have something called “Powershell” which is aimed at Windows administrators but the end user can access it also. Note that if anyone ever asks you to do something to “edit the Windows Registry” then watch out !</p>
+</div>
+<div id="is-there-hope-for-windows-users" class="section level3">
+<h3><span class="header-section-number">1.5.7</span> Is There Hope For Windows Users ?</h3>
+<p>You can in fact get work done using Windows especially if you are using apps like R Studio, SAS, etc though at some point you will probably hit a permissions error or need to install something (e.g. LaTex) that requires a lot of work and troubleshooting just to do something that would take like 5 seconds on Linux or Apple OSX. Also remember that being able to <strong>scale up</strong> your analysis is more easily accomplished on Linux than Windows.</p>
+<p>This doesn’t mean that you should abandon your Windows laptop just that as you plan for a future career in research that might involve computation then you want to look at solutions that involve Linux. Both <a href="https://cloud.google.com/">Google</a> and <a href="https://aws.amazon.com/">Amazon</a> offer excellent support for Linux instances as part of their cloud offerings. Even the <a href="https://azure.microsoft.com/en-us/">Microsfot Azure cloud service</a> offers Linux support as part of their service so they understand the importance of Linux in the scheme of things.</p>
+</div>
+</div>
+<div id="is-there-a-middle-ground" class="section level2">
+<h2><span class="header-section-number">1.6</span> Is There a Middle Ground ?</h2>
+<p>Yes there is. You can always use Windows to remotely access a Linux computer using tools such as Putty but this assumes that someone has setup that remote system for you. This is where Amazon and Google come in with their cloud services. In effect you are using your Windows laptop to access another computer so you don’t have to install very much on your local system. But this also assumes that you know something about Linux.</p>
+<div id="virtualized-systems" class="section level3">
+<h3><span class="header-section-number">1.6.1</span> Virtualized Systems</h3>
+<p>You can also use Virtualization software such as Oracle’s freely available <a href="https://www.virtualbox.org/"><strong>Virtual Box</strong></a> that allows you to install Linux within a “fully virtualized computer” that is hosted within an application running on your Windows box. Just installing Virtual Box isn’t enough. You then have to pick the appropriate distribution of Linux you want to run and then install that.</p>
+<p>The advantage of this approach is that it provides access to a completely different operating system (in this case Linux) that appears to be an entire functioning machine that uses your system’s CD/DV, mouse, track pad, etc just like a “real” machine. You need to use key combinations to switch between your virtualized and host systems but that’s just part of the learning curve. VirtualBox runs on top of Apple, Windows, and Linux systems which means, for example, that you could run a copy of Windows on top of an Apple laptop.</p>
+<p>Using VirtualBox and fully exploring it’s power requires you to know about administration and management of the operating system in question which is why some people shy away from it though it remains a powerful tool for running multiple operating systems on one host. From a practical point of view you need to make sure that you desktop or laptop has enough memory and disk space to practically use VirtualBox since any operating systems you virtualize will share resources with your hardware. If you have around 8GB or more of RAM and at least 100GB free then you should be fine. But you also need to take into account any data sets you plan to process.</p>
+</div>
+<div id="dockers" class="section level3">
+<h3><span class="header-section-number">1.6.2</span> Dockers</h3>
+<p>If using Virtualbox seems too much then consider using “<a href="https://www.docker.com/">Docker</a>” technology which is a form of lightweight virtualization designed to give users easy access to specific services (e.g. other operating systems, analysis packages, databases,etc) without requiring a full on installation of something like VMWare or Virtualbox. Docker “images” are created by a community of interested users who then publish the images onto a repository or registry, usually <a href="https://hub.docker.com/">Dockerhub</a>, for use by others. Running them involves first installing the Docker software for your operating system and then issuing some commands that pulls down the image and executes it within a “container” that can interact with your local operating system.</p>
+<p>As an example, let’s consider the following scenario:</p>
+<ul>
+<li><p>I have R installed on my laptop and it has all the packages I need to do my work.</p></li>
+<li><p>I read some research paper that points me to a new R package that requires the latest version of R</p></li>
+<li><p>I have no interest in updating my local version of R just to get this package which might not ever do what I want it to do.</p></li>
+</ul>
+<p>What are my choices here ? Well, I could loin to a system somewhere that does have the latest version of R. This is where services like Amazon and Google come in handy since I can spin up my own Linux servers and experiment on them but let’s say I don’t want to spend any money on that. I could install Virtualbox and Linux on top of that but that’s too much work. I know, I’ll install the Docker software appropriate to my system (Apple) and run the latest version of R in a container. This executes the latest version of R in a protected container that in no way interferes with my existing version of R. I could also do this with another operating system altogether such as running Ubuntu Linux in a container on my Apple.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">Steves<span class="op">-</span>MacBook<span class="op">-</span>Pro<span class="op">:</span><span class="er">~</span><span class="st"> </span>esteban<span class="op">$</span><span class="st"> </span>docker run <span class="op">-</span>it rocker<span class="op">/</span>r<span class="op">-</span>base
+Unable to find image <span class="st">&#39;rocker/r-base:latest&#39;</span> locally
+latest<span class="op">:</span><span class="st"> </span>Pulling from rocker<span class="op">/</span>r<span class="op">-</span>base
+71c170c5dae2<span class="op">:</span><span class="st"> </span>Pull complete 
+1b76173b98c5<span class="op">:</span><span class="st"> </span>Pull complete 
+1b00be862536<span class="op">:</span><span class="st"> </span>Pull complete 
+c48ed365264c<span class="op">:</span><span class="st"> </span>Pull complete 
+b2f3e26a95d6<span class="op">:</span><span class="st"> </span>Pull complete 
+bdb9fc7fc7fb<span class="op">:</span><span class="st"> </span>Pull complete 
+Digest<span class="op">:</span><span class="st"> </span>sha256<span class="op">:</span>0589141389482d3211dbc9ccef20e1b426cc8ed7644c2ef0f60862becf3bea4e
+Status<span class="op">:</span><span class="st"> </span>Downloaded newer image <span class="cf">for</span> rocker<span class="op">/</span>r<span class="op">-</span>base<span class="op">:</span>latest
+
+R version <span class="fl">3.5</span>.<span class="dv">3</span> (<span class="dv">2019</span><span class="op">-</span><span class="dv">03</span><span class="op">-</span><span class="dv">11</span>) <span class="op">--</span><span class="st"> &quot;Great Truth&quot;</span>
+<span class="kw">Copyright</span> (C) <span class="dv">2019</span> The R Foundation <span class="cf">for</span> Statistical Computing
+Platform<span class="op">:</span><span class="st"> </span>x86_<span class="dv">64</span><span class="op">-</span>pc<span class="op">-</span>linux<span class="op">-</span><span class="kw">gnu</span> (<span class="dv">64</span><span class="op">-</span>bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type <span class="st">&#39;license()&#39;</span> or <span class="st">&#39;licence()&#39;</span> <span class="cf">for</span> distribution details.
+
+  Natural language support but running <span class="cf">in</span> an English locale
+
+R is a collaborative project with many contributors.
+Type <span class="st">&#39;contributors()&#39;</span> <span class="cf">for</span> more information and
+<span class="st">&#39;citation()&#39;</span> on how to cite R or R packages <span class="cf">in</span> publications.
+
+Type <span class="st">&#39;demo()&#39;</span> <span class="cf">for</span> some demos, <span class="st">&#39;help()&#39;</span> <span class="cf">for</span> on<span class="op">-</span>line help, or
+<span class="st">&#39;help.start()&#39;</span> <span class="cf">for</span> an HTML browser interface to help.
+Type <span class="st">&#39;q()&#39;</span> to quit R.
+
+<span class="op">&gt;</span><span class="st"> </span></code></pre></div>
+</div>
+<div id="anaconda" class="section level3">
+<h3><span class="header-section-number">1.6.3</span> Anaconda</h3>
+<p>From the <a href="https://docs.conda.io/projects/conda/en/latest/">Anaconda page</a>:</p>
+<blockquote>
+<p>Conda is an open source package management system and environment management system that runs on Windows, macOS and Linux. Conda quickly installs, runs and updates packages and their dependencies. Conda easily creates, saves, loads and switches between environments on your local computer. It was created for Python programs, but it can package and distribute software for any language.</p>
+</blockquote>
+<p>Conda is tool that allows you to manage Python and (to an extent) R installations. It insulates you from the details of installing Python versions and allows you to maintain multiple versions of Python on one system should you need that type of environment. An advantage of this is that you can then easily install something like <a href="https://jupyter.org/">Jupyter</a> Notebooks that facilitate development of Python code.</p>
+</div>
+</div>
+<div id="apple-osx-macos" class="section level2">
+<h2><span class="header-section-number">1.7</span> Apple OSX / macOS ?</h2>
+<p>Hmm. Isn’t Apple a proprietary system ? Why yes it is but Apple laptops, unbeknownst to most people, runs a form of UNIX natively ! It’s been there for some time. Just find the “Terminal” application. Start it up and you will see something like the following. The interesting thing about this is that the GUI (The Graphical User Interface) that you interact with is itself a process that runs on top of UNIX !</p>
+<blockquote>
+<p>The reason I am advocating Apple is not because I’m fond of paying more for a computer (see comparison below) but because it’s much close to Linux by far than MS Windows which is good news for anyone who does BioMedical or Bioinformatics work - more generally anything opensource.</p>
+</blockquote>
+<center>
+<img src="PICS/osxterm.png" width="500" />
+</center>
+<div id="the-dark-years-of-apple" class="section level3">
+<h3><span class="header-section-number">1.7.1</span> The Dark Years of Apple</h3>
+<p>It’s way outside of the scope of this discussion to explain the history of Apple products and it’s various operating system but for a number of years (mostly up to an including 2001) it suffered from stability and performance issues due to its general inability to effectively manage multiple processes which would then lead to unexpected crashes and screens like the following. This was so common that people called it <strong>The Bomb</strong>. The Microsoft equivalent was called “The Blue Screen of Death” aka <strong>BSOD</strong>. And there was a time when both Apple and Microsoft battled it out for the crown of unexpected crashes.</p>
+<center>
+<img src="PICS/bombs.png" width="500" />
+</center>
+<p>Modern Apple systems do not crash nearly as often as the systems of old but occasionally they can, (due usually to hardware issues), and when it happens, one usually observes what is known as <strong>The Spinning Beach ball</strong> or <strong>The Beach ball of Death</strong>. In reality this can be more easily addressed than <strong>The Bomb</strong> which was more strongly associated with Max OS 9 but it’s still a pain. Take comfort in the knowledge that it happens far less frequently than a decade ago. This is due to the fact that the Apple Operating System is running <strong>on top</strong> of UNIX which handles processes very efficiently.</p>
+<center>
+<img src="PICS/bbod.png" width="500" />
+</center>
+</div>
+<div id="apple-osx-vs-previous-apple-operating-systems" class="section level3">
+<h3><span class="header-section-number">1.7.2</span> Apple OSX vs Previous Apple Operating Systems</h3>
+<p>Around 2001 Apple decided to base it’s interface on a UNIX type of operating system. This is something of a simplification but this introduced enhanced stability for the platform which in turn made development for OSX more uniform than before. What this means for you is that you have access to UNIX. This does not mean that you will instantly know how to use it but it’s there if you want it. Check out this graphic which presents the history of the UNIX operating system and Apple’s relation to that development tree:</p>
+<div class="figure">
+<img src="PICS/unix_history.png" />
+
+</div>
+<p>Don’t get me wrong - simply running UNIX does not guarantee enhanced performance for applications that don’t take advantage of it but the Apple OSX User interface is very well integrated with UNIX which provides, at least in my experience, a much smoother experience overall with fewer crashes.</p>
+</div>
+<div id="lets-go-shopping" class="section level3">
+<h3><span class="header-section-number">1.7.3</span> Let’s Go Shopping !</h3>
+<p>Of course I understand the appeal of Windows-based laptops and desktops - they are quite inexpensive when compared to Apple products. For example check out the price on this Dell Inspiron. It also includes a 15.6 inch screen, a camera, fingerprint reader, touch pad, DVD, a 512GB Solid State Drive, and a bunch of USB and HDMI ports.</p>
+<div class="figure">
+<img src="PICS/windowslap.png" />
+
+</div>
+<p>When looking at the comparable Apple there is a drastic price difference though keep in mind that the CPU is very good as is the display. But still there is a financial consideration to be made. But consider that the hardware and software are designed and implemented by the same company whereas with Windows based laptops the hardware can be designed by any number of vendors. For me, the performance and the relatively headache-free experience of not having viruses is worth it. Especially since I can develop very easily. Where this all falls apart is that with Window-based hardware one can usually add storage much cheaper.</p>
+<div class="figure">
+<img src="PICS/apple_imac.png" />
+
+</div>
+<p>There are a number of ways to manage the installation of UNIX tools on your Apple laptop (or desktop) but many of the tools you would want access to at the command line are already installed. Apple offers something called XCode which provides access to compilers for development. Obviously they would like for you to develop applications that run natively on OSX but this isn’t at all a requirements. But since it’s all UNIX under the hood you can have compilers like gcc and gfortan.</p>
+</div>
+<div id="managing-software-locally" class="section level3">
+<h3><span class="header-section-number">1.7.4</span> Managing Software Locally</h3>
+<p>Usually you want to install one or more programming environments to facilitate analysis and the possible development of packages for eventual sharing with others. So it’s common to install things like RStudio and perhaps Python along with commercial tools like SAS and MATLAB. This is possible and if done with care you should be okay. Specifically make sure you have plenty of hard drive space and plenty of RAM (at least 8GB or more) to realistically do any work.</p>
+</div>
+<div id="rstudio" class="section level3">
+<h3><span class="header-section-number">1.7.5</span> RStudio</h3>
+<p>This is usually a very straightforward installation process with few surprises and for the most part <a href="https://www.rstudio.com/">RStudio</a> works very well. Where it doesn’t work well is when you need to install packages that in turn require some other version of R than the one you have installed.</p>
+<div id="bioconductor" class="section level4">
+<h4><span class="header-section-number">1.7.5.1</span> BioConductor</h4>
+<p><a href="https://www.bioconductor.org/">BioConductor</a> is an add on environment for R that is dedicated to managing and analyzing data types of interest to bio medical investigators. However, it brings its own set of problems in that you have to use a special installer that is independent of the typical R package installer. This is because BioConductor imposes a specific structure on top of the data to ensure that downstream BioConductor packages can easily “digest” the incoming data. BioConductor is also highly dynamic and packages are updated frequently which can lead to version collisions. In recognition of some of these problems the BioConductor team recently introduced a new tool to manage BioConductor installations that allows one to install multiple versions of BioConductor alongside each other with interference. This is a convenience worth having if you plan to do a lot of bioinformatics work. To install BioConductor do the following within an active R installation:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Get the installer if you don&#39;t already have it</span>
+<span class="kw">install.packages</span>(<span class="st">&quot;BiocManager&quot;</span>)
+
+<span class="co"># This will install most of the basic packages</span>
+BiocManager<span class="op">::</span><span class="kw">install</span>()
+
+<span class="co"># Find available Bioconductor packages</span>
+BiocManager<span class="op">::</span><span class="kw">available</span>()</code></pre></div>
+</div>
+<div id="python" class="section level4">
+<h4><span class="header-section-number">1.7.5.2</span> Python</h4>
+<p>Python comes by default on Apple systems. The newer systems come with Python version 3 as general support for Python 2 is going away. This has nothing to do with Apple. It’s a Python community kind of thing. So the bottom line is that if you need to have Python access you have it by default BUT it’s best not to mess with the default installation since Apple OSX relies on Python to do some things administratively. At least this is what I have found. What I generally do is use the <a href="https://conda.io/en/latest/">Conda</a> installer to manage different versions of Python on my Apple. You can also do this on Linux or MS Windows !</p>
+<p>There is a smaller version of Conda called <a href="https://docs.conda.io/en/latest/miniconda.html">Miniconda</a> which has a smaller installation foot print so you could start with that. That’s the only difference. Both of these allow you to install multiple versions of Python in a way that insulates those respective versions from each other. This is great for evaluating, testing, and running various Python modules that might require differing versions of Python. Conda provides access to a number of pre-built channels that contain pre-built modules (such as numpy, scipy, scikit, matplotlib) which means all you have to do is install them without concern for downloading and compiling them yourself. This is a true convenience in that you almost never have to deal with version conflicts or compile modules yourself.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">Steves<span class="op">-</span>MacBook<span class="op">-</span>Pro <span class="op">$</span><span class="st"> </span>conda env list
+<span class="co"># conda environments:</span>
+<span class="co">#</span>
+base                  <span class="op">*</span><span class="st">  </span><span class="er">/</span>Users<span class="op">/</span>esteban<span class="op">/</span>anaconda3</code></pre></div>
+
+</div>
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+
+<a href="virtualization.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"download": ["Nursing Report.pdf", "Nursing Report.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

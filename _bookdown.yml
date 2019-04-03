@@ -1,0 +1,6 @@
+book_filename: "Nursing Report"
+delete_merged_file: true
+output_dir: "book"
+language:
+  ui:
+    chapter_name: "Chapter "
