@@ -25,7 +25,7 @@
 <meta name="author" content="Steve Pittard">
 
 
-<meta name="date" content="2019-04-02">
+<meta name="date" content="2019-04-03">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -149,6 +149,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="2.4" data-path="virtualization.html"><a href="virtualization.html#accessing-your-instance"><i class="fa fa-check"></i><b>2.4</b> Accessing Your Instance</a></li>
 <li class="chapter" data-level="2.5" data-path="virtualization.html"><a href="virtualization.html#getting-data-into-your-instance"><i class="fa fa-check"></i><b>2.5</b> Getting Data Into Your Instance</a></li>
 <li class="chapter" data-level="2.6" data-path="virtualization.html"><a href="virtualization.html#accessing-s3-from-ec2-instances"><i class="fa fa-check"></i><b>2.6</b> Accessing S3 from EC2 Instances</a></li>
+<li class="chapter" data-level="2.7" data-path="virtualization.html"><a href="virtualization.html#shiny-server"><i class="fa fa-check"></i><b>2.7</b> Shiny Server</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="dockers-1.html"><a href="dockers-1.html"><i class="fa fa-check"></i><b>3</b> Dockers</a><ul>
 <li class="chapter" data-level="3.1" data-path="dockers-1.html"><a href="dockers-1.html#scenarios"><i class="fa fa-check"></i><b>3.1</b> Scenarios</a></li>
@@ -366,6 +367,39 @@ The idea is to assign a role that will allow your EC2 instance to “read” you
 <span class="dv">2018</span><span class="op">-</span><span class="dv">12</span><span class="op">-</span><span class="dv">04</span> <span class="dv">21</span><span class="op">:</span><span class="dv">57</span><span class="op">:</span><span class="dv">39</span>         <span class="dv">13</span> healthcheck.html
 <span class="dv">2018</span><span class="op">-</span><span class="dv">12</span><span class="op">-</span><span class="dv">05</span> <span class="dv">20</span><span class="op">:</span><span class="dv">19</span><span class="op">:</span><span class="dv">03</span>        <span class="dv">732</span> index.html
 <span class="dv">2019</span><span class="op">-</span><span class="dv">04</span><span class="op">-</span><span class="dv">01</span> <span class="dv">21</span><span class="op">:</span><span class="dv">37</span><span class="op">:</span><span class="dv">18</span>   <span class="dv">63566904</span> rstudio<span class="op">-</span>server<span class="op">-</span><span class="fl">1.1</span>.<span class="dv">463</span><span class="op">-</span>amd64.deb</code></pre></div>
+</div>
+<div id="shiny-server" class="section level2">
+<h2><span class="header-section-number">2.7</span> Shiny Server</h2>
+<p>You can install Shiny Server also using the directions found <a href="https://www.rstudio.com/products/shiny/download-server/">here</a>. Login to your instance you created previously. The following command will result in lots of messages. It installs the shiny server along with the pre requisites. You might encounter some warning messages.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">$</span><span class="st"> </span>sudo su <span class="op">-</span><span class="st"> </span>\
+<span class="op">-</span>c <span class="st">&quot;R -e </span><span class="ch">\&quot;</span><span class="st">install.packages(&#39;shiny&#39;, repos=&#39;https://cran.rstudio.com/&#39;)</span><span class="ch">\&quot;</span><span class="st">&quot;</span></code></pre></div>
+<p>So now download the actual server code and install it. You should not encounter any errors when doing this. The last thing you should see is a message indicated that the server has started. By default, your server will be running on port 3838 so make sure your instance firewall / security group will allow access on that port.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">$</span><span class="st"> </span>sudo apt<span class="op">-</span>get install gdebi<span class="op">-</span>core
+<span class="op">$</span><span class="st"> </span>wget https<span class="op">:</span><span class="er">//</span>download3.rstudio.org<span class="op">/</span>ubuntu<span class="op">-</span><span class="fl">14.04</span><span class="op">/</span>x86_<span class="dv">64</span><span class="op">/</span>shiny<span class="op">-</span>server<span class="op">-</span><span class="fl">1.5</span>.<span class="fl">9.923</span><span class="op">-</span>amd64.deb
+<span class="op">$</span><span class="st"> </span>sudo gdebi shiny<span class="op">-</span>server<span class="op">-</span><span class="fl">1.5</span>.<span class="fl">9.923</span><span class="op">-</span>amd64.deb</code></pre></div>
+<div class="figure">
+<img src="PICS/testshine.png" />
+
+</div>
+<p>So the default location for the server apps are in <strong>/srv/shiny-server/sample-apps</strong> So point your browser at whatever your IP number is followed by /sample-apps/rmd As an example **<a href="http://3.87.30.168:3838/sample-apps/rmd/**" class="uri">http://3.87.30.168:3838/sample-apps/rmd/**</a></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">$</span><span class="st"> </span>ls <span class="op">-</span>lR
+.<span class="op">:</span>
+total <span class="dv">8</span>
+drwxrwxr<span class="op">-</span>x <span class="dv">2</span> root root <span class="dv">4096</span> Apr  <span class="dv">3</span> <span class="dv">15</span><span class="op">:</span><span class="dv">42</span> hello
+drwxrwxr<span class="op">-</span>x <span class="dv">2</span> root root <span class="dv">4096</span> Apr  <span class="dv">3</span> <span class="dv">15</span><span class="op">:</span><span class="dv">42</span> rmd
+
+.<span class="op">/</span>hello<span class="op">:</span>
+total <span class="dv">8</span>
+<span class="op">-</span>rw<span class="op">-</span>rw<span class="op">-</span>r<span class="op">--</span><span class="st"> </span><span class="dv">1</span> root root <span class="dv">642</span> Sep <span class="dv">11</span>  <span class="dv">2018</span> server.R
+<span class="op">-</span>rw<span class="op">-</span>rw<span class="op">-</span>r<span class="op">--</span><span class="st"> </span><span class="dv">1</span> root root <span class="dv">494</span> Sep <span class="dv">11</span>  <span class="dv">2018</span> ui.R
+
+.<span class="op">/</span>rmd<span class="op">:</span>
+total <span class="dv">4</span>
+<span class="op">-</span>rwxrwxr<span class="op">-</span>x <span class="dv">1</span> root root <span class="dv">484</span> Sep <span class="dv">11</span>  <span class="dv">2018</span> index.Rmd</code></pre></div>
+<div class="figure">
+<img src="PICS/shine2.png" />
+
+</div>
 
 </div>
 </div>

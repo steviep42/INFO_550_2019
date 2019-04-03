@@ -235,3 +235,47 @@ $ aws s3 ls s3://juniferous
 
 ```
 
+## Shiny Server
+
+You can install Shiny Server also using the directions found [here](https://www.rstudio.com/products/shiny/download-server/). Login to your instance you created previously. The following command will result in lots of messages. It installs the shiny server along with the pre requisites. You might encounter some warning messages.
+
+```{r eval=FALSE}
+$ sudo su - \
+-c "R -e \"install.packages('shiny', repos='https://cran.rstudio.com/')\""
+```
+
+So now download the actual server code and install it. You should not encounter any errors when doing this. The last thing you should see is a message indicated that the server has started. By default, your server will be running on port 3838 so make sure your instance firewall / security group will allow access on that port. 
+
+```{r eval=FALSE}
+$ sudo apt-get install gdebi-core
+$ wget https://download3.rstudio.org/ubuntu-14.04/x86_64/shiny-server-1.5.9.923-amd64.deb
+$ sudo gdebi shiny-server-1.5.9.923-amd64.deb
+
+```
+
+
+![](./PICS/testshine.png)
+
+
+So the default location for the server apps are in **/srv/shiny-server/sample-apps** So point your browser at
+whatever your IP number is followed by /sample-apps/rmd As an example **http://3.87.30.168:3838/sample-apps/rmd/**
+
+```{r eval=FALSE}
+$ ls -lR
+.:
+total 8
+drwxrwxr-x 2 root root 4096 Apr  3 15:42 hello
+drwxrwxr-x 2 root root 4096 Apr  3 15:42 rmd
+
+./hello:
+total 8
+-rw-rw-r-- 1 root root 642 Sep 11  2018 server.R
+-rw-rw-r-- 1 root root 494 Sep 11  2018 ui.R
+
+./rmd:
+total 4
+-rwxrwxr-x 1 root root 484 Sep 11  2018 index.Rmd
+```
+
+
+![](./PICS/shine2.png)
