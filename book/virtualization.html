@@ -150,6 +150,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="2.5" data-path="virtualization.html"><a href="virtualization.html#getting-data-into-your-instance"><i class="fa fa-check"></i><b>2.5</b> Getting Data Into Your Instance</a></li>
 <li class="chapter" data-level="2.6" data-path="virtualization.html"><a href="virtualization.html#accessing-s3-from-ec2-instances"><i class="fa fa-check"></i><b>2.6</b> Accessing S3 from EC2 Instances</a></li>
 <li class="chapter" data-level="2.7" data-path="virtualization.html"><a href="virtualization.html#shiny-server"><i class="fa fa-check"></i><b>2.7</b> Shiny Server</a></li>
+<li class="chapter" data-level="2.8" data-path="virtualization.html"><a href="virtualization.html#making-an-ami"><i class="fa fa-check"></i><b>2.8</b> Making an AMI</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="dockers-1.html"><a href="dockers-1.html"><i class="fa fa-check"></i><b>3</b> Dockers</a><ul>
 <li class="chapter" data-level="3.1" data-path="dockers-1.html"><a href="dockers-1.html#scenarios"><i class="fa fa-check"></i><b>3.1</b> Scenarios</a></li>
@@ -400,6 +401,31 @@ total <span class="dv">4</span>
 <span class="op">-</span>rwxrwxr<span class="op">-</span>x <span class="dv">1</span> root root <span class="dv">484</span> Sep <span class="dv">11</span>  <span class="dv">2018</span> index.Rmd</code></pre></div>
 <div class="figure">
 <img src="PICS/shine2.png" />
+
+</div>
+</div>
+<div id="making-an-ami" class="section level2">
+<h2><span class="header-section-number">2.8</span> Making an AMI</h2>
+<p>One thing you can do to help yourself is to create an AMI (an Amazxon Machine Instance) that will save all the work you have in a way that allows you to share it with others. They can use your image as a reference from which to boot a machine so they don’t have to go through all the headaches you did when setting things up, installing packages, and generally trying to get things to work. This is easy to do.</p>
+<div class="figure">
+<img src="PICS/ci.png" />
+
+</div>
+<p><br />
+So now we need to provide some information about our image</p>
+<div class="figure">
+<img src="PICS/ami1.png" width="500" />
+
+</div>
+<p><br />
+Then we get confirmation</p>
+<div class="figure">
+<img src="PICS/cicon.png" width="500" />
+
+</div>
+<p>After it gets created you can change it’s permissions to public so that others may access it when launching their machine.</p>
+<div class="figure">
+<img src="PICS/mod.png" />
 
 </div>
 

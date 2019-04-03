@@ -279,3 +279,28 @@ total 4
 
 
 ![](./PICS/shine2.png)
+
+
+## Making an AMI
+
+One thing you can do to help yourself is to create an AMI (an Amazxon Machine Instance) that will save all the work you have in a way that allows you to share it with others. They can use your image as a reference from which to boot a machine so they don't have to go through all the headaches you did when setting things up, installing packages, and generally trying to get things to work. This is easy to do.
+
+![](./PICS/ci.png)
+
+\
+
+So now we need to provide some information about our image
+
+
+![](./PICS/ami1.png){width=500}
+
+\
+
+Then we get confirmation
+
+
+![](./PICS/cicon.png){width=500}
+
+After it gets created you can change it's permissions to public so that others may access it when launching their machine. 
+
+![](./PICS/mod.png)
