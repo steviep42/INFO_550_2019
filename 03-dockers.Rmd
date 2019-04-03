@@ -312,7 +312,7 @@ latest: digest: sha256:368dd8950a433cc14ba799f6c4a39b812eff904b670563fd33ecad64d
 ![](./PICS/docker_hub.png){width=550}
 
 
-### There is Another Way
+## There is Another Way
 
 We can create what is known as a Dockerfile which can contain the instructions to do what we did above except
 in a more convenient way. Make a folder called **build**. Note that this is arbitrary.
