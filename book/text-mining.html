@@ -101,7 +101,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
       <nav role="navigation">
 
 <ul class="summary">
-<li><a href="./">Guest Lecture INFO 550</a></li>
+<li><a href="./">Guest Lecture Nursing School</a></li>
 
 <li class="divider"></li>
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Computation In Research</a><ul>
@@ -181,13 +181,12 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="4.8" data-path="text-mining.html"><a href="text-mining.html#term-frequency"><i class="fa fa-check"></i><b>4.8</b> Term Frequency</a><ul>
 <li class="chapter" data-level="4.8.1" data-path="text-mining.html"><a href="text-mining.html#back-to-the-speeches"><i class="fa fa-check"></i><b>4.8.1</b> Back To The Speeches</a></li>
 </ul></li>
-<li class="chapter" data-level="4.9" data-path="text-mining.html"><a href="text-mining.html#n-grams"><i class="fa fa-check"></i><b>4.9</b> N Grams</a></li>
-<li class="chapter" data-level="4.10" data-path="text-mining.html"><a href="text-mining.html#tf-and-idf"><i class="fa fa-check"></i><b>4.10</b> Tf and Idf</a></li>
-<li class="chapter" data-level="4.11" data-path="text-mining.html"><a href="text-mining.html#sentiment"><i class="fa fa-check"></i><b>4.11</b> Sentiment</a><ul>
-<li class="chapter" data-level="4.11.1" data-path="text-mining.html"><a href="text-mining.html#sentiment-dictionaries-and-lexicons"><i class="fa fa-check"></i><b>4.11.1</b> Sentiment Dictionaries and Lexicons</a></li>
-<li class="chapter" data-level="4.11.2" data-path="text-mining.html"><a href="text-mining.html#an-example"><i class="fa fa-check"></i><b>4.11.2</b> An Example</a></li>
-<li class="chapter" data-level="4.11.3" data-path="text-mining.html"><a href="text-mining.html#speech-sentiment"><i class="fa fa-check"></i><b>4.11.3</b> Speech Sentiment</a></li>
-<li class="chapter" data-level="4.11.4" data-path="text-mining.html"><a href="text-mining.html#comparison-cloud"><i class="fa fa-check"></i><b>4.11.4</b> Comparison Cloud</a></li>
+<li class="chapter" data-level="4.9" data-path="text-mining.html"><a href="text-mining.html#tf-and-idf"><i class="fa fa-check"></i><b>4.9</b> Tf and Idf</a></li>
+<li class="chapter" data-level="4.10" data-path="text-mining.html"><a href="text-mining.html#sentiment"><i class="fa fa-check"></i><b>4.10</b> Sentiment</a><ul>
+<li class="chapter" data-level="4.10.1" data-path="text-mining.html"><a href="text-mining.html#sentiment-dictionaries-and-lexicons"><i class="fa fa-check"></i><b>4.10.1</b> Sentiment Dictionaries and Lexicons</a></li>
+<li class="chapter" data-level="4.10.2" data-path="text-mining.html"><a href="text-mining.html#an-example"><i class="fa fa-check"></i><b>4.10.2</b> An Example</a></li>
+<li class="chapter" data-level="4.10.3" data-path="text-mining.html"><a href="text-mining.html#speech-sentiment"><i class="fa fa-check"></i><b>4.10.3</b> Speech Sentiment</a></li>
+<li class="chapter" data-level="4.10.4" data-path="text-mining.html"><a href="text-mining.html#comparison-cloud"><i class="fa fa-check"></i><b>4.10.4</b> Comparison Cloud</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="twitter-social-media.html"><a href="twitter-social-media.html"><i class="fa fa-check"></i><b>5</b> Twitter - Social Media</a><ul>
@@ -451,7 +450,7 @@ d &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="
 <span class="kw">wordcloud</span>(<span class="dt">words =</span> d<span class="op">$</span>word, <span class="dt">freq =</span> d<span class="op">$</span>freq, <span class="dt">min.freq =</span> <span class="dv">1</span>,
           <span class="dt">max.words=</span><span class="dv">200</span>, <span class="dt">random.order=</span><span class="ot">FALSE</span>, <span class="dt">rot.per=</span><span class="fl">0.35</span>, 
           <span class="dt">colors=</span><span class="kw">brewer.pal</span>(<span class="dv">8</span>, <span class="st">&quot;Dark2&quot;</span>))</code></pre></div>
-<p><img src="Nursing_Report_files/figure-html/unnamed-chunk-82-1.png" width="672" /></p>
+<p><img src="Research_Computing_files/figure-html/unnamed-chunk-39-1.png" width="672" /></p>
 <p><a href="https://gerardnico.com/natural_language/term_document" class="uri">https://gerardnico.com/natural_language/term_document</a></p>
 <p>The strengths of <strong>tm</strong> are that it more closely aligns with the traditional text mining terminology and approaches. There are also a number of tools and packages that work well with <strong>tm</strong> that do not work well directly with the <strong>tidytext</strong> approach. But there are now approaches and functions in <strong>tidytext</strong> that address this concern which can take, for example, a <strong>Term Document Matrixx</strong> and turn it into a tidy data frame.</p>
 <div id="tidy-format" class="section level3">
@@ -570,7 +569,7 @@ tidy_speeches_nostop_nonums_stem <span class="op">%&gt;%</span>
 <span class="st">  </span><span class="kw">geom_col</span>() <span class="op">+</span>
 <span class="st">  </span><span class="kw">xlab</span>(<span class="ot">NULL</span>) <span class="op">+</span>
 <span class="st">  </span><span class="kw">coord_flip</span>()</code></pre></div>
-<p><img src="Nursing_Report_files/figure-html/unnamed-chunk-90-1.png" width="672" /></p>
+<p><img src="Research_Computing_files/figure-html/unnamed-chunk-47-1.png" width="672" /></p>
 <p><a href="http://jacobsimmering.com/2016/11/15/tidytext/" class="uri">http://jacobsimmering.com/2016/11/15/tidytext/</a></p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(tidyr)
 
@@ -587,7 +586,7 @@ frequency &lt;-<span class="st"> </span>tidy_speeches_nostop_nonums_stem <span c
 <span class="st">  </span><span class="kw">geom_col</span>() <span class="op">+</span>
 <span class="st">  </span><span class="kw">xlab</span>(<span class="ot">NULL</span>) <span class="op">+</span>
 <span class="st">  </span><span class="kw">coord_flip</span>() <span class="op">+</span><span class="st"> </span><span class="kw">facet_grid</span>(book <span class="op">~</span><span class="st"> </span>.)</code></pre></div>
-<p><img src="Nursing_Report_files/figure-html/unnamed-chunk-92-1.png" width="672" /></p>
+<p><img src="Research_Computing_files/figure-html/unnamed-chunk-49-1.png" width="672" /></p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">tidy_speeches_nostop_nonums_stem <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">count</span>(book, word_stem, <span class="dt">sort =</span> <span class="ot">TRUE</span>) <span class="op">%&gt;%</span>
 <span class="st">  </span><span class="kw">group_by</span>(book) <span class="op">%&gt;%</span>
 <span class="st">  </span><span class="kw">top_n</span>(<span class="dv">5</span>) <span class="op">%&gt;%</span><span class="st"> </span>
@@ -603,7 +602,7 @@ frequency &lt;-<span class="st"> </span>tidy_speeches_nostop_nonums_stem <span c
     <span class="dt">title =</span> <span class="st">&quot;Most frequent words after removing stop words&quot;</span>
   )</code></pre></div>
 <pre><code>## Selecting by n</code></pre>
-<p><img src="Nursing_Report_files/figure-html/unnamed-chunk-93-1.png" width="672" /></p>
+<p><img src="Research_Computing_files/figure-html/unnamed-chunk-50-1.png" width="672" /></p>
 <p><a href="https://richpauloo.github.io/2017-12-29-Using-tidytext-to-make-word-clouds/" class="uri">https://richpauloo.github.io/2017-12-29-Using-tidytext-to-make-word-clouds/</a></p>
 </div>
 <div id="wordclouds" class="section level3">
@@ -616,7 +615,7 @@ frequency &lt;-<span class="st"> </span>tidy_speeches_nostop_nonums_stem <span c
 tidy_speeches_nostop_nonums_stem <span class="op">%&gt;%</span>
 <span class="st">  </span><span class="kw">count</span>(word_stem, <span class="dt">sort =</span> <span class="ot">TRUE</span>) <span class="op">%&gt;%</span>
 <span class="st">  </span><span class="kw">with</span>(<span class="kw">wordcloud</span>(word_stem, n, <span class="dt">random.order =</span> <span class="ot">FALSE</span>, <span class="dt">max.words =</span> <span class="dv">50</span>, <span class="dt">colors=</span>pal))</code></pre></div>
-<p><img src="Nursing_Report_files/figure-html/unnamed-chunk-94-1.png" width="672" /></p>
+<p><img src="Research_Computing_files/figure-html/unnamed-chunk-51-1.png" width="672" /></p>
 <p>See <a href="https://shiring.github.io/text_analysis/2017/06/28/twitter_post" class="uri">https://shiring.github.io/text_analysis/2017/06/28/twitter_post</a></p>
 </div>
 </div>
@@ -735,14 +734,11 @@ total_words &lt;-<span class="st"> </span>book_words <span class="op">%&gt;%</sp
 <pre><code>## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
 <pre><code>## Warning: Removed 359 rows containing non-finite values (stat_bin).</code></pre>
 <pre><code>## Warning: Removed 2 rows containing missing values (geom_bar).</code></pre>
-<p><img src="Nursing_Report_files/figure-html/unnamed-chunk-99-1.png" width="672" /></p>
+<p><img src="Research_Computing_files/figure-html/unnamed-chunk-56-1.png" width="672" /></p>
 </div>
-</div>
-<div id="n-grams" class="section level2">
-<h2><span class="header-section-number">4.9</span> N Grams</h2>
 </div>
 <div id="tf-and-idf" class="section level2">
-<h2><span class="header-section-number">4.10</span> Tf and Idf</h2>
+<h2><span class="header-section-number">4.9</span> Tf and Idf</h2>
 <blockquote>
 <p>A central question in text mining and natural language processing is how to quantify what a document is about. One measure of how important a word may be is its term frequency (tf), how frequently a word occurs in a document</p>
 </blockquote>
@@ -803,7 +799,7 @@ book_words</code></pre></div>
 <span class="st">  </span><span class="kw">facet_wrap</span>(<span class="op">~</span>book, <span class="dt">ncol =</span> <span class="dv">2</span>, <span class="dt">scales =</span> <span class="st">&quot;free&quot;</span>) <span class="op">+</span>
 <span class="st">  </span><span class="kw">coord_flip</span>()</code></pre></div>
 <pre><code>## Selecting by tf_idf</code></pre>
-<p><img src="Nursing_Report_files/figure-html/unnamed-chunk-102-1.png" width="672" /></p>
+<p><img src="Research_Computing_files/figure-html/unnamed-chunk-59-1.png" width="672" /></p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">data</span>(stop_words)
 
 book_words <span class="op">%&gt;%</span>
@@ -818,10 +814,10 @@ book_words <span class="op">%&gt;%</span>
 <span class="st">  </span><span class="kw">facet_wrap</span>(<span class="op">~</span>book, <span class="dt">ncol =</span> <span class="dv">2</span>, <span class="dt">scales =</span> <span class="st">&quot;free&quot;</span>) <span class="op">+</span>
 <span class="st">  </span><span class="kw">coord_flip</span>()</code></pre></div>
 <pre><code>## Selecting by tf_idf</code></pre>
-<p><img src="Nursing_Report_files/figure-html/unnamed-chunk-103-1.png" width="672" /></p>
+<p><img src="Research_Computing_files/figure-html/unnamed-chunk-60-1.png" width="672" /></p>
 </div>
 <div id="sentiment" class="section level2">
-<h2><span class="header-section-number">4.11</span> Sentiment</h2>
+<h2><span class="header-section-number">4.10</span> Sentiment</h2>
 <p>Attempting to understand the feeling associated with words is a complicated business especially given that context can drastically change the meaning of words and phrases. Consider the following statements. To a human the sentiment is obvious. The third statement reflects sarcasm which is notoriously difficult for an algorithm to pick up.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">I had a good flight experience on Delta airlines.
 
@@ -829,7 +825,7 @@ I had a bad flight experience on Delta airlines.
 
 Gee thanks Delta <span class="cf">for</span> losing my luggage.</code></pre></div>
 <div id="sentiment-dictionaries-and-lexicons" class="section level3">
-<h3><span class="header-section-number">4.11.1</span> Sentiment Dictionaries and Lexicons</h3>
+<h3><span class="header-section-number">4.10.1</span> Sentiment Dictionaries and Lexicons</h3>
 <p>The <strong>tidytext</strong> package has a data frame called <strong>sentiments</strong> which has three lexicons that will help us figure out the emotional value of words. Each dictionary handles sentiment assessment differently.</p>
 <p>The <strong>nrc</strong> dictionary applies a single word emotional description to a text word Of course a word in a piece of text can be associated with different emotions. The possible sentiments are:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">unique</span>(<span class="kw">get_sentiments</span>(<span class="st">&quot;nrc&quot;</span>)<span class="op">$</span>sentiment)</code></pre></div>
@@ -869,7 +865,7 @@ Gee thanks Delta <span class="cf">for</span> losing my luggage.</code></pre></di
 ## [5] &quot;constraining&quot; &quot;superfluous&quot;</code></pre>
 </div>
 <div id="an-example" class="section level3">
-<h3><span class="header-section-number">4.11.2</span> An Example</h3>
+<h3><span class="header-section-number">4.10.2</span> An Example</h3>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">head</span>(sentiments)</code></pre></div>
 <pre><code>## # A tibble: 6 x 4
 ##   word      sentiment lexicon score
@@ -955,7 +951,7 @@ df <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">anti_
 ## 13               3 luggage       NA</code></pre>
 </div>
 <div id="speech-sentiment" class="section level3">
-<h3><span class="header-section-number">4.11.3</span> Speech Sentiment</h3>
+<h3><span class="header-section-number">4.10.3</span> Speech Sentiment</h3>
 <p>Let’s apply our new found knowledge of sentiment tools to the combined speeches of Romney and Obama. We might want to get some sense of how emotive their respective sets of speeches are. We might also want to look at the emotive range for all speches combined independently of the candidate. Of course, these are political speeches so you know up front that there will be a bias towards positive language. So here we will join the words from all speeches to the <strong>bing</strong> sentiment lexicon to rate the emotional content of the words comprising the speech. Note that many words in the speeches will not have an emotional equivalent because they don’t exist in the lexicon. This is why you should use a stop word approach or consider using a Term Frequency - Inverse frequency approach to first eliminate filler words.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"> bing_word_counts &lt;-<span class="st"> </span>combined_tidy_speech <span class="op">%&gt;%</span>
 <span class="st">  </span><span class="kw">inner_join</span>(<span class="kw">get_sentiments</span>(<span class="st">&quot;bing&quot;</span>)) <span class="op">%&gt;%</span>
@@ -975,7 +971,7 @@ df <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">anti_
        <span class="dt">x =</span> <span class="ot">NULL</span>) <span class="op">+</span>
 <span class="st">  </span><span class="kw">coord_flip</span>()</code></pre></div>
 <pre><code>## Selecting by n</code></pre>
-<p><img src="Nursing_Report_files/figure-html/unnamed-chunk-111-1.png" width="672" /></p>
+<p><img src="Research_Computing_files/figure-html/unnamed-chunk-68-1.png" width="672" /></p>
 <p>It’s also really easy to look at the emotions for each candidate just by using the <strong>book</strong> variable from the <strong>bing_word_counts</strong> data frame.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">bing_word_counts <span class="op">%&gt;%</span>
 <span class="st">  </span><span class="kw">group_by</span>(sentiment) <span class="op">%&gt;%</span>
@@ -989,7 +985,7 @@ df <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">anti_
        <span class="dt">x =</span> <span class="ot">NULL</span>) <span class="op">+</span>
 <span class="st">  </span><span class="kw">coord_flip</span>()</code></pre></div>
 <pre><code>## Selecting by n</code></pre>
-<p><img src="Nursing_Report_files/figure-html/unnamed-chunk-112-1.png" width="672" /></p>
+<p><img src="Research_Computing_files/figure-html/unnamed-chunk-69-1.png" width="672" /></p>
 <p>So if we look at a word cloud of combined sentiment across all speeches independently of candidate we see the following:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">pal &lt;-<span class="st"> </span><span class="kw">brewer.pal</span>(<span class="dv">8</span>,<span class="st">&quot;Dark2&quot;</span>)
 
@@ -997,10 +993,10 @@ df <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">anti_
 
 bing_word_counts  <span class="op">%&gt;%</span>
 <span class="st">  </span><span class="kw">with</span>(<span class="kw">wordcloud</span>(word, n, <span class="dt">random.order =</span> <span class="ot">FALSE</span>, <span class="dt">max.words =</span> <span class="dv">50</span>, <span class="dt">colors=</span>pal))</code></pre></div>
-<p><img src="Nursing_Report_files/figure-html/unnamed-chunk-113-1.png" width="672" /></p>
+<p><img src="Research_Computing_files/figure-html/unnamed-chunk-70-1.png" width="672" /></p>
 </div>
 <div id="comparison-cloud" class="section level3">
-<h3><span class="header-section-number">4.11.4</span> Comparison Cloud</h3>
+<h3><span class="header-section-number">4.10.4</span> Comparison Cloud</h3>
 <p>So another thing we can do is to look at a comparison cloud that would give us a word cloud that presents a visualization of the most common postive and negative words. There is a function called <strong>comparison.cloud()</strong> that will accomplish this but it also requires us to do some conversion on our data frame.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(reshape2)
 combined_tidy_speech <span class="op">%&gt;%</span>
@@ -1010,7 +1006,7 @@ combined_tidy_speech <span class="op">%&gt;%</span>
 <span class="st">  </span><span class="kw">comparison.cloud</span>(<span class="dt">colors =</span> <span class="kw">c</span>(<span class="st">&quot;gray20&quot;</span>, <span class="st">&quot;gray80&quot;</span>),
                    <span class="dt">max.words =</span> <span class="dv">100</span>)</code></pre></div>
 <pre><code>## Joining, by = &quot;word&quot;</code></pre>
-<p><img src="Nursing_Report_files/figure-html/unnamed-chunk-114-1.png" width="672" /></p>
+<p><img src="Research_Computing_files/figure-html/unnamed-chunk-71-1.png" width="672" /></p>
 <p>We could also look at this on a per candidate basis:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(reshape2)
 combined_tidy_speech <span class="op">%&gt;%</span>
@@ -1057,7 +1053,7 @@ combined_tidy_speech <span class="op">%&gt;%</span>
 ## 100): extraordinary could not be fit on page. It will not be plotted.</code></pre>
 <pre><code>## Warning in comparison.cloud(., colors = c(&quot;gray20&quot;, &quot;gray80&quot;), max.words =
 ## 100): wonder could not be fit on page. It will not be plotted.</code></pre>
-<p><img src="Nursing_Report_files/figure-html/unnamed-chunk-115-1.png" width="672" /></p>
+<p><img src="Research_Computing_files/figure-html/unnamed-chunk-72-1.png" width="672" /></p>
 
 </div>
 </div>
@@ -1105,7 +1101,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": ["Nursing Report.pdf", "Nursing Report.epub"],
+"download": ["Research Computing.pdf", "Research Computing.epub"],
 "toc": {
 "collapse": "subsection"
 }
