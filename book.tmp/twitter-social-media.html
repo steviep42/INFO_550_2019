@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Chapter 5 Twitter - Social Media | Intro To Research Computing</title>
+  <meta name="description" content="Cloud Computing">
+  <meta name="generator" content="bookdown  and GitBook 2.6.7">
+
+  <meta property="og:title" content="Chapter 5 Twitter - Social Media | Intro To Research Computing" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Cloud Computing" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 5 Twitter - Social Media | Intro To Research Computing" />
+  
+  <meta name="twitter:description" content="Cloud Computing" />
+  
+
+<meta name="author" content="Steve Pittard">
+
+
+<meta name="date" content="2019-04-16">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="text-mining.html">
+
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Guest Lecture INFO 550</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Computation In Research</a><ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#what-do-the-top-sites-use"><i class="fa fa-check"></i><b>1.1</b> What Do the Top Sites Use ?</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#division-of-labor"><i class="fa fa-check"></i><b>1.2</b> Division of Labor</a><ul>
+<li class="chapter" data-level="1.2.1" data-path="index.html"><a href="index.html#mixing-work-and-pleasure"><i class="fa fa-check"></i><b>1.2.1</b> Mixing Work and Pleasure</a></li>
+<li class="chapter" data-level="1.2.2" data-path="index.html"><a href="index.html#mixing-e-mail-and-research"><i class="fa fa-check"></i><b>1.2.2</b> Mixing E-Mail and Research ?</a></li>
+<li class="chapter" data-level="1.2.3" data-path="index.html"><a href="index.html#youll-do-it-anyway"><i class="fa fa-check"></i><b>1.2.3</b> You’ll Do It Anyway</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#popular-data-science-languages"><i class="fa fa-check"></i><b>1.3</b> Popular Data Science Languages</a></li>
+<li class="chapter" data-level="1.4" data-path="index.html"><a href="index.html#is-windows-good-for-computation"><i class="fa fa-check"></i><b>1.4</b> Is Windows Good For Computation ?</a></li>
+<li class="chapter" data-level="1.5" data-path="index.html"><a href="index.html#whats-wrong-with-windows"><i class="fa fa-check"></i><b>1.5</b> What’s Wrong with Windows ?</a><ul>
+<li class="chapter" data-level="1.5.1" data-path="index.html"><a href="index.html#windows-security-virus-and-performance-issues"><i class="fa fa-check"></i><b>1.5.1</b> Windows Security, Virus, and Performance Issues</a></li>
+<li class="chapter" data-level="1.5.2" data-path="index.html"><a href="index.html#windows-reboots-and-updates"><i class="fa fa-check"></i><b>1.5.2</b> Windows Reboots and Updates</a></li>
+<li class="chapter" data-level="1.5.3" data-path="index.html"><a href="index.html#is-linux-really-better"><i class="fa fa-check"></i><b>1.5.3</b> Is Linux Really Better ?</a></li>
+<li class="chapter" data-level="1.5.4" data-path="index.html"><a href="index.html#cool-things-about-linux"><i class="fa fa-check"></i><b>1.5.4</b> Cool Things About Linux</a></li>
+<li class="chapter" data-level="1.5.5" data-path="index.html"><a href="index.html#linux-is-the-native-environment-for-development."><i class="fa fa-check"></i><b>1.5.5</b> Linux is The Native Environment for Development.</a></li>
+<li class="chapter" data-level="1.5.6" data-path="index.html"><a href="index.html#command-line-knowledge-is-next-level-stuff"><i class="fa fa-check"></i><b>1.5.6</b> Command Line Knowledge is Next Level Stuff</a></li>
+<li class="chapter" data-level="1.5.7" data-path="index.html"><a href="index.html#is-there-hope-for-windows-users"><i class="fa fa-check"></i><b>1.5.7</b> Is There Hope For Windows Users ?</a></li>
+</ul></li>
+<li class="chapter" data-level="1.6" data-path="index.html"><a href="index.html#is-there-a-middle-ground"><i class="fa fa-check"></i><b>1.6</b> Is There a Middle Ground ?</a><ul>
+<li class="chapter" data-level="1.6.1" data-path="index.html"><a href="index.html#virtualized-systems"><i class="fa fa-check"></i><b>1.6.1</b> Virtualized Systems</a></li>
+<li class="chapter" data-level="1.6.2" data-path="index.html"><a href="index.html#dockers"><i class="fa fa-check"></i><b>1.6.2</b> Dockers</a></li>
+<li class="chapter" data-level="1.6.3" data-path="index.html"><a href="index.html#anaconda"><i class="fa fa-check"></i><b>1.6.3</b> Anaconda</a></li>
+</ul></li>
+<li class="chapter" data-level="1.7" data-path="index.html"><a href="index.html#apple-osx-macos"><i class="fa fa-check"></i><b>1.7</b> Apple OSX / macOS ?</a><ul>
+<li class="chapter" data-level="1.7.1" data-path="index.html"><a href="index.html#the-dark-years-of-apple"><i class="fa fa-check"></i><b>1.7.1</b> The Dark Years of Apple</a></li>
+<li class="chapter" data-level="1.7.2" data-path="index.html"><a href="index.html#apple-osx-vs-previous-apple-operating-systems"><i class="fa fa-check"></i><b>1.7.2</b> Apple OSX vs Previous Apple Operating Systems</a></li>
+<li class="chapter" data-level="1.7.3" data-path="index.html"><a href="index.html#lets-go-shopping"><i class="fa fa-check"></i><b>1.7.3</b> Let’s Go Shopping !</a></li>
+<li class="chapter" data-level="1.7.4" data-path="index.html"><a href="index.html#managing-software-locally"><i class="fa fa-check"></i><b>1.7.4</b> Managing Software Locally</a></li>
+<li class="chapter" data-level="1.7.5" data-path="index.html"><a href="index.html#rstudio"><i class="fa fa-check"></i><b>1.7.5</b> RStudio</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="virtualization.html"><a href="virtualization.html"><i class="fa fa-check"></i><b>2</b> Virtualization</a><ul>
+<li class="chapter" data-level="2.1" data-path="virtualization.html"><a href="virtualization.html#virtual-box"><i class="fa fa-check"></i><b>2.1</b> Virtual Box</a></li>
+<li class="chapter" data-level="2.2" data-path="virtualization.html"><a href="virtualization.html#using-virtualization-farms"><i class="fa fa-check"></i><b>2.2</b> Using Virtualization Farms</a></li>
+<li class="chapter" data-level="2.3" data-path="virtualization.html"><a href="virtualization.html#running-rstudio-on-amazon"><i class="fa fa-check"></i><b>2.3</b> Running RStudio on Amazon</a><ul>
+<li class="chapter" data-level="2.3.1" data-path="virtualization.html"><a href="virtualization.html#why-ubuntu"><i class="fa fa-check"></i><b>2.3.1</b> Why Ubuntu ?</a></li>
+<li class="chapter" data-level="2.3.2" data-path="virtualization.html"><a href="virtualization.html#start-an-instance"><i class="fa fa-check"></i><b>2.3.2</b> Start An Instance</a></li>
+<li class="chapter" data-level="2.3.3" data-path="virtualization.html"><a href="virtualization.html#add-some-storage"><i class="fa fa-check"></i><b>2.3.3</b> Add Some Storage</a></li>
+<li class="chapter" data-level="2.3.4" data-path="virtualization.html"><a href="virtualization.html#get-a-key"><i class="fa fa-check"></i><b>2.3.4</b> Get A Key</a></li>
+<li class="chapter" data-level="2.3.5" data-path="virtualization.html"><a href="virtualization.html#installing-r"><i class="fa fa-check"></i><b>2.3.5</b> Installing R</a></li>
+<li class="chapter" data-level="2.3.6" data-path="virtualization.html"><a href="virtualization.html#installing-rstudio-server"><i class="fa fa-check"></i><b>2.3.6</b> Installing RStudio Server</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="virtualization.html"><a href="virtualization.html#accessing-your-instance"><i class="fa fa-check"></i><b>2.4</b> Accessing Your Instance</a></li>
+<li class="chapter" data-level="2.5" data-path="virtualization.html"><a href="virtualization.html#getting-data-into-your-instance"><i class="fa fa-check"></i><b>2.5</b> Getting Data Into Your Instance</a></li>
+<li class="chapter" data-level="2.6" data-path="virtualization.html"><a href="virtualization.html#accessing-s3-from-ec2-instances"><i class="fa fa-check"></i><b>2.6</b> Accessing S3 from EC2 Instances</a></li>
+<li class="chapter" data-level="2.7" data-path="virtualization.html"><a href="virtualization.html#shiny-server"><i class="fa fa-check"></i><b>2.7</b> Shiny Server</a></li>
+<li class="chapter" data-level="2.8" data-path="virtualization.html"><a href="virtualization.html#making-an-ami"><i class="fa fa-check"></i><b>2.8</b> Making an AMI</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="dockers-1.html"><a href="dockers-1.html"><i class="fa fa-check"></i><b>3</b> Dockers</a><ul>
+<li class="chapter" data-level="3.1" data-path="dockers-1.html"><a href="dockers-1.html#scenarios"><i class="fa fa-check"></i><b>3.1</b> Scenarios</a></li>
+<li class="chapter" data-level="3.2" data-path="dockers-1.html"><a href="dockers-1.html#differences-from-vms"><i class="fa fa-check"></i><b>3.2</b> Differences From VMs</a></li>
+<li class="chapter" data-level="3.3" data-path="dockers-1.html"><a href="dockers-1.html#docker-terminology"><i class="fa fa-check"></i><b>3.3</b> Docker Terminology</a><ul>
+<li class="chapter" data-level="3.3.1" data-path="dockers-1.html"><a href="dockers-1.html#images"><i class="fa fa-check"></i><b>3.3.1</b> Images</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="dockers-1.html"><a href="dockers-1.html#rshiny"><i class="fa fa-check"></i><b>3.4</b> RShiny</a></li>
+<li class="chapter" data-level="3.5" data-path="dockers-1.html"><a href="dockers-1.html#making-your-own-image"><i class="fa fa-check"></i><b>3.5</b> Making Your Own Image</a></li>
+<li class="chapter" data-level="3.6" data-path="dockers-1.html"><a href="dockers-1.html#there-is-another-way"><i class="fa fa-check"></i><b>3.6</b> There is Another Way</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="text-mining.html"><a href="text-mining.html"><i class="fa fa-check"></i><b>4</b> Text Mining</a><ul>
+<li class="chapter" data-level="4.1" data-path="text-mining.html"><a href="text-mining.html#recap"><i class="fa fa-check"></i><b>4.1</b> Recap</a></li>
+<li class="chapter" data-level="4.2" data-path="text-mining.html"><a href="text-mining.html#unstructured-data"><i class="fa fa-check"></i><b>4.2</b> Unstructured Data</a></li>
+<li class="chapter" data-level="4.3" data-path="text-mining.html"><a href="text-mining.html#structured-data"><i class="fa fa-check"></i><b>4.3</b> Structured Data</a></li>
+<li class="chapter" data-level="4.4" data-path="text-mining.html"><a href="text-mining.html#hybrids"><i class="fa fa-check"></i><b>4.4</b> Hybrids</a></li>
+<li class="chapter" data-level="4.5" data-path="text-mining.html"><a href="text-mining.html#information-retrieval-vs-information-extraction"><i class="fa fa-check"></i><b>4.5</b> Information Retrieval vs Information Extraction</a></li>
+<li class="chapter" data-level="4.6" data-path="text-mining.html"><a href="text-mining.html#web-scraping-revisited"><i class="fa fa-check"></i><b>4.6</b> Web Scraping Revisited</a></li>
+<li class="chapter" data-level="4.7" data-path="text-mining.html"><a href="text-mining.html#exploring-the-text"><i class="fa fa-check"></i><b>4.7</b> Exploring The Text</a><ul>
+<li class="chapter" data-level="4.7.1" data-path="text-mining.html"><a href="text-mining.html#tidy-format"><i class="fa fa-check"></i><b>4.7.1</b> Tidy Format</a></li>
+<li class="chapter" data-level="4.7.2" data-path="text-mining.html"><a href="text-mining.html#tidy-up-the-text"><i class="fa fa-check"></i><b>4.7.2</b> Tidy Up the text</a></li>
+<li class="chapter" data-level="4.7.3" data-path="text-mining.html"><a href="text-mining.html#dump-the-stop-words"><i class="fa fa-check"></i><b>4.7.3</b> Dump The “Stop Words”</a></li>
+<li class="chapter" data-level="4.7.4" data-path="text-mining.html"><a href="text-mining.html#eliminate-numbers"><i class="fa fa-check"></i><b>4.7.4</b> Eliminate Numbers</a></li>
+<li class="chapter" data-level="4.7.5" data-path="text-mining.html"><a href="text-mining.html#stemming"><i class="fa fa-check"></i><b>4.7.5</b> Stemming</a></li>
+<li class="chapter" data-level="4.7.6" data-path="text-mining.html"><a href="text-mining.html#bar-plots"><i class="fa fa-check"></i><b>4.7.6</b> Bar Plots</a></li>
+<li class="chapter" data-level="4.7.7" data-path="text-mining.html"><a href="text-mining.html#wordclouds"><i class="fa fa-check"></i><b>4.7.7</b> Wordclouds</a></li>
+</ul></li>
+<li class="chapter" data-level="4.8" data-path="text-mining.html"><a href="text-mining.html#term-frequency"><i class="fa fa-check"></i><b>4.8</b> Term Frequency</a><ul>
+<li class="chapter" data-level="4.8.1" data-path="text-mining.html"><a href="text-mining.html#back-to-the-speeches"><i class="fa fa-check"></i><b>4.8.1</b> Back To The Speeches</a></li>
+</ul></li>
+<li class="chapter" data-level="4.9" data-path="text-mining.html"><a href="text-mining.html#n-grams"><i class="fa fa-check"></i><b>4.9</b> N Grams</a></li>
+<li class="chapter" data-level="4.10" data-path="text-mining.html"><a href="text-mining.html#tf-and-idf"><i class="fa fa-check"></i><b>4.10</b> Tf and Idf</a></li>
+<li class="chapter" data-level="4.11" data-path="text-mining.html"><a href="text-mining.html#sentiment"><i class="fa fa-check"></i><b>4.11</b> Sentiment</a><ul>
+<li class="chapter" data-level="4.11.1" data-path="text-mining.html"><a href="text-mining.html#sentiment-dictionaries-and-lexicons"><i class="fa fa-check"></i><b>4.11.1</b> Sentiment Dictionaries and Lexicons</a></li>
+<li class="chapter" data-level="4.11.2" data-path="text-mining.html"><a href="text-mining.html#an-example"><i class="fa fa-check"></i><b>4.11.2</b> An Example</a></li>
+<li class="chapter" data-level="4.11.3" data-path="text-mining.html"><a href="text-mining.html#speech-sentiment"><i class="fa fa-check"></i><b>4.11.3</b> Speech Sentiment</a></li>
+<li class="chapter" data-level="4.11.4" data-path="text-mining.html"><a href="text-mining.html#comparison-cloud"><i class="fa fa-check"></i><b>4.11.4</b> Comparison Cloud</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="twitter-social-media.html"><a href="twitter-social-media.html"><i class="fa fa-check"></i><b>5</b> Twitter - Social Media</a><ul>
+<li class="chapter" data-level="5.1" data-path="twitter-social-media.html"><a href="twitter-social-media.html#twitter-uses"><i class="fa fa-check"></i><b>5.1</b> Twitter Uses</a></li>
+<li class="chapter" data-level="5.2" data-path="twitter-social-media.html"><a href="twitter-social-media.html#why-should-you-care"><i class="fa fa-check"></i><b>5.2</b> Why Should You Care ?</a></li>
+<li class="chapter" data-level="5.3" data-path="twitter-social-media.html"><a href="twitter-social-media.html#twitter-anatomy"><i class="fa fa-check"></i><b>5.3</b> Twitter Anatomy</a></li>
+<li class="chapter" data-level="5.4" data-path="twitter-social-media.html"><a href="twitter-social-media.html#accessing-from-r---rtweet"><i class="fa fa-check"></i><b>5.4</b> Accessing From R - rtweet</a></li>
+<li class="chapter" data-level="5.5" data-path="twitter-social-media.html"><a href="twitter-social-media.html#authenticating-from-r"><i class="fa fa-check"></i><b>5.5</b> Authenticating From R</a></li>
+<li class="chapter" data-level="5.6" data-path="twitter-social-media.html"><a href="twitter-social-media.html#some-basic-tips"><i class="fa fa-check"></i><b>5.6</b> Some Basic Tips</a></li>
+<li class="chapter" data-level="5.7" data-path="twitter-social-media.html"><a href="twitter-social-media.html#some-built-in-plots"><i class="fa fa-check"></i><b>5.7</b> Some built in plots</a></li>
+<li class="chapter" data-level="5.8" data-path="twitter-social-media.html"><a href="twitter-social-media.html#looking-for-people-tweeting-about-copd"><i class="fa fa-check"></i><b>5.8</b> Looking for People Tweeting About COPD</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Intro To Research Computing</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="twitter---social-media" class="section level1">
+<h1><span class="header-section-number">Chapter 5</span> Twitter - Social Media</h1>
+<center>
+<img src="PICS/manny.png" width="450" />
+</center>
+<center>
+<img src="PICS/twitter_followers.png" />
+</center>
+<div id="twitter-uses" class="section level2">
+<h2><span class="header-section-number">5.1</span> Twitter Uses</h2>
+<ul>
+<li><p>Tweets come from many sources - people, politicians, media outlets, sports teams, movie stars, etc</p></li>
+<li><p>Multimedia content can be sent along with a Tweet (pics, movies, emojis)</p></li>
+<li><p>Real time communication</p></li>
+<li><p>Anyone can create an account and also sign up to use the API</p></li>
+<li><p>Proxy news service</p></li>
+</ul>
+</div>
+<div id="why-should-you-care" class="section level2">
+<h2><span class="header-section-number">5.2</span> Why Should You Care ?</h2>
+<p>That’s really up to you and your personal interests but consider that tweets can be worth a lot of money.</p>
+<center>
+<div class="figure">
+<img src="PICS/tweet_val_1.png" />
+
+</div>
+<img src="PICS/tweet_val_0.png" />
+</center>
+<p><a href="https://www.freevaluator.com/tools/twitter-username-worth" class="uri">https://www.freevaluator.com/tools/twitter-username-worth</a> <a href="https://www.tweetbinder.com/blog/economic-value-tweet/" class="uri">https://www.tweetbinder.com/blog/economic-value-tweet/</a></p>
+</div>
+<div id="twitter-anatomy" class="section level2">
+<h2><span class="header-section-number">5.3</span> Twitter Anatomy</h2>
+<ul>
+<li>User Name: A unique userid</li>
+<li>Time Stamp: When the tweet went out Text: The content of the tweet</li>
+<li>Hashtags: Words prefixed with a # character.</li>
+<li>Links: Hyper links to other web sourcved</li>
+<li>Replies: Replies to a posted tweet</li>
+<li>Retweets: When someone shares a third party tweet with followers</li>
+<li>Favorites: A history of tweets you have liked</li>
+<li>Latitude / Longitude: Some tweets have geo coding information</li>
+</ul>
+</div>
+<div id="accessing-from-r---rtweet" class="section level2">
+<h2><span class="header-section-number">5.4</span> Accessing From R - rtweet</h2>
+<p>The <strong>rtweet</strong> package is very cool but you have to do the following:</p>
+<ul>
+<li>Install the rtweet package</li>
+<li>Setup a Twitter account. It’s free at <a href="https://twitter.com/" class="uri">https://twitter.com/</a></li>
+</ul>
+<p>Note that it requires your cell number to create an App (But you can delete the account after the class is over).</p>
+<p>After you have created your account then go <a href="http://apps.twitter.com" class="uri">http://apps.twitter.com</a></p>
+<p>From with your account create an ”application”so you can mine other tweets:</p>
+<ul>
+<li>Name: rtweet testing</li>
+<li>Description: Testing Account for rtweet</li>
+<li>Website: <a href="http://twitter.com/userid" class="uri">http://twitter.com/userid</a> (replace userid with your userid)</li>
+<li>Callback URL: <a href="http://127.0.0.1:1410" class="uri">http://127.0.0.1:1410</a></li>
+<li>Create App</li>
+</ul>
+<center>
+<img src="PICS/app_details.png" />
+</center>
+<center>
+<img src="PICS/rtweet.png" />
+</center>
+</div>
+<div id="authenticating-from-r" class="section level2">
+<h2><span class="header-section-number">5.5</span> Authenticating From R</h2>
+<p>Now within R, You need to do the following. You only need to do it once per session to get authenticated to use Twitter from within R.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Running this code will contact Twitter and load a web page.</span>
+<span class="co"># If authentication is successful then you will see a web page</span>
+<span class="co"># with the contents of</span>
+
+<span class="kw">library</span>(rtweet)
+twitter_token &lt;-<span class="st"> </span><span class="kw">create_token</span>(
+   <span class="dt">app =</span> <span class="st">&quot;rtweetpitt&quot;</span>,
+   <span class="dt">consumer_key =</span> <span class="st">&quot;HBNyMiXbPsdsdiiisdoodvIUBsBpRY8zH&quot;</span>,
+   <span class="dt">consumer_secret =</span> <span class="st">&quot;Tl6uTC4quNGONXsddLoRSIn9ULe7LReHPyYleUMUlM&quot;</span>)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Create a Function to Pull in Some Tweets</span>
+my_search_tweets &lt;-<span class="st"> </span><span class="cf">function</span>(<span class="dt">string=</span><span class="st">&quot;Katy Perry&quot;</span>,<span class="dt">n=</span><span class="dv">500</span>) {
+  <span class="kw">require</span>(rtweet)
+  tweet_table &lt;-<span class="st"> </span><span class="kw">search_tweets</span>(string,<span class="dt">n=</span>n,
+                              <span class="dt">retryonratelimit =</span> <span class="ot">TRUE</span>,
+                              <span class="dt">include_rts =</span> <span class="ot">FALSE</span>,
+                              <span class="dt">lang =</span> <span class="st">&quot;en&quot;</span>)
+  <span class="kw">return</span>(<span class="kw">plain_tweets</span>(tweet_table<span class="op">$</span>text))
+}
+raw_tweets &lt;-<span class="st"> </span><span class="kw">my_search_tweets</span>(<span class="st">&quot;Katy Perry&quot;</span>)
+katy_raw_tweets &lt;-<span class="st"> </span>raw_tweets <span class="co"># save for later</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">[<span class="dv">1</span>] <span class="st">&quot;i blame my bad eating habits on katy perry. idk why but i do.&quot;</span>
+
+[<span class="dv">2</span>] <span class="st">&quot;When I was 10, I slept over at my friend&#39;s house and she </span>
+<span class="st">made me watch the Katy Perry movie but little does she know, </span>
+<span class="st">when she fell asleep, I changed it to a JFK conspiracy documentary&quot;</span> </code></pre></div>
+<p>But wait. How can these be worth $86,904 each ? Well these are tweets ABOUT Katy Perry. Let’s get some tweets that she herself actually issued and then see if they are worht that much.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">kpt &lt;-<span class="st"> </span><span class="kw">get_timeline</span>(<span class="st">&quot;katyperry&quot;</span>,<span class="dt">n=</span><span class="dv">100</span>)
+
+<span class="op">&gt;</span><span class="st"> </span><span class="kw">plain_tweets</span>(kpt<span class="op">$</span>text)[<span class="dv">1</span><span class="op">:</span><span class="dv">9</span>]
+[<span class="dv">1</span>] <span class="st">&quot;I don&#39;t know if anyone noticed but I almost broke down in </span>
+<span class="st">tears having to pick one of my children #americanidol&quot;</span>                
+
+[<span class="dv">2</span>] <span class="st">&quot;Daydreaming of a world where we have 14 #americanidol(s) </span>
+<span class="st">(cause this SKRESSFUL)//t.co/o3u4eYRt4d&quot;</span>
+
+[<span class="dv">3</span>] <span class="st">&quot;Is anyone else stress snacking during the commercial </span>
+<span class="st">breaks? #americanidol&quot;</span>
+
+[<span class="dv">4</span>] <span class="st">&quot;From 15 years of being a coachella festival goer to guesting </span>
+<span class="st">with @zedd on his main stage set not gonna lie feels pretty chill.</span>
+<span class="st">Thanks area for the shine by @ronyalwin @ you&#39;re doing great//t.co/gwU12MpAla&quot;</span>
+
+[<span class="dv">5</span>] <span class="st">&quot;we must protect wherearetheavocados, beings like her don&#39;t </span>
+<span class="st">enter our orbit often @ Coachella, California//t.co/078jLTZQXy&quot;</span> 
+
+[<span class="dv">6</span>] <span class="st">&quot;You think your favs are safe, think again. @AmericanIdol//t.co/xF53nLvGwj&quot;</span>
+
+[<span class="dv">8</span>] <span class="st">&quot;It&#39;s time for y&#39;all to pull out your hair over these </span>
+<span class="st">contestants #JesusTakeTheWheel #AmericanIdol//t.co/1vxNkFTaYp&quot;</span>
+
+[<span class="dv">9</span>] <span class="st">&quot;After you&#39;re done watching Idol, East Coast (and before </span>
+<span class="st">yours begins, West Coast), you might want to check out the </span>
+<span class="st">Coachella live stream... around 7:30pm poss? //t.co/tXVz4J1Ra4 -</span>
+<span class="st">Channel 1 #GetYouAGirlWhoCanDoBoth&quot;</span></code></pre></div>
+</div>
+<div id="some-basic-tips" class="section level2">
+<h2><span class="header-section-number">5.6</span> Some Basic Tips</h2>
+<p>The <strong>rtweet</strong> package is a well written and very full featured package that does a lot for you so you don’t have to. However, you do need to become familiar with the various options to get usable text. For example maybe you don’t want retweets in the tweets or user handles. You might also want tweets from a specific location or in a specific language.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Get tweets in French </span>
+
+nd &lt;-<span class="st"> </span><span class="kw">search_tweets</span>(<span class="st">&quot;#notredame&quot;</span>,<span class="dt">include_rts=</span><span class="ot">FALSE</span>,<span class="dt">lang=</span><span class="st">&quot;fr&quot;</span>)
+<span class="kw">plain_text</span>(nd<span class="op">$</span>text)[<span class="dv">95</span><span class="op">:</span><span class="dv">100</span>]
+
+<span class="op">&gt;</span><span class="st"> </span><span class="kw">plain_tweets</span>(nd<span class="op">$</span>text)[<span class="dv">95</span><span class="op">:</span><span class="dv">99</span>]
+
+[<span class="dv">1</span>] <span class="st">&quot;#LCI le propagandiste d&#39;extrme droite Andre Bercoff </span>
+<span class="st">raconte n&#39;importe quoi en prtendant qu&#39;il y a eu des milliers de</span>
+<span class="st">tweets se flicitant de l&#39;incendie de #notredame c&#39;est </span>
+<span class="st">parfaitement faux #24hpujadas//t.co/vgU8mGutCV&quot;</span>                                  
+
+[<span class="dv">2</span>] <span class="st">&quot;Le Prsident de la Rpublique @EmmanuelMacron </span>
+<span class="st">s&#39;adressera la Nation ce soir, 20h. </span>
+<span class="st">#NotreDame #NotreDameCathedralFire #Notre_Dame_de_Paris</span>
+<span class="st">#Macron20h#Macron//t.co/GwxoUt5lsj&quot;</span>                  
+
+[<span class="dv">3</span>] <span class="st">&quot;Zineb chie.... Volume 20 opus 34.... A dguster </span>
+<span class="st">au fond des chiottes.... #NotreDame//t.co/PUmIJtrsYl&quot;</span>
+
+[<span class="dv">4</span>] <span class="st">&quot;</span><span class="ch">\&quot;</span><span class="st">#NotreDame a tenu. Ses votes millnaires sont restes debout.</span>
+<span class="st">Certes, Notre-Dame est abme, mutile, mais elle continuera de vivre. </span>
+<span class="st">Ds lors que les piliers tiennent et portent l&#39;difice, il est toujours</span>
+<span class="st">possible de reconstruire.</span><span class="ch">\&quot;</span><span class="st"> #NotreDameDeParis//t.co/6YYo3QtGhU&quot;</span>  
+
+[<span class="dv">5</span>] <span class="st">&quot;Jamais un monument n&#39;avait autant touch le cur de </span>
+<span class="st">l&#39;humanit #NotreDame #SauverNotreDame&quot;</span>
+
+<span class="co"># English</span>
+
+<span class="op">&gt;</span><span class="st"> </span>nd &lt;-<span class="st"> </span><span class="kw">search_tweets</span>(<span class="st">&quot;#notredame&quot;</span>,<span class="dt">include_rts=</span><span class="ot">FALSE</span>,<span class="dt">lang=</span><span class="st">&quot;en&quot;</span>)
+Searching <span class="cf">for</span> tweets...
+Finished collecting tweets<span class="op">!</span>
+<span class="st">  </span>
+<span class="er">&gt;</span><span class="st"> </span><span class="kw">plain_tweets</span>(nd<span class="op">$</span>text)[<span class="dv">95</span><span class="op">:</span><span class="dv">100</span>]
+[<span class="dv">1</span>] <span class="st">&quot;Gut wrenching but still hauntingly beautiful. Amazing </span>
+<span class="st">work by the Paris fire teams to preserve so much of the </span>
+<span class="st">glasswork. #notredame//t.co/smoZaLqXwG&quot;</span>
+
+[<span class="dv">2</span>] <span class="st">&quot;Ancient Notre Dame artifact found preserved #NotreDame//t.co/V8lZ8lE9zW&quot;</span>
+
+[<span class="dv">3</span>] <span class="st">&quot;@joshscampbell There you go again criticizing Mr. Trump. </span>
+<span class="st">Clearly, more raking could have saved the roof, an inspired </span>
+<span class="st">idea. @POTUS @realDonaldTrump @NotreDame #NotreDame @PressSec @VP&quot;</span>
+
+[<span class="dv">4</span>] <span class="st">&quot;To all the people thinking #notredame should not be rebuilt</span>
+<span class="st">and the money given to the poor because that&#39;s what Jesus would </span>
+<span class="st">want. You are wrong. No where in the Bible does Jesus say </span>
+<span class="st">don&#39;t make/do beautiful costly things for me. In fact the </span>
+<span class="st">opposite, Jesus went to the temple....&quot;</span>
+
+[<span class="dv">5</span>] <span class="st">&quot;I keep singing &#39;The Bells of Notre Dame&#39; from the Disney </span>
+<span class="st">movie... I know it&#39;s inappropriate but, damn, the place and that </span>
+<span class="st">film are so iconic. The place stands for humanity and it must be </span>
+<span class="st">fully restored. #NotreDame&quot;</span>
+
+[<span class="dv">6</span>] <span class="st">&quot;Lot of empathetic discussion on Twitter by Mexicans </span>
+<span class="st">about yesterday&#39;s conflagration at #NotreDame in Paris. </span><span class="ch">\&quot;</span><span class="st">How </span>
+<span class="st">would we feel if #ChichenItza were destroyed,</span><span class="ch">\&quot;</span><span class="st"> is a common </span>
+<span class="st">refrain. Chichen Itza WAS destroyed and left to ruin; </span>
+<span class="st">Consolidation and/or restoration began only in </span>
+<span class="st">1923.//t.co/6d9EhAvXz4&quot;</span></code></pre></div>
+</div>
+<div id="some-built-in-plots" class="section level2">
+<h2><span class="header-section-number">5.7</span> Some built in plots</h2>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">rt &lt;-<span class="st"> </span><span class="kw">search_tweets</span>(
+  <span class="st">&quot;notre dame&quot;</span>, <span class="dt">n =</span> <span class="dv">2000</span>, <span class="dt">include_rts =</span> <span class="ot">FALSE</span>,
+   <span class="dt">retryonratelimit =</span> <span class="ot">TRUE</span>
+)
+
+<span class="kw">ts_plot</span>(rt, <span class="st">&quot;3 hours&quot;</span>) <span class="op">+</span>
+<span class="st">  </span>ggplot2<span class="op">::</span><span class="kw">theme_minimal</span>() <span class="op">+</span>
+<span class="st">  </span>ggplot2<span class="op">::</span><span class="kw">theme</span>(<span class="dt">plot.title =</span> ggplot2<span class="op">::</span><span class="kw">element_text</span>(<span class="dt">face =</span> <span class="st">&quot;bold&quot;</span>)) <span class="op">+</span>
+<span class="st">  </span>ggplot2<span class="op">::</span><span class="kw">labs</span>(
+    <span class="dt">x =</span> <span class="ot">NULL</span>, <span class="dt">y =</span> <span class="ot">NULL</span>,
+    <span class="dt">title =</span> <span class="st">&quot;Frequency of #rstats Twitter statuses from past 9 days&quot;</span>,
+    <span class="dt">subtitle =</span> <span class="st">&quot;Twitter status (tweet) counts aggregated using three-hour intervals&quot;</span>,
+    <span class="dt">caption =</span> <span class="st">&quot;</span><span class="ch">\n</span><span class="st">Source: Data collected from Twitter&#39;s REST API via rtweet&quot;</span>
+  )</code></pre></div>
+</div>
+<div id="looking-for-people-tweeting-about-copd" class="section level2">
+<h2><span class="header-section-number">5.8</span> Looking for People Tweeting About COPD</h2>
+<p>Let’s look at something more serious:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">raw_tweets &lt;-<span class="st"> </span><span class="kw">my_search_tweets</span>(<span class="st">&quot;COPD&quot;</span>)
+raw_tweets
+
+[<span class="dv">995</span>] <span class="st">&quot;Rebecca lives with COPD and is being treated for</span>
+<span class="st">non-tuberculous mycobacterial infection (NTM) as well. She&#39;s </span>
+<span class="st">looking forward to being clear of the NTM infection after 18 </span>
+<span class="st">months&#39; treatment. //t.co/Vo7L5Fdco1&quot;</span>
+
+[<span class="dv">996</span>] <span class="st">&quot;Do you have COPD? Are you receiving the care that </span>
+<span class="st">you&#39;re entitled to? Complete your online COPD patient passport </span>
+<span class="st">to find out now. Discover if you&#39;re getting the care that you </span>
+<span class="st">are eligible for, and what to talk to your doctor about </span>
+<span class="st">if not //t.co/9Jyonn2PeG//t.co/js88XSHF0E&quot;</span>
+
+[<span class="dv">997</span>] <span class="st">&quot;Is #COPD associated with alterations in #hearing? A </span>
+<span class="st">systematic review meta-analysis://t.co/jnXA6boq0N//t.co/KYfOxgL4aF&quot;</span>         
+[<span class="dv">998</span>] <span class="st">&quot;omg this is like when im teaching COPD clients breathing</span>
+<span class="st">exercises in hospital but now i have to use it on myself CALM </span>
+<span class="st">DOWN MY HEART #PERSONAWelcomeParty&quot;</span>
+
+[<span class="dv">999</span>] <span class="st">&quot;#mdpidiagnostics Predicting #Pulmonary Function Testing </span>
+<span class="st">from Quantified Computed #Tomography Using Machine Learning </span>
+<span class="st">Algorithms in Patients with #COPD @UniHeidelberg @UBMannheim</span>
+<span class="st">@dzhk_germany //t.co/FppyxJ5J5F//t.co/PspkxCLdKj&quot;</span>
+
+[<span class="dv">1000</span>] <span class="st">&quot;@KTHopkins Hidden disabilities such as COPD, MS, </span>
+<span class="st">Crohn&#39;s disease and arthritis can affect things like pain, </span>
+<span class="st">stamina, breathing, and other things that influence how far </span>
+<span class="st">someone can walk. When you are old or unwell, it will be you </span>
+<span class="st">in a wheelchair someday. Pray that people are kind, instead.&quot;</span>                                           </code></pre></div>
+<p>So you might want to look at the data structure that is returned because it can give a lot of information for your research.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">copd_tweets &lt;-<span class="st"> </span><span class="kw">search_tweets</span>(<span class="st">&quot;#COPD&quot;</span>)
+
+<span class="co"># Here are all the variables associated with each tweet</span>
+<span class="co"># There are 88 columns worth of information !</span>
+
+<span class="kw">names</span>(copd_tweets)
+ [<span class="dv">1</span>] <span class="st">&quot;user_id&quot;</span>                 <span class="st">&quot;status_id&quot;</span>              
+ [<span class="dv">3</span>] <span class="st">&quot;created_at&quot;</span>              <span class="st">&quot;screen_name&quot;</span>            
+ [<span class="dv">5</span>] <span class="st">&quot;text&quot;</span>                    <span class="st">&quot;source&quot;</span>                 
+ [<span class="dv">7</span>] <span class="st">&quot;display_text_width&quot;</span>      <span class="st">&quot;reply_to_status_id&quot;</span>     
+ [<span class="dv">9</span>] <span class="st">&quot;reply_to_user_id&quot;</span>        <span class="st">&quot;reply_to_screen_name&quot;</span>   
+[<span class="dv">11</span>] <span class="st">&quot;is_quote&quot;</span>                <span class="st">&quot;is_retweet&quot;</span>             
+[<span class="dv">13</span>] <span class="st">&quot;favorite_count&quot;</span>          <span class="st">&quot;retweet_count&quot;</span>          
+[<span class="dv">15</span>] <span class="st">&quot;hashtags&quot;</span>                <span class="st">&quot;symbols&quot;</span>                
+[<span class="dv">17</span>] <span class="st">&quot;urls_url&quot;</span>                <span class="st">&quot;urls_t.co&quot;</span>              
+[<span class="dv">19</span>] <span class="st">&quot;urls_expanded_url&quot;</span>       <span class="st">&quot;media_url&quot;</span>              
+[<span class="dv">21</span>] <span class="st">&quot;media_t.co&quot;</span>              <span class="st">&quot;media_expanded_url&quot;</span>     
+[<span class="dv">23</span>] <span class="st">&quot;media_type&quot;</span>              <span class="st">&quot;ext_media_url&quot;</span>          
+[<span class="dv">25</span>] <span class="st">&quot;ext_media_t.co&quot;</span>          <span class="st">&quot;ext_media_expanded_url&quot;</span> 
+[<span class="dv">27</span>] <span class="st">&quot;ext_media_type&quot;</span>          <span class="st">&quot;mentions_user_id&quot;</span>       
+[<span class="dv">29</span>] <span class="st">&quot;mentions_screen_name&quot;</span>    <span class="st">&quot;lang&quot;</span>                   
+[<span class="dv">31</span>] <span class="st">&quot;quoted_status_id&quot;</span>        <span class="st">&quot;quoted_text&quot;</span>            
+[<span class="dv">33</span>] <span class="st">&quot;quoted_created_at&quot;</span>       <span class="st">&quot;quoted_source&quot;</span>          
+[<span class="dv">35</span>] <span class="st">&quot;quoted_favorite_count&quot;</span>   <span class="st">&quot;quoted_retweet_count&quot;</span>   
+[<span class="dv">37</span>] <span class="st">&quot;quoted_user_id&quot;</span>          <span class="st">&quot;quoted_screen_name&quot;</span>     
+[<span class="dv">39</span>] <span class="st">&quot;quoted_name&quot;</span>             <span class="st">&quot;quoted_followers_count&quot;</span> 
+[<span class="dv">41</span>] <span class="st">&quot;quoted_friends_count&quot;</span>    <span class="st">&quot;quoted_statuses_count&quot;</span>  
+[<span class="dv">43</span>] <span class="st">&quot;quoted_location&quot;</span>         <span class="st">&quot;quoted_description&quot;</span>     
+[<span class="dv">45</span>] <span class="st">&quot;quoted_verified&quot;</span>         <span class="st">&quot;retweet_status_id&quot;</span>      
+[<span class="dv">47</span>] <span class="st">&quot;retweet_text&quot;</span>            <span class="st">&quot;retweet_created_at&quot;</span>     
+[<span class="dv">49</span>] <span class="st">&quot;retweet_source&quot;</span>          <span class="st">&quot;retweet_favorite_count&quot;</span> 
+[<span class="dv">51</span>] <span class="st">&quot;retweet_retweet_count&quot;</span>   <span class="st">&quot;retweet_user_id&quot;</span>        
+[<span class="dv">53</span>] <span class="st">&quot;retweet_screen_name&quot;</span>     <span class="st">&quot;retweet_name&quot;</span>           
+[<span class="dv">55</span>] <span class="st">&quot;retweet_followers_count&quot;</span> <span class="st">&quot;retweet_friends_count&quot;</span>  
+[<span class="dv">57</span>] <span class="st">&quot;retweet_statuses_count&quot;</span>  <span class="st">&quot;retweet_location&quot;</span>       
+[<span class="dv">59</span>] <span class="st">&quot;retweet_description&quot;</span>     <span class="st">&quot;retweet_verified&quot;</span>       
+[<span class="dv">61</span>] <span class="st">&quot;place_url&quot;</span>               <span class="st">&quot;place_name&quot;</span>             
+[<span class="dv">63</span>] <span class="st">&quot;place_full_name&quot;</span>         <span class="st">&quot;place_type&quot;</span>             
+[<span class="dv">65</span>] <span class="st">&quot;country&quot;</span>                 <span class="st">&quot;country_code&quot;</span>           
+[<span class="dv">67</span>] <span class="st">&quot;geo_coords&quot;</span>              <span class="st">&quot;coords_coords&quot;</span>          
+[<span class="dv">69</span>] <span class="st">&quot;bbox_coords&quot;</span>             <span class="st">&quot;status_url&quot;</span>             
+[<span class="dv">71</span>] <span class="st">&quot;name&quot;</span>                    <span class="st">&quot;location&quot;</span>               
+[<span class="dv">73</span>] <span class="st">&quot;description&quot;</span>             <span class="st">&quot;url&quot;</span>                    
+[<span class="dv">75</span>] <span class="st">&quot;protected&quot;</span>               <span class="st">&quot;followers_count&quot;</span>        
+[<span class="dv">77</span>] <span class="st">&quot;friends_count&quot;</span>           <span class="st">&quot;listed_count&quot;</span>           
+[<span class="dv">79</span>] <span class="st">&quot;statuses_count&quot;</span>          <span class="st">&quot;favourites_count&quot;</span>       
+[<span class="dv">81</span>] <span class="st">&quot;account_created_at&quot;</span>      <span class="st">&quot;verified&quot;</span>               
+[<span class="dv">83</span>] <span class="st">&quot;profile_url&quot;</span>             <span class="st">&quot;profile_expanded_url&quot;</span>   
+[<span class="dv">85</span>] <span class="st">&quot;account_lang&quot;</span>            <span class="st">&quot;profile_banner_url&quot;</span>     
+[<span class="dv">87</span>] <span class="st">&quot;profile_background_url&quot;</span>  <span class="st">&quot;profile_image_url&quot;</span></code></pre></div>
+<p>So you could spend a lot of time reviewing this information and you probably should if you want to mine Twitter for stuff. Let’s look at the user names of the people who tweeted about COPD.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">copd_tweets<span class="op">$</span>screen_name
+  [<span class="dv">1</span>] <span class="st">&quot;YouThisMe&quot;</span>       <span class="st">&quot;ATS_GG&quot;</span>          <span class="st">&quot;JayVFight&quot;</span>      
+  [<span class="dv">4</span>] <span class="st">&quot;GKA_field&quot;</span>       <span class="st">&quot;ForaCareUSA&quot;</span>     <span class="st">&quot;littlelisa3579&quot;</span> 
+  [<span class="dv">7</span>] <span class="st">&quot;COPD_research&quot;</span>   <span class="st">&quot;COPD_research&quot;</span>   <span class="st">&quot;COPD_research&quot;</span>  
+ [<span class="dv">10</span>] <span class="st">&quot;COPD_research&quot;</span>   <span class="st">&quot;COPD_research&quot;</span>   <span class="st">&quot;COPD_research&quot;</span>  
+ [<span class="dv">13</span>] <span class="st">&quot;COPD_research&quot;</span>   <span class="st">&quot;COPD_research&quot;</span>   <span class="st">&quot;COPD_research&quot;</span>  
+ [<span class="dv">16</span>] <span class="st">&quot;COPD_research&quot;</span>   <span class="st">&quot;COPD_research&quot;</span>   <span class="st">&quot;COPD_research&quot;</span>  
+ [<span class="dv">19</span>] <span class="st">&quot;COPD_research&quot;</span>   <span class="st">&quot;COPD_research&quot;</span>   <span class="st">&quot;COPD_research&quot;</span>  
+ [<span class="dv">22</span>] <span class="st">&quot;COPD_research&quot;</span>   <span class="st">&quot;COPD_research&quot;</span>   <span class="st">&quot;COPD_research&quot;</span>  
+ [<span class="dv">25</span>] <span class="st">&quot;COPD_research&quot;</span>   <span class="st">&quot;COPD_research&quot;</span>   <span class="st">&quot;COPD_research&quot;</span>  
+ [<span class="dv">28</span>] <span class="st">&quot;COPD_research&quot;</span>   <span class="st">&quot;COPD_research&quot;</span>   <span class="st">&quot;rch4him&quot;</span>        
+ [<span class="dv">31</span>] <span class="st">&quot;ACMeinde&quot;</span>        <span class="st">&quot;efrasanchez&quot;</span>     <span class="st">&quot;efrasanchez&quot;</span>    
+ [<span class="dv">34</span>] <span class="st">&quot;efrasanchez&quot;</span>     <span class="st">&quot;myCOPDteam&quot;</span>      <span class="st">&quot;ATS_BSHSR&quot;</span>      
+ [<span class="dv">37</span>] <span class="st">&quot;AllergyAsthmaHQ&quot;</span> <span class="st">&quot;guillesole3&quot;</span>     <span class="st">&quot;hgosker&quot;</span>        
+ [<span class="dv">40</span>] <span class="st">&quot;MaryGreerMurder&quot;</span> <span class="st">&quot;SmartVestSystem&quot;</span> <span class="st">&quot;patosidro&quot;</span>      
+ [<span class="dv">43</span>] <span class="st">&quot;Sandip_Thakrar&quot;</span>  <span class="st">&quot;TheCQRC&quot;</span>         <span class="st">&quot;CaliDiet&quot;</span>       
+ [<span class="dv">46</span>] <span class="st">&quot;GetPalliative&quot;</span>   <span class="st">&quot;HildaRosaCarta1&quot;</span> <span class="st">&quot;IARETUSA&quot;</span>       
+ [<span class="dv">49</span>] <span class="st">&quot;DrMajzun&quot;</span>        <span class="st">&quot;ChrisCarrollMD&quot;</span>  <span class="st">&quot;accpchest&quot;</span>      
+ [<span class="dv">52</span>] <span class="st">&quot;CResnews&quot;</span>        <span class="st">&quot;MorphCLtd&quot;</span>       <span class="st">&quot;COPDCanada&quot;</span>     
+ [<span class="dv">55</span>] <span class="st">&quot;DialysisSaves&quot;</span>   <span class="st">&quot;FABIOVARON&quot;</span>      <span class="st">&quot;Donicme&quot;</span>        
+ [<span class="dv">58</span>] <span class="st">&quot;DemFromCT&quot;</span>       <span class="st">&quot;mariaalerey&quot;</span>     <span class="st">&quot;ChronicRights&quot;</span>  
+ [<span class="dv">61</span>] <span class="st">&quot;virenkaul&quot;</span>       <span class="st">&quot;atscommunity&quot;</span>    <span class="st">&quot;eczemasupport&quot;</span>  
+ [<span class="dv">64</span>] <span class="st">&quot;BENESG&quot;</span>          <span class="st">&quot;DAMiD_Presse&quot;</span>    <span class="st">&quot;datadrivencare&quot;</span> 
+ [<span class="dv">67</span>] <span class="st">&quot;caring_mobile&quot;</span>   <span class="st">&quot;RFalfanV&quot;</span>        <span class="st">&quot;r2guidance&quot;</span>     
+ [<span class="dv">70</span>] <span class="st">&quot;EverFLO_Q_OPI&quot;</span>   <span class="st">&quot;EverFLO_Q_OPI&quot;</span>   <span class="st">&quot;CCI_Ltd&quot;</span>        
+ [<span class="dv">73</span>] <span class="st">&quot;Sergioblasco68&quot;</span>  <span class="st">&quot;trinity_delta&quot;</span>   <span class="st">&quot;Nurse_JSW&quot;</span>      
+ [<span class="dv">76</span>] <span class="st">&quot;LiddleCarol&quot;</span>     <span class="st">&quot;pulmonology101&quot;</span>  <span class="st">&quot;cristineeberry&quot;</span> 
+ [<span class="dv">79</span>] <span class="st">&quot;Ms_MMM_Herbert&quot;</span>  <span class="st">&quot;AnnieBruton&quot;</span>     <span class="st">&quot;jt_resp_physio&quot;</span> 
+ [<span class="dv">82</span>] <span class="st">&quot;_RichardPalmer&quot;</span>  <span class="st">&quot;KarenFinnLondon&quot;</span> <span class="st">&quot;russwinn66&quot;</span>     
+ [<span class="dv">85</span>] <span class="st">&quot;Ilio79&quot;</span>          <span class="st">&quot;teraokanozomi&quot;</span>   <span class="st">&quot;AnnaFla1268&quot;</span>    
+ [<span class="dv">88</span>] <span class="st">&quot;PCRSUK&quot;</span>          <span class="st">&quot;lunguk&quot;</span>          <span class="st">&quot;bullringbash1&quot;</span>  
+ [<span class="dv">91</span>] <span class="st">&quot;exerciseCOPD&quot;</span>    <span class="st">&quot;blfwales&quot;</span>        <span class="st">&quot;666Dunst&quot;</span>       
+ [<span class="dv">94</span>] <span class="st">&quot;Atemwegsliga&quot;</span>    <span class="st">&quot;D_mk77&quot;</span>          <span class="st">&quot;AJ_MCMLXV&quot;</span>      
+ [<span class="dv">97</span>] <span class="st">&quot;Health_Editor&quot;</span>   <span class="st">&quot;PR_Assembly&quot;</span>     <span class="st">&quot;AnaHDeakinQPS&quot;</span>  
+[<span class="dv">100</span>] <span class="st">&quot;RespirologyAPSR&quot;</span></code></pre></div>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="text-mining.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"download": ["Nursing Report.pdf", "Nursing Report.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

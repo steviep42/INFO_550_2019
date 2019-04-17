@@ -1,0 +1,1118 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Chapter 4 Text Mining | Intro To Research Computing</title>
+  <meta name="description" content="Cloud Computing">
+  <meta name="generator" content="bookdown  and GitBook 2.6.7">
+
+  <meta property="og:title" content="Chapter 4 Text Mining | Intro To Research Computing" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Cloud Computing" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 4 Text Mining | Intro To Research Computing" />
+  
+  <meta name="twitter:description" content="Cloud Computing" />
+  
+
+<meta name="author" content="Steve Pittard">
+
+
+<meta name="date" content="2019-04-16">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="dockers-1.html">
+<link rel="next" href="twitter-social-media.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Guest Lecture INFO 550</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Computation In Research</a><ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#what-do-the-top-sites-use"><i class="fa fa-check"></i><b>1.1</b> What Do the Top Sites Use ?</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#division-of-labor"><i class="fa fa-check"></i><b>1.2</b> Division of Labor</a><ul>
+<li class="chapter" data-level="1.2.1" data-path="index.html"><a href="index.html#mixing-work-and-pleasure"><i class="fa fa-check"></i><b>1.2.1</b> Mixing Work and Pleasure</a></li>
+<li class="chapter" data-level="1.2.2" data-path="index.html"><a href="index.html#mixing-e-mail-and-research"><i class="fa fa-check"></i><b>1.2.2</b> Mixing E-Mail and Research ?</a></li>
+<li class="chapter" data-level="1.2.3" data-path="index.html"><a href="index.html#youll-do-it-anyway"><i class="fa fa-check"></i><b>1.2.3</b> You’ll Do It Anyway</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#popular-data-science-languages"><i class="fa fa-check"></i><b>1.3</b> Popular Data Science Languages</a></li>
+<li class="chapter" data-level="1.4" data-path="index.html"><a href="index.html#is-windows-good-for-computation"><i class="fa fa-check"></i><b>1.4</b> Is Windows Good For Computation ?</a></li>
+<li class="chapter" data-level="1.5" data-path="index.html"><a href="index.html#whats-wrong-with-windows"><i class="fa fa-check"></i><b>1.5</b> What’s Wrong with Windows ?</a><ul>
+<li class="chapter" data-level="1.5.1" data-path="index.html"><a href="index.html#windows-security-virus-and-performance-issues"><i class="fa fa-check"></i><b>1.5.1</b> Windows Security, Virus, and Performance Issues</a></li>
+<li class="chapter" data-level="1.5.2" data-path="index.html"><a href="index.html#windows-reboots-and-updates"><i class="fa fa-check"></i><b>1.5.2</b> Windows Reboots and Updates</a></li>
+<li class="chapter" data-level="1.5.3" data-path="index.html"><a href="index.html#is-linux-really-better"><i class="fa fa-check"></i><b>1.5.3</b> Is Linux Really Better ?</a></li>
+<li class="chapter" data-level="1.5.4" data-path="index.html"><a href="index.html#cool-things-about-linux"><i class="fa fa-check"></i><b>1.5.4</b> Cool Things About Linux</a></li>
+<li class="chapter" data-level="1.5.5" data-path="index.html"><a href="index.html#linux-is-the-native-environment-for-development."><i class="fa fa-check"></i><b>1.5.5</b> Linux is The Native Environment for Development.</a></li>
+<li class="chapter" data-level="1.5.6" data-path="index.html"><a href="index.html#command-line-knowledge-is-next-level-stuff"><i class="fa fa-check"></i><b>1.5.6</b> Command Line Knowledge is Next Level Stuff</a></li>
+<li class="chapter" data-level="1.5.7" data-path="index.html"><a href="index.html#is-there-hope-for-windows-users"><i class="fa fa-check"></i><b>1.5.7</b> Is There Hope For Windows Users ?</a></li>
+</ul></li>
+<li class="chapter" data-level="1.6" data-path="index.html"><a href="index.html#is-there-a-middle-ground"><i class="fa fa-check"></i><b>1.6</b> Is There a Middle Ground ?</a><ul>
+<li class="chapter" data-level="1.6.1" data-path="index.html"><a href="index.html#virtualized-systems"><i class="fa fa-check"></i><b>1.6.1</b> Virtualized Systems</a></li>
+<li class="chapter" data-level="1.6.2" data-path="index.html"><a href="index.html#dockers"><i class="fa fa-check"></i><b>1.6.2</b> Dockers</a></li>
+<li class="chapter" data-level="1.6.3" data-path="index.html"><a href="index.html#anaconda"><i class="fa fa-check"></i><b>1.6.3</b> Anaconda</a></li>
+</ul></li>
+<li class="chapter" data-level="1.7" data-path="index.html"><a href="index.html#apple-osx-macos"><i class="fa fa-check"></i><b>1.7</b> Apple OSX / macOS ?</a><ul>
+<li class="chapter" data-level="1.7.1" data-path="index.html"><a href="index.html#the-dark-years-of-apple"><i class="fa fa-check"></i><b>1.7.1</b> The Dark Years of Apple</a></li>
+<li class="chapter" data-level="1.7.2" data-path="index.html"><a href="index.html#apple-osx-vs-previous-apple-operating-systems"><i class="fa fa-check"></i><b>1.7.2</b> Apple OSX vs Previous Apple Operating Systems</a></li>
+<li class="chapter" data-level="1.7.3" data-path="index.html"><a href="index.html#lets-go-shopping"><i class="fa fa-check"></i><b>1.7.3</b> Let’s Go Shopping !</a></li>
+<li class="chapter" data-level="1.7.4" data-path="index.html"><a href="index.html#managing-software-locally"><i class="fa fa-check"></i><b>1.7.4</b> Managing Software Locally</a></li>
+<li class="chapter" data-level="1.7.5" data-path="index.html"><a href="index.html#rstudio"><i class="fa fa-check"></i><b>1.7.5</b> RStudio</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="virtualization.html"><a href="virtualization.html"><i class="fa fa-check"></i><b>2</b> Virtualization</a><ul>
+<li class="chapter" data-level="2.1" data-path="virtualization.html"><a href="virtualization.html#virtual-box"><i class="fa fa-check"></i><b>2.1</b> Virtual Box</a></li>
+<li class="chapter" data-level="2.2" data-path="virtualization.html"><a href="virtualization.html#using-virtualization-farms"><i class="fa fa-check"></i><b>2.2</b> Using Virtualization Farms</a></li>
+<li class="chapter" data-level="2.3" data-path="virtualization.html"><a href="virtualization.html#running-rstudio-on-amazon"><i class="fa fa-check"></i><b>2.3</b> Running RStudio on Amazon</a><ul>
+<li class="chapter" data-level="2.3.1" data-path="virtualization.html"><a href="virtualization.html#why-ubuntu"><i class="fa fa-check"></i><b>2.3.1</b> Why Ubuntu ?</a></li>
+<li class="chapter" data-level="2.3.2" data-path="virtualization.html"><a href="virtualization.html#start-an-instance"><i class="fa fa-check"></i><b>2.3.2</b> Start An Instance</a></li>
+<li class="chapter" data-level="2.3.3" data-path="virtualization.html"><a href="virtualization.html#add-some-storage"><i class="fa fa-check"></i><b>2.3.3</b> Add Some Storage</a></li>
+<li class="chapter" data-level="2.3.4" data-path="virtualization.html"><a href="virtualization.html#get-a-key"><i class="fa fa-check"></i><b>2.3.4</b> Get A Key</a></li>
+<li class="chapter" data-level="2.3.5" data-path="virtualization.html"><a href="virtualization.html#installing-r"><i class="fa fa-check"></i><b>2.3.5</b> Installing R</a></li>
+<li class="chapter" data-level="2.3.6" data-path="virtualization.html"><a href="virtualization.html#installing-rstudio-server"><i class="fa fa-check"></i><b>2.3.6</b> Installing RStudio Server</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="virtualization.html"><a href="virtualization.html#accessing-your-instance"><i class="fa fa-check"></i><b>2.4</b> Accessing Your Instance</a></li>
+<li class="chapter" data-level="2.5" data-path="virtualization.html"><a href="virtualization.html#getting-data-into-your-instance"><i class="fa fa-check"></i><b>2.5</b> Getting Data Into Your Instance</a></li>
+<li class="chapter" data-level="2.6" data-path="virtualization.html"><a href="virtualization.html#accessing-s3-from-ec2-instances"><i class="fa fa-check"></i><b>2.6</b> Accessing S3 from EC2 Instances</a></li>
+<li class="chapter" data-level="2.7" data-path="virtualization.html"><a href="virtualization.html#shiny-server"><i class="fa fa-check"></i><b>2.7</b> Shiny Server</a></li>
+<li class="chapter" data-level="2.8" data-path="virtualization.html"><a href="virtualization.html#making-an-ami"><i class="fa fa-check"></i><b>2.8</b> Making an AMI</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="dockers-1.html"><a href="dockers-1.html"><i class="fa fa-check"></i><b>3</b> Dockers</a><ul>
+<li class="chapter" data-level="3.1" data-path="dockers-1.html"><a href="dockers-1.html#scenarios"><i class="fa fa-check"></i><b>3.1</b> Scenarios</a></li>
+<li class="chapter" data-level="3.2" data-path="dockers-1.html"><a href="dockers-1.html#differences-from-vms"><i class="fa fa-check"></i><b>3.2</b> Differences From VMs</a></li>
+<li class="chapter" data-level="3.3" data-path="dockers-1.html"><a href="dockers-1.html#docker-terminology"><i class="fa fa-check"></i><b>3.3</b> Docker Terminology</a><ul>
+<li class="chapter" data-level="3.3.1" data-path="dockers-1.html"><a href="dockers-1.html#images"><i class="fa fa-check"></i><b>3.3.1</b> Images</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="dockers-1.html"><a href="dockers-1.html#rshiny"><i class="fa fa-check"></i><b>3.4</b> RShiny</a></li>
+<li class="chapter" data-level="3.5" data-path="dockers-1.html"><a href="dockers-1.html#making-your-own-image"><i class="fa fa-check"></i><b>3.5</b> Making Your Own Image</a></li>
+<li class="chapter" data-level="3.6" data-path="dockers-1.html"><a href="dockers-1.html#there-is-another-way"><i class="fa fa-check"></i><b>3.6</b> There is Another Way</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="text-mining.html"><a href="text-mining.html"><i class="fa fa-check"></i><b>4</b> Text Mining</a><ul>
+<li class="chapter" data-level="4.1" data-path="text-mining.html"><a href="text-mining.html#recap"><i class="fa fa-check"></i><b>4.1</b> Recap</a></li>
+<li class="chapter" data-level="4.2" data-path="text-mining.html"><a href="text-mining.html#unstructured-data"><i class="fa fa-check"></i><b>4.2</b> Unstructured Data</a></li>
+<li class="chapter" data-level="4.3" data-path="text-mining.html"><a href="text-mining.html#structured-data"><i class="fa fa-check"></i><b>4.3</b> Structured Data</a></li>
+<li class="chapter" data-level="4.4" data-path="text-mining.html"><a href="text-mining.html#hybrids"><i class="fa fa-check"></i><b>4.4</b> Hybrids</a></li>
+<li class="chapter" data-level="4.5" data-path="text-mining.html"><a href="text-mining.html#information-retrieval-vs-information-extraction"><i class="fa fa-check"></i><b>4.5</b> Information Retrieval vs Information Extraction</a></li>
+<li class="chapter" data-level="4.6" data-path="text-mining.html"><a href="text-mining.html#web-scraping-revisited"><i class="fa fa-check"></i><b>4.6</b> Web Scraping Revisited</a></li>
+<li class="chapter" data-level="4.7" data-path="text-mining.html"><a href="text-mining.html#exploring-the-text"><i class="fa fa-check"></i><b>4.7</b> Exploring The Text</a><ul>
+<li class="chapter" data-level="4.7.1" data-path="text-mining.html"><a href="text-mining.html#tidy-format"><i class="fa fa-check"></i><b>4.7.1</b> Tidy Format</a></li>
+<li class="chapter" data-level="4.7.2" data-path="text-mining.html"><a href="text-mining.html#tidy-up-the-text"><i class="fa fa-check"></i><b>4.7.2</b> Tidy Up the text</a></li>
+<li class="chapter" data-level="4.7.3" data-path="text-mining.html"><a href="text-mining.html#dump-the-stop-words"><i class="fa fa-check"></i><b>4.7.3</b> Dump The “Stop Words”</a></li>
+<li class="chapter" data-level="4.7.4" data-path="text-mining.html"><a href="text-mining.html#eliminate-numbers"><i class="fa fa-check"></i><b>4.7.4</b> Eliminate Numbers</a></li>
+<li class="chapter" data-level="4.7.5" data-path="text-mining.html"><a href="text-mining.html#stemming"><i class="fa fa-check"></i><b>4.7.5</b> Stemming</a></li>
+<li class="chapter" data-level="4.7.6" data-path="text-mining.html"><a href="text-mining.html#bar-plots"><i class="fa fa-check"></i><b>4.7.6</b> Bar Plots</a></li>
+<li class="chapter" data-level="4.7.7" data-path="text-mining.html"><a href="text-mining.html#wordclouds"><i class="fa fa-check"></i><b>4.7.7</b> Wordclouds</a></li>
+</ul></li>
+<li class="chapter" data-level="4.8" data-path="text-mining.html"><a href="text-mining.html#term-frequency"><i class="fa fa-check"></i><b>4.8</b> Term Frequency</a><ul>
+<li class="chapter" data-level="4.8.1" data-path="text-mining.html"><a href="text-mining.html#back-to-the-speeches"><i class="fa fa-check"></i><b>4.8.1</b> Back To The Speeches</a></li>
+</ul></li>
+<li class="chapter" data-level="4.9" data-path="text-mining.html"><a href="text-mining.html#n-grams"><i class="fa fa-check"></i><b>4.9</b> N Grams</a></li>
+<li class="chapter" data-level="4.10" data-path="text-mining.html"><a href="text-mining.html#tf-and-idf"><i class="fa fa-check"></i><b>4.10</b> Tf and Idf</a></li>
+<li class="chapter" data-level="4.11" data-path="text-mining.html"><a href="text-mining.html#sentiment"><i class="fa fa-check"></i><b>4.11</b> Sentiment</a><ul>
+<li class="chapter" data-level="4.11.1" data-path="text-mining.html"><a href="text-mining.html#sentiment-dictionaries-and-lexicons"><i class="fa fa-check"></i><b>4.11.1</b> Sentiment Dictionaries and Lexicons</a></li>
+<li class="chapter" data-level="4.11.2" data-path="text-mining.html"><a href="text-mining.html#an-example"><i class="fa fa-check"></i><b>4.11.2</b> An Example</a></li>
+<li class="chapter" data-level="4.11.3" data-path="text-mining.html"><a href="text-mining.html#speech-sentiment"><i class="fa fa-check"></i><b>4.11.3</b> Speech Sentiment</a></li>
+<li class="chapter" data-level="4.11.4" data-path="text-mining.html"><a href="text-mining.html#comparison-cloud"><i class="fa fa-check"></i><b>4.11.4</b> Comparison Cloud</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="twitter-social-media.html"><a href="twitter-social-media.html"><i class="fa fa-check"></i><b>5</b> Twitter - Social Media</a><ul>
+<li class="chapter" data-level="5.1" data-path="twitter-social-media.html"><a href="twitter-social-media.html#twitter-uses"><i class="fa fa-check"></i><b>5.1</b> Twitter Uses</a></li>
+<li class="chapter" data-level="5.2" data-path="twitter-social-media.html"><a href="twitter-social-media.html#why-should-you-care"><i class="fa fa-check"></i><b>5.2</b> Why Should You Care ?</a></li>
+<li class="chapter" data-level="5.3" data-path="twitter-social-media.html"><a href="twitter-social-media.html#twitter-anatomy"><i class="fa fa-check"></i><b>5.3</b> Twitter Anatomy</a></li>
+<li class="chapter" data-level="5.4" data-path="twitter-social-media.html"><a href="twitter-social-media.html#accessing-from-r---rtweet"><i class="fa fa-check"></i><b>5.4</b> Accessing From R - rtweet</a></li>
+<li class="chapter" data-level="5.5" data-path="twitter-social-media.html"><a href="twitter-social-media.html#authenticating-from-r"><i class="fa fa-check"></i><b>5.5</b> Authenticating From R</a></li>
+<li class="chapter" data-level="5.6" data-path="twitter-social-media.html"><a href="twitter-social-media.html#some-basic-tips"><i class="fa fa-check"></i><b>5.6</b> Some Basic Tips</a></li>
+<li class="chapter" data-level="5.7" data-path="twitter-social-media.html"><a href="twitter-social-media.html#some-built-in-plots"><i class="fa fa-check"></i><b>5.7</b> Some built in plots</a></li>
+<li class="chapter" data-level="5.8" data-path="twitter-social-media.html"><a href="twitter-social-media.html#looking-for-people-tweeting-about-copd"><i class="fa fa-check"></i><b>5.8</b> Looking for People Tweeting About COPD</a></li>
+<li class="chapter" data-level="5.9" data-path="twitter-social-media.html"><a href="twitter-social-media.html#cleaning-and-tidying"><i class="fa fa-check"></i><b>5.9</b> Cleaning and Tidying</a></li>
+<li class="chapter" data-level="5.10" data-path="twitter-social-media.html"><a href="twitter-social-media.html#make-the-word-cloud"><i class="fa fa-check"></i><b>5.10</b> Make The Word Cloud</a></li>
+<li class="chapter" data-level="5.11" data-path="twitter-social-media.html"><a href="twitter-social-media.html#bi-grams"><i class="fa fa-check"></i><b>5.11</b> Bi-Grams</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Intro To Research Computing</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="text-mining" class="section level1">
+<h1><span class="header-section-number">Chapter 4</span> Text Mining</h1>
+<div id="recap" class="section level2">
+<h2><span class="header-section-number">4.1</span> Recap</h2>
+<p>In my last lecture I talked about using the <strong>rvest</strong> package to pull data from the Internet. This is useful because there is lots of information out there on the Internet that you could download and analyze. It can also be a pain to clean data and get it into a format you would like but that’s life and there isn’t a lot you can do about that.</p>
+<ul>
+<li><p>Every 60 seconds on Facebook: 510,000 comments are posted and 293,000 statused are updated</p></li>
+<li><p>Facebook Photo uploads total 300 million per day</p></li>
+<li><p>Worldwide, there are over 2.32 billion active Facbook users as of December 31, 2018</p></li>
+<li><p>Every second, on average, around 6,000 tweets are tweeted on Twitter</p></li>
+<li><p>1,332,433 Publications in Pubmed for the year 2018</p></li>
+</ul>
+<p>Here are the top Twitter accounts being followed. A tweet from any of these people can represent a lot of money ! There are people who try to figure out just how much.</p>
+<center>
+<img src="PICS/top6.png" />
+</center>
+<p>Sources:</p>
+<ul>
+<li><a href="https://zephoria.com/top-15-valuable-facebook-statistics/" class="uri">https://zephoria.com/top-15-valuable-facebook-statistics/</a></li>
+<li><a href="http://www.internetlivestats.com/twitter-statistics/" class="uri">http://www.internetlivestats.com/twitter-statistics/</a></li>
+<li><a href="http://dan.corlan.net/cgi-bin/medline-trend?Q" class="uri">http://dan.corlan.net/cgi-bin/medline-trend?Q</a>=</li>
+</ul>
+</div>
+<div id="unstructured-data" class="section level2">
+<h2><span class="header-section-number">4.2</span> Unstructured Data</h2>
+<p>Much of the text information found in these sources is <strong>unstructured</strong> meaning that the content is a narrative, a collection of phrases, or maybe social media posts that might involve domain specific references or a form of slang. Not surprisingly, it can be hard to get meaningful information from text. Unstructured data is useful in that can capture many contexts or points of views in response to a question or situation. It’s also more “natural” for humans to speak and write in unsrtuctured terms.</p>
+<center>
+<img src="PICS/struc2.png" width="450" />
+</center>
+<p><a href="http://www.triella.com/unstructured-data/" class="uri">http://www.triella.com/unstructured-data/</a></p>
+<p>Some <strong>unstructured</strong> text does conform to an ontology, vocabulary, or some form of domain approved terminology that can simplify knowledge extraction but there are always ambiguities. For example consider a body (aka “corpus”) of medical information related to Nephrology. The following terms might be used to refer to the same thing:</p>
+<ul>
+<li>Chronic renal impairment</li>
+<li>Chronic kidney disease</li>
+<li>CKD</li>
+<li>Kidney failure</li>
+<li>Chronid renal failure</li>
+<li>CRF</li>
+<li>Chronic renal failure syndrome</li>
+<li>Renal insufficiency</li>
+<li>eGFR 44</li>
+</ul>
+<p>Source: <a href="http://healtex.org/wp-content/uploads/2016/11/I4H-Healtex-tutorial-part1-optimised.pdf" class="uri">http://healtex.org/wp-content/uploads/2016/11/I4H-Healtex-tutorial-part1-optimised.pdf</a></p>
+<p>Unless someone knows that these all map to the same idea then downstream analysis might lead to confusing or diluted results.</p>
+</div>
+<div id="structured-data" class="section level2">
+<h2><span class="header-section-number">4.3</span> Structured Data</h2>
+<p>Stuctured data is easier to work with in the sense that it is frequently numeric in nature so it lends itself well to statistical analysis and use in building predictive models. Some structured data is standalone meaning you can download it or obtain it as a .CSV file or from a database (e.g. CDC) and begin to work with the data immediately upon receipt.</p>
+<p>However, structured data does NOT have to be numeric. For example, consider demographic information. As long as a patient tracking system conforms to a standard then one’s race (and the label used to describe that) would ususally not change. Lists of personal allegies and medications are ususally structured although they might change over time. Smoking status (“yes” or “no”) is structured. Asking someone to describe their life time struggles with trying to stop smoking would not be structured information.</p>
+</div>
+<div id="hybrids" class="section level2">
+<h2><span class="header-section-number">4.4</span> Hybrids</h2>
+<p>Consider a Pubmed publication. There is a lot of textual information that is supplemented by graphs, tables, and (hopefully) link outs to raw data. Of course the tables themselves represent a form of structured data in aggregate form so you maybe you would want to parse tor extraxt them from the text. Also consider that Clinician notes and letters are ususally in narrative form but might well include structured info also.</p>
+<blockquote>
+<p>The take home info here is that there is by far more <strong>unstructured</strong> data than <strong>structured</strong> but there is lots of cool stuff to be learned from unstructured information. So don’t let that stop you from trying to apply text mining methods for understanding collections of documents.</p>
+</blockquote>
+</div>
+<div id="information-retrieval-vs-information-extraction" class="section level2">
+<h2><span class="header-section-number">4.5</span> Information Retrieval vs Information Extraction</h2>
+<p>Searching for data is different from extracting meaning from the results returned from a search. If a search engine is good it will return relevant results in response to our query. A bad search engine will return lots of “false positives”. The idea of <strong>relevance</strong> can be expressed using a number of mathematically computed ratios such as <strong>precision</strong> (aka <strong>positive predictive value</strong>) and <strong>recall</strong> (aka <strong>sensitivity</strong>). We’ll dig more into these later.</p>
+<div class="figure">
+<img src="PICS/precision.png" />
+
+</div>
+<p><img src="PICS/recall.png" /> <a href="https://en.wikipedia.org/wiki/Precision_and_recall" class="uri">https://en.wikipedia.org/wiki/Precision_and_recall</a></p>
+<p>So for this lecture we’ll assume that we have some meaningful results already and work with the text that we have (or will) obtain from using some web scraping techniques we used in a previous lecture.</p>
+</div>
+<div id="web-scraping-revisited" class="section level2">
+<h2><span class="header-section-number">4.6</span> Web Scraping Revisited</h2>
+<p>So I just said that we would be focusing on how to compute on the data instead of how to retrieve it but it’s important to review some basic techniques to refresh your memory and up your R game a little bit. Let’s get some speeches given by former President Obama. This is easy to do.</p>
+<p>Look at this URL <a href="http://www.obamaspeeches.com/" class="uri">http://www.obamaspeeches.com/</a></p>
+<div class="figure">
+<img src="PICS/speeches.png" />
+
+</div>
+<p>We can get all the speeches from this page if we want to using the <strong>rvest</strong> package. It’s tedious and takes some time to get things to work correctly but it’s not intellectually challenging. Data scraping and cleaning are two of the more common tasks when working with unstructured text. There is no way around it really. Most projects start out with lots of enthusiam until the data starts rolling in and everyone realizes that there are problems with formatting, etc. Anyway, we’ll get a list of all the links from the page itself. Well all the links that refer to a speech.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(rvest)
+url &lt;-<span class="st"> &quot;http://www.obamaspeeches.com/&quot;</span>
+
+links &lt;-<span class="st"> </span><span class="kw">read_html</span>(url) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">html_nodes</span>(<span class="st">&quot;a&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">html_attr</span>(<span class="st">&quot;href&quot;</span>) 
+links[<span class="kw">c</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">2</span>,<span class="dv">110</span><span class="op">:</span><span class="dv">114</span>)]</code></pre></div>
+<pre><code>## [1] &quot;/P-Obama-Inaugural-Speech-Inauguration.htm&quot;                                                                      
+## [2] &quot;/E11-Barack-Obama-Election-Night-Victory-Speech-Grant-Park-Illinois-November-4-2008.htm&quot;                         
+## [3] &quot;003-John-Lewis-65th-Birthday-Gala-Obama-Speech.htm&quot;                                                              
+## [4] &quot;002-Keynote-Address-at-the-2004-Democratic-National-Convention-Obama-Speech.htm&quot;                                 
+## [5] &quot;001-2002-Speech-Against-the-Iraq-War-Obama-Speech.htm&quot;                                                           
+## [6] &quot;http://www.cafepress.com/obamaquotes&quot;                                                                            
+## [7] &quot;http://www.amazon.com/INSPIRE-NATION-Electrifying-Speeches-Inauguration/dp/0982100531/?tag=obama-speeches-com-20&quot;</code></pre>
+<p>So there are about 114 speeches but the last couple of elements don’t appear to relate to the speeches so we’ll pull them from the list:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">links[<span class="kw">c</span>(<span class="kw">length</span>(links)<span class="op">-</span><span class="dv">3</span>)<span class="op">:</span><span class="kw">length</span>(links)]</code></pre></div>
+<pre><code>## [1] &quot;002-Keynote-Address-at-the-2004-Democratic-National-Convention-Obama-Speech.htm&quot;                                 
+## [2] &quot;001-2002-Speech-Against-the-Iraq-War-Obama-Speech.htm&quot;                                                           
+## [3] &quot;http://www.cafepress.com/obamaquotes&quot;                                                                            
+## [4] &quot;http://www.amazon.com/INSPIRE-NATION-Electrifying-Speeches-Inauguration/dp/0982100531/?tag=obama-speeches-com-20&quot;</code></pre>
+<p>I’m going to formalize this a bit more and make it better because it turns out that some of the speech links on that page are duplicated. Besides, I also want to get back the full link so I can access it and download the text.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">linkScraper &lt;-<span class="st"> </span><span class="cf">function</span>(<span class="dt">baseurl=</span><span class="st">&quot;http://obamaspeeches.com&quot;</span>) {
+<span class="co">#</span>
+<span class="co"># Function to grab links from the Obama Speech site</span>
+<span class="co"># http://obamaspeeches.com/</span>
+<span class="co">#</span>
+  <span class="kw">suppressMessages</span>(<span class="kw">library</span>(rvest))
+
+  url   &lt;-<span class="st"> &quot;http://obamaspeeches.com/&quot;</span>
+  links &lt;-<span class="st"> </span><span class="kw">read_html</span>(url) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">html_nodes</span>(<span class="st">&quot;a&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">html_attr</span>(<span class="st">&quot;href&quot;</span>)
+  
+  links &lt;-<span class="st"> </span><span class="kw">gsub</span>(<span class="st">&quot;/&quot;</span>,<span class="st">&quot;&quot;</span>,links)
+  cleaned_links &lt;-<span class="st"> </span>links[<span class="op">-</span><span class="kw">grep</span>(<span class="st">&quot;http&quot;</span>,links)]
+  
+  cleaned_links &lt;-<span class="st"> </span>cleaned_links[<span class="op">!</span><span class="kw">duplicated</span>(cleaned_links)]
+  
+  retlinks &lt;-<span class="st"> </span><span class="kw">paste</span>(<span class="st">&quot;http://obamaspeeches.com&quot;</span>,cleaned_links,<span class="dt">sep=</span><span class="st">&quot;/&quot;</span>)
+  <span class="kw">return</span>(retlinks)
+}</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">obamalinks &lt;-<span class="st"> </span><span class="kw">linkScraper</span>() 
+
+obamalinks[<span class="dv">3</span><span class="op">:</span><span class="dv">10</span>]</code></pre></div>
+<pre><code>## [1] &quot;http://obamaspeeches.com/E-Barack-Obama-Speech-Manassas-Virgina-Last-Rally-2008-Election.htm&quot;                                                                       
+## [2] &quot;http://obamaspeeches.com/E10-Barack-Obama-The-American-Promise-Acceptance-Speech-at-the-Democratic-Convention-Mile-High-Stadium--Denver-Colorado-August-28-2008.htm&quot;
+## [3] &quot;http://obamaspeeches.com/E09-Barack-Obama-Final-Primary-Night-Presumptive-Democratic-Nominee-Speech-St-Paul-Minnesota-June-3-2008.htm&quot;                              
+## [4] &quot;http://obamaspeeches.com/E08-Barack-Obama-North-Carolina-Primary-Night-Raleigh-NC-May-6-2008.htm&quot;                                                                   
+## [5] &quot;http://obamaspeeches.com/E07-Barack-Obama-Pennsylvania-Primary-Night-Evansville-Indiana-April-22-2008.htm&quot;                                                          
+## [6] &quot;http://obamaspeeches.com/E06-Barack-Obama-AP-Annual-Luncheon-Washington-DC-April-14-2008-religion-guns-pennsylvania.htm&quot;                                            
+## [7] &quot;http://obamaspeeches.com/E05-Barack-Obama-A-More-Perfect-Union-the-Race-Speech-Philadelphia-PA-March-18-2008.htm&quot;                                                   
+## [8] &quot;http://obamaspeeches.com/E04-Barack-Obama-March-4-Primary-Night-Texas-and-Ohio-San-Antonio-TX-March-4-2008.htm&quot;</code></pre>
+<p>Now let’s get the actual speech content. Not only will we get the speech content but we will keep track of the specific speech number from whence the text came. So we will create a factor that let’s us identify each speech by a number. We don’t have to do this if we want to consider all the speeches text as one big “blob”.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">obamaParse &lt;-<span class="st"> </span><span class="cf">function</span>(url,<span class="dt">write=</span><span class="ot">FALSE</span>) {
+  <span class="kw">library</span>(rvest)
+  retlist &lt;-<span class="st"> </span><span class="kw">list</span>()
+  df &lt;-<span class="st"> </span><span class="kw">data.frame</span>()
+  
+  <span class="cf">for</span> (ii <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="kw">length</span>(url)) {
+    page &lt;-<span class="st"> </span><span class="kw">read_html</span>(url[ii]) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">html_nodes</span>(<span class="st">&quot;p&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">html_text</span>()
+    
+    <span class="co"># The following gets rid of some links that don&#39;t work. See, this is</span>
+    <span class="co"># the crap you have to deal with when working with real data</span>
+    
+    val &lt;-<span class="st"> </span><span class="kw">grep</span>(<span class="st">&quot;Against the Iraq&quot;</span>,page)
+    page &lt;-<span class="st"> </span>page[<span class="op">-</span><span class="dv">1</span><span class="op">:-</span>val]
+  
+    <span class="co"># Now we also want to get rid of numbers since they generally </span>
+    <span class="co"># don&#39;t mean very much in text analysis.</span>
+    
+    page_nonum &lt;-<span class="st"> </span><span class="kw">as.vector</span>(<span class="kw">lapply</span>(page,<span class="cf">function</span>(x) <span class="kw">gsub</span>(<span class="st">&quot;[0-9]+&quot;</span>,<span class="st">&quot;&quot;</span>,x)))
+    
+    <span class="co"># We populate each list element with a one line data frame which </span>
+    <span class="co"># contains the text of one speech and its associated &quot;book&quot; number</span>
+    <span class="co"># e.g. 1,2,3... for the length of the url argument</span>
+    
+    retlist[[ii]] &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">text=</span>page,<span class="dt">book=</span><span class="kw">as.character</span>(ii),
+                                <span class="dt">stringsAsFactors =</span> <span class="ot">FALSE</span>)
+    <span class="co"># Return the page</span>
+  }
+  df &lt;-<span class="st"> </span><span class="kw">do.call</span>(rbind,retlist)
+  <span class="kw">return</span>(df)
+}</code></pre></div>
+<p>Let’s get just 9 speeches to make things manageable.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">out &lt;-<span class="st"> </span><span class="kw">obamaParse</span>(obamalinks[<span class="dv">2</span><span class="op">:</span><span class="dv">12</span>])</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">speeches &lt;-<span class="st"> </span>out <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">group_by</span>(book) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">mutate</span>(<span class="dt">linenumber =</span> <span class="kw">row_number</span>()) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">ungroup</span>()
+
+speeches</code></pre></div>
+<pre><code>## # A tibble: 472 x 3
+##    text                                                    book  linenumber
+##    &lt;chr&gt;                                                   &lt;chr&gt;      &lt;int&gt;
+##  1 &quot;Election Night Victory Speech \n              Grant P… 1              1
+##  2 &quot;&quot;                                                      1              2
+##  3 &quot;If \n              there is anyone out there who stil… 1              3
+##  4 &quot;It’s \n              the answer told by lines that st… 1              4
+##  5 &quot;It’s \n              the answer spoken by young and o… 1              5
+##  6 &quot;It’s \n              the answer that led those who ha… 1              6
+##  7 &quot;It’s \n              been a long time coming, but ton… 1              7
+##  8 &quot;I just \n              received a very gracious call … 1              8
+##  9 &quot;I want \n              to thank my partner in this jo… 1              9
+## 10 &quot;I would \n              not be standing here tonight … 1             10
+## # … with 462 more rows</code></pre>
+</div>
+<div id="exploring-the-text" class="section level2">
+<h2><span class="header-section-number">4.7</span> Exploring The Text</h2>
+<p>So there are some general activities common to text explorations. Let’s summarize:</p>
+<ol style="list-style-type: decimal">
+<li>Collections of text (one or more documents) can be called a <strong>corpus</strong></li>
+<li>We tend to break up documents into words and treat them as a <strong>bag of words</strong></li>
+<li>Getting the text into a tidy format is importnat. The <strong>tidytext</strong> package helps.</li>
+<li>Basically we get each word of a phrase or document onto its own line a data frame</li>
+<li>We then remove <strong>stop words</strong> which are <strong>filler</strong> words that don’t mean much</li>
+<li>We might also get rid of numbers</li>
+<li>Next, we <strong>stem</strong> the words (e.g. america and americas are really the same word)</li>
+</ol>
+<p>The <strong>tidytext</strong> package is what we will use here although there a number of R packages that take a more traditional approach to analyzing text such as the <strong>tm</strong> package. There is also <strong>RWeka</strong> and the <strong>qdap</strong> packages that help work with text data.</p>
+<p>You might also encounter references to things like <strong>Term Document Matrices</strong> or <strong>Document Term Matrices</strong> which are sparse matrix structures that help count the number of times a word occurs in a given set of documents. The transpose of a <strong>Document Term Matrix</strong> can be thought of as a <strong>Document Term Matrix</strong>.</p>
+<div class="figure">
+<img src="PICS/dtm.png" />
+
+</div>
+<p>Here is a very brief walkthrough on how you could do some text explorations using the <strong>tm</strong> package:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># https://stackoverflow.com/questions/24703920/r-tm-package-vcorpus-error-in-converting-corpus-to-data-frame#24704075</span>
+
+<span class="kw">suppressMessages</span>(<span class="kw">library</span>(tm))
+<span class="kw">library</span>(<span class="st">&quot;wordcloud&quot;</span>)
+<span class="kw">library</span>(<span class="st">&quot;RColorBrewer&quot;</span>)
+
+<span class="co"># Create a vector with text</span>
+x &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Hello. Sir!&quot;</span>,<span class="st">&quot;Tacos? On Tuesday?!?&quot;</span>, <span class="st">&quot;Hello&quot;</span>)
+
+<span class="co"># We create a Corpus</span>
+mycorpus &lt;-<span class="st"> </span><span class="kw">Corpus</span>(<span class="kw">VectorSource</span>(x))
+
+<span class="co"># Get rid of the punctuation</span>
+mycorpus &lt;-<span class="st"> </span><span class="kw">tm_map</span>(mycorpus, removePunctuation)</code></pre></div>
+<pre><code>## Warning in tm_map.SimpleCorpus(mycorpus, removePunctuation): transformation
+## drops documents</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Create a Term Document Matrix</span>
+dtm &lt;-<span class="st"> </span><span class="kw">TermDocumentMatrix</span>(mycorpus)
+
+<span class="co"># We can turn it onto a matrix to be read by humans</span>
+m &lt;-<span class="st"> </span><span class="kw">as.matrix</span>(dtm)
+v &lt;-<span class="st"> </span><span class="kw">sort</span>(<span class="kw">rowSums</span>(m),<span class="dt">decreasing=</span><span class="ot">TRUE</span>)
+d &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">word =</span> <span class="kw">names</span>(v),<span class="dt">freq=</span>v)
+<span class="kw">head</span>(d, <span class="dv">10</span>)</code></pre></div>
+<pre><code>##            word freq
+## hello     hello    2
+## sir         sir    1
+## tacos     tacos    1
+## tuesday tuesday    1</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">set.seed</span>(<span class="dv">1234</span>)
+<span class="kw">wordcloud</span>(<span class="dt">words =</span> d<span class="op">$</span>word, <span class="dt">freq =</span> d<span class="op">$</span>freq, <span class="dt">min.freq =</span> <span class="dv">1</span>,
+          <span class="dt">max.words=</span><span class="dv">200</span>, <span class="dt">random.order=</span><span class="ot">FALSE</span>, <span class="dt">rot.per=</span><span class="fl">0.35</span>, 
+          <span class="dt">colors=</span><span class="kw">brewer.pal</span>(<span class="dv">8</span>, <span class="st">&quot;Dark2&quot;</span>))</code></pre></div>
+<p><img src="Nursing_Report_files/figure-html/unnamed-chunk-82-1.png" width="672" /></p>
+<p><a href="https://gerardnico.com/natural_language/term_document" class="uri">https://gerardnico.com/natural_language/term_document</a></p>
+<p>The strengths of <strong>tm</strong> are that it more closely aligns with the traditional text mining terminology and approaches. There are also a number of tools and packages that work well with <strong>tm</strong> that do not work well directly with the <strong>tidytext</strong> approach. But there are now approaches and functions in <strong>tidytext</strong> that address this concern which can take, for example, a <strong>Term Document Matrixx</strong> and turn it into a tidy data frame.</p>
+<div id="tidy-format" class="section level3">
+<h3><span class="header-section-number">4.7.1</span> Tidy Format</h3>
+<p>In this class you have encountered previous references the <strong>tidyverse</strong> and tools such as those found in <strong>dplyr</strong>. It shouldn’t be surprising then that the <strong>tidytext</strong> package has text analysis tools that fit in nicely with the <strong>tidyverse</strong>.</p>
+</div>
+<div id="tidy-up-the-text" class="section level3">
+<h3><span class="header-section-number">4.7.2</span> Tidy Up the text</h3>
+<p>Let’s look at the speeches data frame</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">speeches</code></pre></div>
+<pre><code>## # A tibble: 472 x 3
+##    text                                                    book  linenumber
+##    &lt;chr&gt;                                                   &lt;chr&gt;      &lt;int&gt;
+##  1 &quot;Election Night Victory Speech \n              Grant P… 1              1
+##  2 &quot;&quot;                                                      1              2
+##  3 &quot;If \n              there is anyone out there who stil… 1              3
+##  4 &quot;It’s \n              the answer told by lines that st… 1              4
+##  5 &quot;It’s \n              the answer spoken by young and o… 1              5
+##  6 &quot;It’s \n              the answer that led those who ha… 1              6
+##  7 &quot;It’s \n              been a long time coming, but ton… 1              7
+##  8 &quot;I just \n              received a very gracious call … 1              8
+##  9 &quot;I want \n              to thank my partner in this jo… 1              9
+## 10 &quot;I would \n              not be standing here tonight … 1             10
+## # … with 462 more rows</code></pre>
+<p>This looks bad because the text still has junk characters in it. Each row also has a long stringy line of text (in the <strong>text</strong> column) that is not only hard to read but if we wanted to compute on the text it would be very inconvenient. It might better to first break up the long obnoxious looking line into individual words.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(tidytext)
+tidy_speeches &lt;-<span class="st"> </span>speeches <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">unnest_tokens</span>(word, text)
+
+tidy_speeches</code></pre></div>
+<pre><code>## # A tibble: 27,849 x 3
+##    book  linenumber word    
+##    &lt;chr&gt;      &lt;int&gt; &lt;chr&gt;   
+##  1 1              1 election
+##  2 1              1 night   
+##  3 1              1 victory 
+##  4 1              1 speech  
+##  5 1              1 grant   
+##  6 1              1 park    
+##  7 1              1 illinois
+##  8 1              1 november
+##  9 1              1 4       
+## 10 1              1 2008    
+## # … with 27,839 more rows</code></pre>
+</div>
+<div id="dump-the-stop-words" class="section level3">
+<h3><span class="header-section-number">4.7.3</span> Dump The “Stop Words”</h3>
+<p>So we have some more work to do. Let’s get rid of common words that don’t substantially add ot the comprehensibility of the information. There is a built in data frame called <strong>stop_words</strong> that we can use to filter out such useless words (well for purposes of information retrrieval anyway).</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">data</span>(stop_words)
+
+tidy_speeches_nostop &lt;-<span class="st"> </span>tidy_speeches <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">anti_join</span>(stop_words)</code></pre></div>
+<pre><code>## Joining, by = &quot;word&quot;</code></pre>
+</div>
+<div id="eliminate-numbers" class="section level3">
+<h3><span class="header-section-number">4.7.4</span> Eliminate Numbers</h3>
+<p>Let’s also remove numbers from the words.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># remove numbers</span>
+nums &lt;-<span class="st"> </span>tidy_speeches_nostop <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">filter</span>(<span class="kw">str_detect</span>(word, <span class="st">&quot;^[0-9]&quot;</span>)) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">select</span>(word) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">unique</span>()
+
+tidy_speeches_nostop_nonums &lt;-<span class="st"> </span>tidy_speeches_nostop <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">anti_join</span>(nums, <span class="dt">by =</span> <span class="st">&quot;word&quot;</span>)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">tidy_speeches_nostop_nonums <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">count</span>(word, <span class="dt">sort =</span> <span class="ot">TRUE</span>) </code></pre></div>
+<pre><code>## # A tibble: 2,736 x 2
+##    word           n
+##    &lt;chr&gt;      &lt;int&gt;
+##  1 change       106
+##  2 time         105
+##  3 people        99
+##  4 america       98
+##  5 american      94
+##  6 country       90
+##  7 americans     55
+##  8 care          54
+##  9 washington    54
+## 10 campaign      52
+## # … with 2,726 more rows</code></pre>
+</div>
+<div id="stemming" class="section level3">
+<h3><span class="header-section-number">4.7.5</span> Stemming</h3>
+<p>Some of these words need to be “stemmed” - such as “american” and “americans”. There is a function in the <strong>snowballC</strong> package that will allow us to do this. Here is an example.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">some_words &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;america&quot;</span>,<span class="st">&quot;americas&quot;</span>,<span class="st">&quot;american&quot;</span>,<span class="st">&quot;cat&quot;</span>,<span class="st">&quot;cats&quot;</span>,<span class="st">&quot;catastrophe&quot;</span>)
+<span class="kw">wordStem</span>(some_words)</code></pre></div>
+<pre><code>## [1] &quot;america&quot;    &quot;america&quot;    &quot;american&quot;   &quot;cat&quot;        &quot;cat&quot;       
+## [6] &quot;catastroph&quot;</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">tidy_speeches_nostop_nonums_stem &lt;-<span class="st"> </span>tidy_speeches_nostop_nonums <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">                </span><span class="kw">mutate</span>(<span class="dt">word_stem =</span> <span class="kw">wordStem</span>(word)) 
+
+tidy_speeches_nostop_nonums_stem</code></pre></div>
+<pre><code>## # A tibble: 9,412 x 4
+##    book  linenumber word     word_stem
+##    &lt;chr&gt;      &lt;int&gt; &lt;chr&gt;    &lt;chr&gt;    
+##  1 1              1 election elect    
+##  2 1              1 night    night    
+##  3 1              1 victory  victori  
+##  4 1              1 speech   speech   
+##  5 1              1 grant    grant    
+##  6 1              1 park     park     
+##  7 1              1 illinois illinoi  
+##  8 1              1 november novemb   
+##  9 1              3 doubts   doubt    
+## 10 1              3 america  america  
+## # … with 9,402 more rows</code></pre>
+</div>
+<div id="bar-plots" class="section level3">
+<h3><span class="header-section-number">4.7.6</span> Bar Plots</h3>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(ggplot2)
+
+tidy_speeches_nostop_nonums_stem <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">count</span>(word_stem, <span class="dt">sort =</span> <span class="ot">TRUE</span>) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(n <span class="op">&gt;</span><span class="st"> </span><span class="dv">40</span>) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">mutate</span>(<span class="dt">word_stem =</span> <span class="kw">reorder</span>(word_stem, n)) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(word_stem, n)) <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_col</span>() <span class="op">+</span>
+<span class="st">  </span><span class="kw">xlab</span>(<span class="ot">NULL</span>) <span class="op">+</span>
+<span class="st">  </span><span class="kw">coord_flip</span>()</code></pre></div>
+<p><img src="Nursing_Report_files/figure-html/unnamed-chunk-90-1.png" width="672" /></p>
+<p><a href="http://jacobsimmering.com/2016/11/15/tidytext/" class="uri">http://jacobsimmering.com/2016/11/15/tidytext/</a></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(tidyr)
+
+frequency &lt;-<span class="st"> </span>tidy_speeches_nostop_nonums_stem <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">count</span>(book,word_stem) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">group_by</span>(book) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">mutate</span>(<span class="dt">proportion =</span> n <span class="op">/</span><span class="st"> </span><span class="kw">sum</span>(n)) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">select</span>(<span class="op">-</span>n) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">spread</span>(book, proportion) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">gather</span>(book, proportion, <span class="st">`</span><span class="dt">1</span><span class="st">`</span><span class="op">:</span><span class="st">`</span><span class="dt">9</span><span class="st">`</span>)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">tidy_speeches_nostop_nonums_stem <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">count</span>(book,word_stem,<span class="dt">sort=</span><span class="ot">TRUE</span>) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">filter</span>(n <span class="op">&gt;</span><span class="st"> </span><span class="dv">14</span>) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(word_stem, n)) <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_col</span>() <span class="op">+</span>
+<span class="st">  </span><span class="kw">xlab</span>(<span class="ot">NULL</span>) <span class="op">+</span>
+<span class="st">  </span><span class="kw">coord_flip</span>() <span class="op">+</span><span class="st"> </span><span class="kw">facet_grid</span>(book <span class="op">~</span><span class="st"> </span>.)</code></pre></div>
+<p><img src="Nursing_Report_files/figure-html/unnamed-chunk-92-1.png" width="672" /></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">tidy_speeches_nostop_nonums_stem <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">count</span>(book, word_stem, <span class="dt">sort =</span> <span class="ot">TRUE</span>) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">group_by</span>(book) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">top_n</span>(<span class="dv">5</span>) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">ungroup</span>() <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="kw">reorder_within</span>(word_stem, n, book), n,<span class="dt">fill =</span> book)) <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_col</span>(<span class="dt">alpha =</span> <span class="fl">0.8</span>, <span class="dt">show.legend =</span> <span class="ot">FALSE</span>) <span class="op">+</span>
+<span class="st">  </span><span class="kw">scale_x_reordered</span>() <span class="op">+</span>
+<span class="st">  </span><span class="kw">coord_flip</span>() <span class="op">+</span>
+<span class="st">  </span><span class="kw">facet_wrap</span>(<span class="op">~</span>book, <span class="dt">scales =</span> <span class="st">&quot;free&quot;</span>) <span class="op">+</span>
+<span class="st">  </span><span class="kw">scale_y_continuous</span>(<span class="dt">expand =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">0</span>)) <span class="op">+</span>
+<span class="st">  </span><span class="kw">labs</span>(
+    <span class="dt">x =</span> <span class="ot">NULL</span>, <span class="dt">y =</span> <span class="st">&quot;Word count&quot;</span>,
+    <span class="dt">title =</span> <span class="st">&quot;Most frequent words after removing stop words&quot;</span>
+  )</code></pre></div>
+<pre><code>## Selecting by n</code></pre>
+<p><img src="Nursing_Report_files/figure-html/unnamed-chunk-93-1.png" width="672" /></p>
+<p><a href="https://richpauloo.github.io/2017-12-29-Using-tidytext-to-make-word-clouds/" class="uri">https://richpauloo.github.io/2017-12-29-Using-tidytext-to-make-word-clouds/</a></p>
+</div>
+<div id="wordclouds" class="section level3">
+<h3><span class="header-section-number">4.7.7</span> Wordclouds</h3>
+<p>One of the premier visualizations for text documents is the <strong>word cloud</strong>. You see this a lot in newsletters and on flyers since word clouds show you frequently occurring topics in a way that makes it obvious what the most mentioned words are.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">pal &lt;-<span class="st"> </span><span class="kw">brewer.pal</span>(<span class="dv">8</span>,<span class="st">&quot;Dark2&quot;</span>)
+
+<span class="co"># plot the 50 most common words</span>
+
+tidy_speeches_nostop_nonums_stem <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">count</span>(word_stem, <span class="dt">sort =</span> <span class="ot">TRUE</span>) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">with</span>(<span class="kw">wordcloud</span>(word_stem, n, <span class="dt">random.order =</span> <span class="ot">FALSE</span>, <span class="dt">max.words =</span> <span class="dv">50</span>, <span class="dt">colors=</span>pal))</code></pre></div>
+<p><img src="Nursing_Report_files/figure-html/unnamed-chunk-94-1.png" width="672" /></p>
+<p>See <a href="https://shiring.github.io/text_analysis/2017/06/28/twitter_post" class="uri">https://shiring.github.io/text_analysis/2017/06/28/twitter_post</a></p>
+</div>
+</div>
+<div id="term-frequency" class="section level2">
+<h2><span class="header-section-number">4.8</span> Term Frequency</h2>
+<p>As mentioned in the previous section, much of the content of a collectio of text contains lots of “filler” words such as “the”,“a”,“an”,“as”,“is”,“at”,“which”. Identifying these words is important in text mining and in search engine technology since you generally want to avoid them as they can interfere with a getting a good result. Stop words are also language dependent.</p>
+<p>Moreover, a given domain also has stop words. For example, when considering documents or tweets that mention kidney disease you might want to filter out specific references to “kidney disease” since you already know that you are considering kidney disease. So you might want to remove those obvious references and drill down into other words and phrases that might be important.</p>
+<center>
+<img src="PICS/stopw.png" width="500" />
+</center>
+<p><a href="https://dev.mysql.com/doc/refman/5.5/en/fulltext-stopwords.html" class="uri">https://dev.mysql.com/doc/refman/5.5/en/fulltext-stopwords.html</a></p>
+<div id="back-to-the-speeches" class="section level3">
+<h3><span class="header-section-number">4.8.1</span> Back To The Speeches</h3>
+<p>Let’s look at some examples of term frequency using collections of speeches from Obama and Romney when they were both candidates. I have two folders with 50 speeches each.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(readtext) <span class="co"># Makes it easy to read in raw text files</span>
+
+<span class="co"># We have a folder with about 50 Obama Speeches</span>
+
+<span class="kw">setwd</span>(<span class="st">&quot;~/Downloads/Candidates/OBAMA&quot;</span>)
+filenames &lt;-<span class="st"> </span><span class="kw">list.files</span>( <span class="dt">pattern=</span><span class="st">&quot;*&quot;</span>, <span class="dt">full.names=</span><span class="ot">TRUE</span>)
+<span class="kw">suppressWarnings</span>(obama &lt;-<span class="st"> </span><span class="kw">lapply</span>(filenames, readtext))
+collected_obama &lt;-<span class="st"> </span><span class="kw">sapply</span>(obama,<span class="cf">function</span>(x) x<span class="op">$</span>text) 
+<span class="kw">length</span>(collected_obama)</code></pre></div>
+<pre><code>## [1] 48</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Now Let&#39;s get this into tidy text. We will also put a column</span>
+<span class="co"># that marks the text with its respective source (&quot;Obama&quot;,&quot;Romney&quot;)</span>
+
+obama_df &lt;-<span class="st"> </span><span class="kw">tibble</span>(<span class="dt">line=</span><span class="dv">1</span><span class="op">:</span><span class="kw">length</span>(collected_obama),
+                   <span class="dt">text=</span>collected_obama,
+                   <span class="dt">book=</span><span class="st">&quot;obama&quot;</span>)
+
+<span class="co"># Let&#39;s tidy this up in accordance with tidy principles</span>
+
+tidy_obama_df &lt;-<span class="st"> </span>obama_df <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">unnest_tokens</span>(word, text)
+
+tidy_obama_df</code></pre></div>
+<pre><code>## # A tibble: 188,999 x 3
+##     line book  word       
+##    &lt;int&gt; &lt;chr&gt; &lt;chr&gt;      
+##  1     1 obama a          
+##  2     1 obama couple     
+##  3     1 obama of         
+##  4     1 obama people     
+##  5     1 obama i          
+##  6     1 obama just       
+##  7     1 obama want       
+##  8     1 obama to         
+##  9     1 obama acknowledge
+## 10     1 obama first      
+## # … with 188,989 more rows</code></pre>
+<p>Next we will do the same for the Romney speeches.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># We have about 50 speeches from Romney</span>
+
+<span class="kw">setwd</span>(<span class="st">&quot;~/Downloads/Candidates/ROMNEY&quot;</span>)
+filenames &lt;-<span class="st"> </span><span class="kw">list.files</span>( <span class="dt">pattern=</span><span class="st">&quot;*&quot;</span>, <span class="dt">full.names=</span><span class="ot">TRUE</span>)
+<span class="kw">suppressWarnings</span>(romney &lt;-<span class="st"> </span><span class="kw">lapply</span>(filenames, readtext))
+collected_romney &lt;-<span class="st"> </span><span class="kw">sapply</span>(romney,<span class="cf">function</span>(x) x<span class="op">$</span>text) 
+<span class="kw">length</span>(collected_romney)</code></pre></div>
+<pre><code>## [1] 49</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Now Let&#39;s get this into tidy text</span>
+rom_df &lt;-<span class="st"> </span><span class="kw">tibble</span>(<span class="dt">line=</span><span class="dv">1</span><span class="op">:</span><span class="kw">length</span>(collected_romney),
+                 <span class="dt">text=</span>collected_romney,
+                 <span class="dt">book=</span><span class="st">&quot;romney&quot;</span>)
+
+tidy_romney_df &lt;-<span class="st"> </span>rom_df <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">unnest_tokens</span>(word, text)
+
+<span class="co"># Let&#39;s combine the two data frames</span>
+
+combined_tidy_speech &lt;-<span class="st"> </span><span class="kw">rbind</span>(tidy_obama_df,tidy_romney_df)
+
+<span class="co"># Count the total number of speech words per candidate</span>
+
+combined_tidy_speech <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">group_by</span>(book) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">summarize</span>(<span class="dt">count=</span><span class="kw">n</span>())</code></pre></div>
+<pre><code>## # A tibble: 2 x 2
+##   book    count
+##   &lt;chr&gt;   &lt;int&gt;
+## 1 obama  188999
+## 2 romney  90229</code></pre>
+<p>Next we’ll count the number of times each word occurs within speeches for each candidate:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Get number of times a word occurs within a speech</span>
+<span class="co"># per candidate</span>
+
+book_words &lt;-<span class="st"> </span>combined_tidy_speech <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">count</span>(book, word, <span class="dt">sort=</span><span class="ot">TRUE</span>)
+
+<span class="co"># Get the total number of words in each speech collection</span>
+total_words &lt;-<span class="st"> </span>book_words <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">group_by</span>(book) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">summarize</span>(<span class="dt">total =</span> <span class="kw">sum</span>(n))</code></pre></div>
+<p>So now we can join these two data frames. What we get for our trouble is way to compute the frequency of a given term within each speech collection for each candidate. This provides information on what terms occur with great frequency and those that do not. We can plot these.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">book_words &lt;-<span class="st"> </span><span class="kw">left_join</span>(book_words, total_words)</code></pre></div>
+<pre><code>## Joining, by = &quot;book&quot;</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">book_words</code></pre></div>
+<pre><code>## # A tibble: 11,515 x 4
+##    book   word      n  total
+##    &lt;chr&gt;  &lt;chr&gt; &lt;int&gt;  &lt;int&gt;
+##  1 obama  the    7306 188999
+##  2 obama  to     6579 188999
+##  3 obama  and    6287 188999
+##  4 romney the    4364  90229
+##  5 obama  that   4050 188999
+##  6 obama  a      3776 188999
+##  7 romney and    3420  90229
+##  8 obama  of     3361 188999
+##  9 obama  you    3341 188999
+## 10 obama  in     3115 188999
+## # … with 11,505 more rows</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(ggplot2)
+
+<span class="kw">ggplot</span>(book_words, <span class="kw">aes</span>(n<span class="op">/</span>total, <span class="dt">fill =</span> book)) <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_histogram</span>(<span class="dt">show.legend =</span> <span class="ot">FALSE</span>) <span class="op">+</span>
+<span class="st">  </span><span class="kw">xlim</span>(<span class="ot">NA</span>, <span class="fl">0.0009</span>) <span class="op">+</span>
+<span class="st">  </span><span class="kw">facet_wrap</span>(<span class="op">~</span>book, <span class="dt">ncol =</span> <span class="dv">2</span>, <span class="dt">scales =</span> <span class="st">&quot;free_y&quot;</span>)</code></pre></div>
+<pre><code>## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
+<pre><code>## Warning: Removed 359 rows containing non-finite values (stat_bin).</code></pre>
+<pre><code>## Warning: Removed 2 rows containing missing values (geom_bar).</code></pre>
+<p><img src="Nursing_Report_files/figure-html/unnamed-chunk-99-1.png" width="672" /></p>
+</div>
+</div>
+<div id="n-grams" class="section level2">
+<h2><span class="header-section-number">4.9</span> N Grams</h2>
+</div>
+<div id="tf-and-idf" class="section level2">
+<h2><span class="header-section-number">4.10</span> Tf and Idf</h2>
+<blockquote>
+<p>A central question in text mining and natural language processing is how to quantify what a document is about. One measure of how important a word may be is its term frequency (tf), how frequently a word occurs in a document</p>
+</blockquote>
+<p>We could use a list of stop words but it’s not always the most sophisticated approach to adjusting term frequency for commonly used words.</p>
+<blockquote>
+<p>Another approach is to look at a term’s inverse document frequency (idf), which decreases the weight for commonly used words and increases the weight for words that are not used very much in a collection of documents. This can be combined with term frequency to calculate a term’s tf-idf (the two quantities multiplied together), the frequency of a term adjusted for how rarely it is used. t-idf similarity</p>
+</blockquote>
+<p><a href="https://www.tidytextmining.com/tfidf.html" class="uri">https://www.tidytextmining.com/tfidf.html</a></p>
+<blockquote>
+<p>The statistic tf-idf is intended to measure how important a word is to a document in a collection (or corpus) of documents, for example, to one novel in a collection of novels or to one website in a collection of websites.</p>
+</blockquote>
+<p>We can use the <strong>bind_tf_idf</strong> function to compute tf, and idf for us. Furthermore it will bind this information onto a tidy text data frame.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">book_words &lt;-<span class="st"> </span>book_words <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">bind_tf_idf</span>(word, book, n)
+book_words</code></pre></div>
+<pre><code>## # A tibble: 11,515 x 7
+##    book   word      n  total     tf   idf tf_idf
+##    &lt;chr&gt;  &lt;chr&gt; &lt;int&gt;  &lt;int&gt;  &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;
+##  1 obama  the    7306 188999 0.0387     0      0
+##  2 obama  to     6579 188999 0.0348     0      0
+##  3 obama  and    6287 188999 0.0333     0      0
+##  4 romney the    4364  90229 0.0484     0      0
+##  5 obama  that   4050 188999 0.0214     0      0
+##  6 obama  a      3776 188999 0.0200     0      0
+##  7 romney and    3420  90229 0.0379     0      0
+##  8 obama  of     3361 188999 0.0178     0      0
+##  9 obama  you    3341 188999 0.0177     0      0
+## 10 obama  in     3115 188999 0.0165     0      0
+## # … with 11,505 more rows</code></pre>
+<p>Let’s look at a sorted list get the high tf_idf words</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">book_words <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">select</span>(<span class="op">-</span>total) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">arrange</span>(<span class="kw">desc</span>(tf_idf))</code></pre></div>
+<pre><code>## # A tibble: 11,515 x 6
+##    book   word            n       tf   idf   tf_idf
+##    &lt;chr&gt;  &lt;chr&gt;       &lt;int&gt;    &lt;dbl&gt; &lt;dbl&gt;    &lt;dbl&gt;
+##  1 romney в             106 0.00117  0.693 0.000814
+##  2 obama  boo           200 0.00106  0.693 0.000733
+##  3 romney enterprise     57 0.000632 0.693 0.000438
+##  4 romney president&#39;s    55 0.000610 0.693 0.000423
+##  5 obama  250,000       107 0.000566 0.693 0.000392
+##  6 obama  bargain       100 0.000529 0.693 0.000367
+##  7 obama  michelle       98 0.000519 0.693 0.000359
+##  8 romney nations        44 0.000488 0.693 0.000338
+##  9 obama  outstanding    82 0.000434 0.693 0.000301
+## 10 romney iran           38 0.000421 0.693 0.000292
+## # … with 11,505 more rows</code></pre>
+<p>We can plot this information</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">book_words <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">arrange</span>(<span class="kw">desc</span>(tf_idf)) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">mutate</span>(<span class="dt">word =</span> <span class="kw">factor</span>(word, <span class="dt">levels =</span> <span class="kw">rev</span>(<span class="kw">unique</span>(word)))) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">group_by</span>(book) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">top_n</span>(<span class="dv">15</span>) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">ungroup</span>() <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(word, tf_idf, <span class="dt">fill =</span> book)) <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_col</span>(<span class="dt">show.legend =</span> <span class="ot">FALSE</span>) <span class="op">+</span>
+<span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="ot">NULL</span>, <span class="dt">y =</span> <span class="st">&quot;tf-idf&quot;</span>) <span class="op">+</span>
+<span class="st">  </span><span class="kw">facet_wrap</span>(<span class="op">~</span>book, <span class="dt">ncol =</span> <span class="dv">2</span>, <span class="dt">scales =</span> <span class="st">&quot;free&quot;</span>) <span class="op">+</span>
+<span class="st">  </span><span class="kw">coord_flip</span>()</code></pre></div>
+<pre><code>## Selecting by tf_idf</code></pre>
+<p><img src="Nursing_Report_files/figure-html/unnamed-chunk-102-1.png" width="672" /></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">data</span>(stop_words)
+
+book_words <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">arrange</span>(<span class="kw">desc</span>(tf_idf)) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">mutate</span>(<span class="dt">word =</span> <span class="kw">factor</span>(word, <span class="dt">levels =</span> <span class="kw">rev</span>(<span class="kw">unique</span>(word)))) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">group_by</span>(book) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">top_n</span>(<span class="dv">15</span>) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">ungroup</span>() <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(word, tf_idf, <span class="dt">fill =</span> book)) <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_col</span>(<span class="dt">show.legend =</span> <span class="ot">FALSE</span>) <span class="op">+</span>
+<span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="ot">NULL</span>, <span class="dt">y =</span> <span class="st">&quot;tf-idf&quot;</span>) <span class="op">+</span>
+<span class="st">  </span><span class="kw">facet_wrap</span>(<span class="op">~</span>book, <span class="dt">ncol =</span> <span class="dv">2</span>, <span class="dt">scales =</span> <span class="st">&quot;free&quot;</span>) <span class="op">+</span>
+<span class="st">  </span><span class="kw">coord_flip</span>()</code></pre></div>
+<pre><code>## Selecting by tf_idf</code></pre>
+<p><img src="Nursing_Report_files/figure-html/unnamed-chunk-103-1.png" width="672" /></p>
+</div>
+<div id="sentiment" class="section level2">
+<h2><span class="header-section-number">4.11</span> Sentiment</h2>
+<p>Attempting to understand the feeling associated with words is a complicated business especially given that context can drastically change the meaning of words and phrases. Consider the following statements. To a human the sentiment is obvious. The third statement reflects sarcasm which is notoriously difficult for an algorithm to pick up.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">I had a good flight experience on Delta airlines.
+
+I had a bad flight experience on Delta airlines.
+
+Gee thanks Delta <span class="cf">for</span> losing my luggage.</code></pre></div>
+<div id="sentiment-dictionaries-and-lexicons" class="section level3">
+<h3><span class="header-section-number">4.11.1</span> Sentiment Dictionaries and Lexicons</h3>
+<p>The <strong>tidytext</strong> package has a data frame called <strong>sentiments</strong> which has three lexicons that will help us figure out the emotional value of words. Each dictionary handles sentiment assessment differently.</p>
+<p>The <strong>nrc</strong> dictionary applies a single word emotional description to a text word Of course a word in a piece of text can be associated with different emotions. The possible sentiments are:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">unique</span>(<span class="kw">get_sentiments</span>(<span class="st">&quot;nrc&quot;</span>)<span class="op">$</span>sentiment)</code></pre></div>
+<pre><code>##  [1] &quot;trust&quot;        &quot;fear&quot;         &quot;negative&quot;     &quot;sadness&quot;     
+##  [5] &quot;anger&quot;        &quot;surprise&quot;     &quot;positive&quot;     &quot;disgust&quot;     
+##  [9] &quot;joy&quot;          &quot;anticipation&quot;</code></pre>
+<p>Next there is the the <strong>afinn</strong> dictionary which presents a range of scores from -5 to 5 which coincides with a range of negative to positive emotion - although the rating is “stepped” (i.e. integers).</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">get_sentiments</span>(<span class="st">&quot;afinn&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">head</span>(.)</code></pre></div>
+<pre><code>## # A tibble: 6 x 2
+##   word       score
+##   &lt;chr&gt;      &lt;int&gt;
+## 1 abandon       -2
+## 2 abandoned     -2
+## 3 abandons      -2
+## 4 abducted      -2
+## 5 abduction     -2
+## 6 abductions    -2</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">get_sentiments</span>(<span class="st">&quot;afinn&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">select</span>(<span class="st">&#39;score&#39;</span>) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">range</span>(.)</code></pre></div>
+<pre><code>## [1] -5  5</code></pre>
+<p>The <strong>bing</strong> lexicon offers a binary assessment of emotion. It’s either “negative” or “positive” so there is no continuum of emotion.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">unique</span>(<span class="kw">get_sentiments</span>(<span class="st">&quot;bing&quot;</span>)<span class="op">$</span>sentiment)</code></pre></div>
+<pre><code>## [1] &quot;negative&quot; &quot;positive&quot;</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#</span>
+<span class="kw">get_sentiments</span>(<span class="st">&quot;bing&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">head</span>()</code></pre></div>
+<pre><code>## # A tibble: 6 x 2
+##   word       sentiment
+##   &lt;chr&gt;      &lt;chr&gt;    
+## 1 2-faced    negative 
+## 2 2-faces    negative 
+## 3 a+         positive 
+## 4 abnormal   negative 
+## 5 abolish    negative 
+## 6 abominable negative</code></pre>
+<p>So next up there is the <strong>loughran</strong> lecxicon which is appropriate for financial and business contexts:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">unique</span>(<span class="kw">get_sentiments</span>(<span class="st">&quot;loughran&quot;</span>)<span class="op">$</span>sentiment)</code></pre></div>
+<pre><code>## [1] &quot;negative&quot;     &quot;positive&quot;     &quot;uncertainty&quot;  &quot;litigious&quot;   
+## [5] &quot;constraining&quot; &quot;superfluous&quot;</code></pre>
+</div>
+<div id="an-example" class="section level3">
+<h3><span class="header-section-number">4.11.2</span> An Example</h3>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">head</span>(sentiments)</code></pre></div>
+<pre><code>## # A tibble: 6 x 4
+##   word      sentiment lexicon score
+##   &lt;chr&gt;     &lt;chr&gt;     &lt;chr&gt;   &lt;int&gt;
+## 1 abacus    trust     nrc        NA
+## 2 abandon   fear      nrc        NA
+## 3 abandon   negative  nrc        NA
+## 4 abandon   sadness   nrc        NA
+## 5 abandoned anger     nrc        NA
+## 6 abandoned fear      nrc        NA</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">txt &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;I had a good flight experience on Delta airlines&quot;</span>,
+  <span class="st">&quot;I had a bad flight experience on Delta airlines&quot;</span>,
+  <span class="st">&quot;Gee thanks Delta for losing my luggage&quot;</span>)
+
+df &lt;-<span class="st"> </span><span class="kw">tibble</span>(<span class="dv">1</span><span class="op">:</span><span class="kw">length</span>(txt),<span class="dt">text=</span>txt)
+df &lt;-<span class="st"> </span>df <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">unnest_tokens</span>(word,text)
+
+<span class="co"># We get rid of the stop words and then see what the nrc sentiment</span>
+<span class="co"># dictionary tells us about our data</span>
+
+df <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">anti_join</span>(stop_words) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">left_join</span>(<span class="kw">get_sentiments</span>(<span class="st">&quot;nrc&quot;</span>))</code></pre></div>
+<pre><code>## Joining, by = &quot;word&quot;
+## Joining, by = &quot;word&quot;</code></pre>
+<pre><code>## # A tibble: 19 x 3
+##    `1:length(txt)` word       sentiment
+##              &lt;int&gt; &lt;chr&gt;      &lt;chr&gt;    
+##  1               1 flight     &lt;NA&gt;     
+##  2               1 experience &lt;NA&gt;     
+##  3               1 delta      &lt;NA&gt;     
+##  4               1 airlines   &lt;NA&gt;     
+##  5               2 bad        anger    
+##  6               2 bad        disgust  
+##  7               2 bad        fear     
+##  8               2 bad        negative 
+##  9               2 bad        sadness  
+## 10               2 flight     &lt;NA&gt;     
+## 11               2 experience &lt;NA&gt;     
+## 12               2 delta      &lt;NA&gt;     
+## 13               2 airlines   &lt;NA&gt;     
+## 14               3 gee        &lt;NA&gt;     
+## 15               3 delta      &lt;NA&gt;     
+## 16               3 losing     anger    
+## 17               3 losing     negative 
+## 18               3 losing     sadness  
+## 19               3 luggage    &lt;NA&gt;</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">df <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">anti_join</span>(stop_words) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">left_join</span>(<span class="kw">get_sentiments</span>(<span class="st">&quot;bing&quot;</span>))</code></pre></div>
+<pre><code>## Joining, by = &quot;word&quot;
+## Joining, by = &quot;word&quot;</code></pre>
+<pre><code>## # A tibble: 13 x 3
+##    `1:length(txt)` word       sentiment
+##              &lt;int&gt; &lt;chr&gt;      &lt;chr&gt;    
+##  1               1 flight     &lt;NA&gt;     
+##  2               1 experience &lt;NA&gt;     
+##  3               1 delta      &lt;NA&gt;     
+##  4               1 airlines   &lt;NA&gt;     
+##  5               2 bad        negative 
+##  6               2 flight     &lt;NA&gt;     
+##  7               2 experience &lt;NA&gt;     
+##  8               2 delta      &lt;NA&gt;     
+##  9               2 airlines   &lt;NA&gt;     
+## 10               3 gee        &lt;NA&gt;     
+## 11               3 delta      &lt;NA&gt;     
+## 12               3 losing     negative 
+## 13               3 luggage    &lt;NA&gt;</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">df <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">anti_join</span>(stop_words) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">left_join</span>(<span class="kw">get_sentiments</span>(<span class="st">&quot;afinn&quot;</span>))</code></pre></div>
+<pre><code>## Joining, by = &quot;word&quot;
+## Joining, by = &quot;word&quot;</code></pre>
+<pre><code>## # A tibble: 13 x 3
+##    `1:length(txt)` word       score
+##              &lt;int&gt; &lt;chr&gt;      &lt;int&gt;
+##  1               1 flight        NA
+##  2               1 experience    NA
+##  3               1 delta         NA
+##  4               1 airlines      NA
+##  5               2 bad           -3
+##  6               2 flight        NA
+##  7               2 experience    NA
+##  8               2 delta         NA
+##  9               2 airlines      NA
+## 10               3 gee           NA
+## 11               3 delta         NA
+## 12               3 losing        -3
+## 13               3 luggage       NA</code></pre>
+</div>
+<div id="speech-sentiment" class="section level3">
+<h3><span class="header-section-number">4.11.3</span> Speech Sentiment</h3>
+<p>Let’s apply our new found knowledge of sentiment tools to the combined speeches of Romney and Obama. We might want to get some sense of how emotive their respective sets of speeches are. We might also want to look at the emotive range for all speches combined independently of the candidate. Of course, these are political speeches so you know up front that there will be a bias towards positive language. So here we will join the words from all speeches to the <strong>bing</strong> sentiment lexicon to rate the emotional content of the words comprising the speech. Note that many words in the speeches will not have an emotional equivalent because they don’t exist in the lexicon. This is why you should use a stop word approach or consider using a Term Frequency - Inverse frequency approach to first eliminate filler words.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"> bing_word_counts &lt;-<span class="st"> </span>combined_tidy_speech <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">inner_join</span>(<span class="kw">get_sentiments</span>(<span class="st">&quot;bing&quot;</span>)) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">count</span>(book, word, sentiment, <span class="dt">sort =</span> <span class="ot">TRUE</span>) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">ungroup</span>()</code></pre></div>
+<pre><code>## Joining, by = &quot;word&quot;</code></pre>
+<p>So let’s look at some of the emotional content of the speeches independently of candidate (i.e. all speeches combined).</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">bing_word_counts <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">group_by</span>(sentiment) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">top_n</span>(<span class="dv">15</span>) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">ungroup</span>() <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">mutate</span>(<span class="dt">word =</span> <span class="kw">reorder</span>(word, n)) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(word, n, <span class="dt">fill =</span> sentiment)) <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_col</span>(<span class="dt">show.legend =</span> <span class="ot">FALSE</span>) <span class="op">+</span>
+<span class="st">  </span><span class="kw">facet_wrap</span>(<span class="op">~</span>sentiment, <span class="dt">scales =</span> <span class="st">&quot;free_y&quot;</span>) <span class="op">+</span>
+<span class="st">  </span><span class="kw">labs</span>(<span class="dt">y =</span> <span class="st">&quot;Contribution to sentiment&quot;</span>,
+       <span class="dt">x =</span> <span class="ot">NULL</span>) <span class="op">+</span>
+<span class="st">  </span><span class="kw">coord_flip</span>()</code></pre></div>
+<pre><code>## Selecting by n</code></pre>
+<p><img src="Nursing_Report_files/figure-html/unnamed-chunk-111-1.png" width="672" /></p>
+<p>It’s also really easy to look at the emotions for each candidate just by using the <strong>book</strong> variable from the <strong>bing_word_counts</strong> data frame.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">bing_word_counts <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">group_by</span>(sentiment) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">top_n</span>(<span class="dv">15</span>) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">ungroup</span>() <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">mutate</span>(<span class="dt">word =</span> <span class="kw">reorder</span>(word, n)) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(word, n, <span class="dt">fill =</span> sentiment)) <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_col</span>(<span class="dt">show.legend =</span> <span class="ot">FALSE</span>) <span class="op">+</span>
+<span class="st">  </span><span class="kw">facet_wrap</span>(<span class="op">~</span>sentiment<span class="op">+</span>book, <span class="dt">scales =</span> <span class="st">&quot;free_y&quot;</span>) <span class="op">+</span>
+<span class="st">  </span><span class="kw">labs</span>(<span class="dt">y =</span> <span class="st">&quot;Contribution to sentiment&quot;</span>,
+       <span class="dt">x =</span> <span class="ot">NULL</span>) <span class="op">+</span>
+<span class="st">  </span><span class="kw">coord_flip</span>()</code></pre></div>
+<pre><code>## Selecting by n</code></pre>
+<p><img src="Nursing_Report_files/figure-html/unnamed-chunk-112-1.png" width="672" /></p>
+<p>So if we look at a word cloud of combined sentiment across all speeches independently of candidate we see the following:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">pal &lt;-<span class="st"> </span><span class="kw">brewer.pal</span>(<span class="dv">8</span>,<span class="st">&quot;Dark2&quot;</span>)
+
+<span class="co"># plot the 50 most common words</span>
+
+bing_word_counts  <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">with</span>(<span class="kw">wordcloud</span>(word, n, <span class="dt">random.order =</span> <span class="ot">FALSE</span>, <span class="dt">max.words =</span> <span class="dv">50</span>, <span class="dt">colors=</span>pal))</code></pre></div>
+<p><img src="Nursing_Report_files/figure-html/unnamed-chunk-113-1.png" width="672" /></p>
+</div>
+<div id="comparison-cloud" class="section level3">
+<h3><span class="header-section-number">4.11.4</span> Comparison Cloud</h3>
+<p>So another thing we can do is to look at a comparison cloud that would give us a word cloud that presents a visualization of the most common postive and negative words. There is a function called <strong>comparison.cloud()</strong> that will accomplish this but it also requires us to do some conversion on our data frame.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(reshape2)
+combined_tidy_speech <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">inner_join</span>(<span class="kw">get_sentiments</span>(<span class="st">&quot;bing&quot;</span>)) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">count</span>(word, sentiment, <span class="dt">sort =</span> <span class="ot">TRUE</span>) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">acast</span>(word <span class="op">~</span><span class="st"> </span>sentiment, <span class="dt">value.var =</span> <span class="st">&quot;n&quot;</span>, <span class="dt">fill =</span> <span class="dv">0</span>) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">comparison.cloud</span>(<span class="dt">colors =</span> <span class="kw">c</span>(<span class="st">&quot;gray20&quot;</span>, <span class="st">&quot;gray80&quot;</span>),
+                   <span class="dt">max.words =</span> <span class="dv">100</span>)</code></pre></div>
+<pre><code>## Joining, by = &quot;word&quot;</code></pre>
+<p><img src="Nursing_Report_files/figure-html/unnamed-chunk-114-1.png" width="672" /></p>
+<p>We could also look at this on a per candidate basis:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(reshape2)
+combined_tidy_speech <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">inner_join</span>(<span class="kw">get_sentiments</span>(<span class="st">&quot;bing&quot;</span>)) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">filter</span>(book<span class="op">==</span><span class="st">&quot;romney&quot;</span>) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">count</span>(word, sentiment, <span class="dt">sort =</span> <span class="ot">TRUE</span>) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">acast</span>(word <span class="op">~</span><span class="st"> </span>sentiment, <span class="dt">value.var =</span> <span class="st">&quot;n&quot;</span>, <span class="dt">fill =</span> <span class="dv">0</span>) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">comparison.cloud</span>(<span class="dt">colors =</span> <span class="kw">c</span>(<span class="st">&quot;gray20&quot;</span>, <span class="st">&quot;gray80&quot;</span>),
+                   <span class="dt">max.words =</span> <span class="dv">100</span>)</code></pre></div>
+<pre><code>## Joining, by = &quot;word&quot;</code></pre>
+<pre><code>## Warning in comparison.cloud(., colors = c(&quot;gray20&quot;, &quot;gray80&quot;), max.words =
+## 100): liberty could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in comparison.cloud(., colors = c(&quot;gray20&quot;, &quot;gray80&quot;), max.words =
+## 100): benefits could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in comparison.cloud(., colors = c(&quot;gray20&quot;, &quot;gray80&quot;), max.words =
+## 100): promises could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in comparison.cloud(., colors = c(&quot;gray20&quot;, &quot;gray80&quot;), max.words =
+## 100): recovery could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in comparison.cloud(., colors = c(&quot;gray20&quot;, &quot;gray80&quot;), max.words =
+## 100): innovation could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in comparison.cloud(., colors = c(&quot;gray20&quot;, &quot;gray80&quot;), max.words =
+## 100): greatness could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in comparison.cloud(., colors = c(&quot;gray20&quot;, &quot;gray80&quot;), max.words =
+## 100): powerful could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in comparison.cloud(., colors = c(&quot;gray20&quot;, &quot;gray80&quot;), max.words =
+## 100): destiny could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in comparison.cloud(., colors = c(&quot;gray20&quot;, &quot;gray80&quot;), max.words =
+## 100): proud could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in comparison.cloud(., colors = c(&quot;gray20&quot;, &quot;gray80&quot;), max.words =
+## 100): honor could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in comparison.cloud(., colors = c(&quot;gray20&quot;, &quot;gray80&quot;), max.words =
+## 100): commitment could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in comparison.cloud(., colors = c(&quot;gray20&quot;, &quot;gray80&quot;), max.words =
+## 100): confidence could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in comparison.cloud(., colors = c(&quot;gray20&quot;, &quot;gray80&quot;), max.words =
+## 100): courage could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in comparison.cloud(., colors = c(&quot;gray20&quot;, &quot;gray80&quot;), max.words =
+## 100): easy could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in comparison.cloud(., colors = c(&quot;gray20&quot;, &quot;gray80&quot;), max.words =
+## 100): protect could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in comparison.cloud(., colors = c(&quot;gray20&quot;, &quot;gray80&quot;), max.words =
+## 100): tough could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in comparison.cloud(., colors = c(&quot;gray20&quot;, &quot;gray80&quot;), max.words =
+## 100): extraordinary could not be fit on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in comparison.cloud(., colors = c(&quot;gray20&quot;, &quot;gray80&quot;), max.words =
+## 100): wonder could not be fit on page. It will not be plotted.</code></pre>
+<p><img src="Nursing_Report_files/figure-html/unnamed-chunk-115-1.png" width="672" /></p>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="dockers-1.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="twitter-social-media.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"download": ["Nursing Report.pdf", "Nursing Report.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Chapter 2 Virtualization | Intro To Research Computing</title>
+  <meta name="description" content="Cloud Computing">
+  <meta name="generator" content="bookdown  and GitBook 2.6.7">
+
+  <meta property="og:title" content="Chapter 2 Virtualization | Intro To Research Computing" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Cloud Computing" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 2 Virtualization | Intro To Research Computing" />
+  
+  <meta name="twitter:description" content="Cloud Computing" />
+  
+
+<meta name="author" content="Steve Pittard">
+
+
+<meta name="date" content="2019-04-16">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="index.html">
+<link rel="next" href="dockers-1.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Guest Lecture INFO 550</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Computation In Research</a><ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#what-do-the-top-sites-use"><i class="fa fa-check"></i><b>1.1</b> What Do the Top Sites Use ?</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#division-of-labor"><i class="fa fa-check"></i><b>1.2</b> Division of Labor</a><ul>
+<li class="chapter" data-level="1.2.1" data-path="index.html"><a href="index.html#mixing-work-and-pleasure"><i class="fa fa-check"></i><b>1.2.1</b> Mixing Work and Pleasure</a></li>
+<li class="chapter" data-level="1.2.2" data-path="index.html"><a href="index.html#mixing-e-mail-and-research"><i class="fa fa-check"></i><b>1.2.2</b> Mixing E-Mail and Research ?</a></li>
+<li class="chapter" data-level="1.2.3" data-path="index.html"><a href="index.html#youll-do-it-anyway"><i class="fa fa-check"></i><b>1.2.3</b> You’ll Do It Anyway</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#popular-data-science-languages"><i class="fa fa-check"></i><b>1.3</b> Popular Data Science Languages</a></li>
+<li class="chapter" data-level="1.4" data-path="index.html"><a href="index.html#is-windows-good-for-computation"><i class="fa fa-check"></i><b>1.4</b> Is Windows Good For Computation ?</a></li>
+<li class="chapter" data-level="1.5" data-path="index.html"><a href="index.html#whats-wrong-with-windows"><i class="fa fa-check"></i><b>1.5</b> What’s Wrong with Windows ?</a><ul>
+<li class="chapter" data-level="1.5.1" data-path="index.html"><a href="index.html#windows-security-virus-and-performance-issues"><i class="fa fa-check"></i><b>1.5.1</b> Windows Security, Virus, and Performance Issues</a></li>
+<li class="chapter" data-level="1.5.2" data-path="index.html"><a href="index.html#windows-reboots-and-updates"><i class="fa fa-check"></i><b>1.5.2</b> Windows Reboots and Updates</a></li>
+<li class="chapter" data-level="1.5.3" data-path="index.html"><a href="index.html#is-linux-really-better"><i class="fa fa-check"></i><b>1.5.3</b> Is Linux Really Better ?</a></li>
+<li class="chapter" data-level="1.5.4" data-path="index.html"><a href="index.html#cool-things-about-linux"><i class="fa fa-check"></i><b>1.5.4</b> Cool Things About Linux</a></li>
+<li class="chapter" data-level="1.5.5" data-path="index.html"><a href="index.html#linux-is-the-native-environment-for-development."><i class="fa fa-check"></i><b>1.5.5</b> Linux is The Native Environment for Development.</a></li>
+<li class="chapter" data-level="1.5.6" data-path="index.html"><a href="index.html#command-line-knowledge-is-next-level-stuff"><i class="fa fa-check"></i><b>1.5.6</b> Command Line Knowledge is Next Level Stuff</a></li>
+<li class="chapter" data-level="1.5.7" data-path="index.html"><a href="index.html#is-there-hope-for-windows-users"><i class="fa fa-check"></i><b>1.5.7</b> Is There Hope For Windows Users ?</a></li>
+</ul></li>
+<li class="chapter" data-level="1.6" data-path="index.html"><a href="index.html#is-there-a-middle-ground"><i class="fa fa-check"></i><b>1.6</b> Is There a Middle Ground ?</a><ul>
+<li class="chapter" data-level="1.6.1" data-path="index.html"><a href="index.html#virtualized-systems"><i class="fa fa-check"></i><b>1.6.1</b> Virtualized Systems</a></li>
+<li class="chapter" data-level="1.6.2" data-path="index.html"><a href="index.html#dockers"><i class="fa fa-check"></i><b>1.6.2</b> Dockers</a></li>
+<li class="chapter" data-level="1.6.3" data-path="index.html"><a href="index.html#anaconda"><i class="fa fa-check"></i><b>1.6.3</b> Anaconda</a></li>
+</ul></li>
+<li class="chapter" data-level="1.7" data-path="index.html"><a href="index.html#apple-osx-macos"><i class="fa fa-check"></i><b>1.7</b> Apple OSX / macOS ?</a><ul>
+<li class="chapter" data-level="1.7.1" data-path="index.html"><a href="index.html#the-dark-years-of-apple"><i class="fa fa-check"></i><b>1.7.1</b> The Dark Years of Apple</a></li>
+<li class="chapter" data-level="1.7.2" data-path="index.html"><a href="index.html#apple-osx-vs-previous-apple-operating-systems"><i class="fa fa-check"></i><b>1.7.2</b> Apple OSX vs Previous Apple Operating Systems</a></li>
+<li class="chapter" data-level="1.7.3" data-path="index.html"><a href="index.html#lets-go-shopping"><i class="fa fa-check"></i><b>1.7.3</b> Let’s Go Shopping !</a></li>
+<li class="chapter" data-level="1.7.4" data-path="index.html"><a href="index.html#managing-software-locally"><i class="fa fa-check"></i><b>1.7.4</b> Managing Software Locally</a></li>
+<li class="chapter" data-level="1.7.5" data-path="index.html"><a href="index.html#rstudio"><i class="fa fa-check"></i><b>1.7.5</b> RStudio</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="virtualization.html"><a href="virtualization.html"><i class="fa fa-check"></i><b>2</b> Virtualization</a><ul>
+<li class="chapter" data-level="2.1" data-path="virtualization.html"><a href="virtualization.html#virtual-box"><i class="fa fa-check"></i><b>2.1</b> Virtual Box</a></li>
+<li class="chapter" data-level="2.2" data-path="virtualization.html"><a href="virtualization.html#using-virtualization-farms"><i class="fa fa-check"></i><b>2.2</b> Using Virtualization Farms</a></li>
+<li class="chapter" data-level="2.3" data-path="virtualization.html"><a href="virtualization.html#running-rstudio-on-amazon"><i class="fa fa-check"></i><b>2.3</b> Running RStudio on Amazon</a><ul>
+<li class="chapter" data-level="2.3.1" data-path="virtualization.html"><a href="virtualization.html#why-ubuntu"><i class="fa fa-check"></i><b>2.3.1</b> Why Ubuntu ?</a></li>
+<li class="chapter" data-level="2.3.2" data-path="virtualization.html"><a href="virtualization.html#start-an-instance"><i class="fa fa-check"></i><b>2.3.2</b> Start An Instance</a></li>
+<li class="chapter" data-level="2.3.3" data-path="virtualization.html"><a href="virtualization.html#add-some-storage"><i class="fa fa-check"></i><b>2.3.3</b> Add Some Storage</a></li>
+<li class="chapter" data-level="2.3.4" data-path="virtualization.html"><a href="virtualization.html#get-a-key"><i class="fa fa-check"></i><b>2.3.4</b> Get A Key</a></li>
+<li class="chapter" data-level="2.3.5" data-path="virtualization.html"><a href="virtualization.html#installing-r"><i class="fa fa-check"></i><b>2.3.5</b> Installing R</a></li>
+<li class="chapter" data-level="2.3.6" data-path="virtualization.html"><a href="virtualization.html#installing-rstudio-server"><i class="fa fa-check"></i><b>2.3.6</b> Installing RStudio Server</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="virtualization.html"><a href="virtualization.html#accessing-your-instance"><i class="fa fa-check"></i><b>2.4</b> Accessing Your Instance</a></li>
+<li class="chapter" data-level="2.5" data-path="virtualization.html"><a href="virtualization.html#getting-data-into-your-instance"><i class="fa fa-check"></i><b>2.5</b> Getting Data Into Your Instance</a></li>
+<li class="chapter" data-level="2.6" data-path="virtualization.html"><a href="virtualization.html#accessing-s3-from-ec2-instances"><i class="fa fa-check"></i><b>2.6</b> Accessing S3 from EC2 Instances</a></li>
+<li class="chapter" data-level="2.7" data-path="virtualization.html"><a href="virtualization.html#shiny-server"><i class="fa fa-check"></i><b>2.7</b> Shiny Server</a></li>
+<li class="chapter" data-level="2.8" data-path="virtualization.html"><a href="virtualization.html#making-an-ami"><i class="fa fa-check"></i><b>2.8</b> Making an AMI</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="dockers-1.html"><a href="dockers-1.html"><i class="fa fa-check"></i><b>3</b> Dockers</a><ul>
+<li class="chapter" data-level="3.1" data-path="dockers-1.html"><a href="dockers-1.html#scenarios"><i class="fa fa-check"></i><b>3.1</b> Scenarios</a></li>
+<li class="chapter" data-level="3.2" data-path="dockers-1.html"><a href="dockers-1.html#differences-from-vms"><i class="fa fa-check"></i><b>3.2</b> Differences From VMs</a></li>
+<li class="chapter" data-level="3.3" data-path="dockers-1.html"><a href="dockers-1.html#docker-terminology"><i class="fa fa-check"></i><b>3.3</b> Docker Terminology</a><ul>
+<li class="chapter" data-level="3.3.1" data-path="dockers-1.html"><a href="dockers-1.html#images"><i class="fa fa-check"></i><b>3.3.1</b> Images</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="dockers-1.html"><a href="dockers-1.html#rshiny"><i class="fa fa-check"></i><b>3.4</b> RShiny</a></li>
+<li class="chapter" data-level="3.5" data-path="dockers-1.html"><a href="dockers-1.html#making-your-own-image"><i class="fa fa-check"></i><b>3.5</b> Making Your Own Image</a></li>
+<li class="chapter" data-level="3.6" data-path="dockers-1.html"><a href="dockers-1.html#there-is-another-way"><i class="fa fa-check"></i><b>3.6</b> There is Another Way</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="text-mining.html"><a href="text-mining.html"><i class="fa fa-check"></i><b>4</b> Text Mining</a><ul>
+<li class="chapter" data-level="4.1" data-path="text-mining.html"><a href="text-mining.html#recap"><i class="fa fa-check"></i><b>4.1</b> Recap</a></li>
+<li class="chapter" data-level="4.2" data-path="text-mining.html"><a href="text-mining.html#unstructured-data"><i class="fa fa-check"></i><b>4.2</b> Unstructured Data</a></li>
+<li class="chapter" data-level="4.3" data-path="text-mining.html"><a href="text-mining.html#structured-data"><i class="fa fa-check"></i><b>4.3</b> Structured Data</a></li>
+<li class="chapter" data-level="4.4" data-path="text-mining.html"><a href="text-mining.html#hybrids"><i class="fa fa-check"></i><b>4.4</b> Hybrids</a></li>
+<li class="chapter" data-level="4.5" data-path="text-mining.html"><a href="text-mining.html#information-retrieval-vs-information-extraction"><i class="fa fa-check"></i><b>4.5</b> Information Retrieval vs Information Extraction</a></li>
+<li class="chapter" data-level="4.6" data-path="text-mining.html"><a href="text-mining.html#web-scraping-revisited"><i class="fa fa-check"></i><b>4.6</b> Web Scraping Revisited</a></li>
+<li class="chapter" data-level="4.7" data-path="text-mining.html"><a href="text-mining.html#exploring-the-text"><i class="fa fa-check"></i><b>4.7</b> Exploring The Text</a><ul>
+<li class="chapter" data-level="4.7.1" data-path="text-mining.html"><a href="text-mining.html#tidy-format"><i class="fa fa-check"></i><b>4.7.1</b> Tidy Format</a></li>
+<li class="chapter" data-level="4.7.2" data-path="text-mining.html"><a href="text-mining.html#tidy-up-the-text"><i class="fa fa-check"></i><b>4.7.2</b> Tidy Up the text</a></li>
+<li class="chapter" data-level="4.7.3" data-path="text-mining.html"><a href="text-mining.html#dump-the-stop-words"><i class="fa fa-check"></i><b>4.7.3</b> Dump The “Stop Words”</a></li>
+<li class="chapter" data-level="4.7.4" data-path="text-mining.html"><a href="text-mining.html#eliminate-numbers"><i class="fa fa-check"></i><b>4.7.4</b> Eliminate Numbers</a></li>
+<li class="chapter" data-level="4.7.5" data-path="text-mining.html"><a href="text-mining.html#stemming"><i class="fa fa-check"></i><b>4.7.5</b> Stemming</a></li>
+<li class="chapter" data-level="4.7.6" data-path="text-mining.html"><a href="text-mining.html#bar-plots"><i class="fa fa-check"></i><b>4.7.6</b> Bar Plots</a></li>
+<li class="chapter" data-level="4.7.7" data-path="text-mining.html"><a href="text-mining.html#wordclouds"><i class="fa fa-check"></i><b>4.7.7</b> Wordclouds</a></li>
+</ul></li>
+<li class="chapter" data-level="4.8" data-path="text-mining.html"><a href="text-mining.html#term-frequency"><i class="fa fa-check"></i><b>4.8</b> Term Frequency</a><ul>
+<li class="chapter" data-level="4.8.1" data-path="text-mining.html"><a href="text-mining.html#back-to-the-speeches"><i class="fa fa-check"></i><b>4.8.1</b> Back To The Speeches</a></li>
+</ul></li>
+<li class="chapter" data-level="4.9" data-path="text-mining.html"><a href="text-mining.html#n-grams"><i class="fa fa-check"></i><b>4.9</b> N Grams</a></li>
+<li class="chapter" data-level="4.10" data-path="text-mining.html"><a href="text-mining.html#tf-and-idf"><i class="fa fa-check"></i><b>4.10</b> Tf and Idf</a></li>
+<li class="chapter" data-level="4.11" data-path="text-mining.html"><a href="text-mining.html#sentiment"><i class="fa fa-check"></i><b>4.11</b> Sentiment</a><ul>
+<li class="chapter" data-level="4.11.1" data-path="text-mining.html"><a href="text-mining.html#sentiment-dictionaries-and-lexicons"><i class="fa fa-check"></i><b>4.11.1</b> Sentiment Dictionaries and Lexicons</a></li>
+<li class="chapter" data-level="4.11.2" data-path="text-mining.html"><a href="text-mining.html#an-example"><i class="fa fa-check"></i><b>4.11.2</b> An Example</a></li>
+<li class="chapter" data-level="4.11.3" data-path="text-mining.html"><a href="text-mining.html#speech-sentiment"><i class="fa fa-check"></i><b>4.11.3</b> Speech Sentiment</a></li>
+<li class="chapter" data-level="4.11.4" data-path="text-mining.html"><a href="text-mining.html#comparison-cloud"><i class="fa fa-check"></i><b>4.11.4</b> Comparison Cloud</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="twitter-social-media.html"><a href="twitter-social-media.html"><i class="fa fa-check"></i><b>5</b> Twitter - Social Media</a><ul>
+<li class="chapter" data-level="5.1" data-path="twitter-social-media.html"><a href="twitter-social-media.html#twitter-uses"><i class="fa fa-check"></i><b>5.1</b> Twitter Uses</a></li>
+<li class="chapter" data-level="5.2" data-path="twitter-social-media.html"><a href="twitter-social-media.html#why-should-you-care"><i class="fa fa-check"></i><b>5.2</b> Why Should You Care ?</a></li>
+<li class="chapter" data-level="5.3" data-path="twitter-social-media.html"><a href="twitter-social-media.html#twitter-anatomy"><i class="fa fa-check"></i><b>5.3</b> Twitter Anatomy</a></li>
+<li class="chapter" data-level="5.4" data-path="twitter-social-media.html"><a href="twitter-social-media.html#accessing-from-r---rtweet"><i class="fa fa-check"></i><b>5.4</b> Accessing From R - rtweet</a></li>
+<li class="chapter" data-level="5.5" data-path="twitter-social-media.html"><a href="twitter-social-media.html#authenticating-from-r"><i class="fa fa-check"></i><b>5.5</b> Authenticating From R</a></li>
+<li class="chapter" data-level="5.6" data-path="twitter-social-media.html"><a href="twitter-social-media.html#some-basic-tips"><i class="fa fa-check"></i><b>5.6</b> Some Basic Tips</a></li>
+<li class="chapter" data-level="5.7" data-path="twitter-social-media.html"><a href="twitter-social-media.html#some-built-in-plots"><i class="fa fa-check"></i><b>5.7</b> Some built in plots</a></li>
+<li class="chapter" data-level="5.8" data-path="twitter-social-media.html"><a href="twitter-social-media.html#looking-for-people-tweeting-about-copd"><i class="fa fa-check"></i><b>5.8</b> Looking for People Tweeting About COPD</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Intro To Research Computing</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="virtualization" class="section level1">
+<h1><span class="header-section-number">Chapter 2</span> Virtualization</h1>
+<p>Virtualization can help deal with the problem of having to use multiple operating systems although it requires some level of operating system administration knowledge to fully exploit. At the most basic level a person can install a Virtualization package onto a desktop or laptop and then host one or more “guest” operating systems on top of that which will appear to be running “natively” on your hardware.</p>
+<p>The “guest” opersting system will use the hard drive, memory, keyboard, mouse, touch pad just as it was running on its own. OF coruse a limistation of this approach is that the guest operating system will be competing with your host operasting system for resources so you will need to appropriately allocate resources to the guest OS when you set it up to ensure decent performance.</p>
+<p>The most common virtualization setup I see are people with Apple laptops wanting to run MS Windows on their Apple. Apple even has a product for this called <a href="https://www.parallels.com/products/desktop/">Parallels</a> which cost around $80 though open soruce tools like Virtualobox can also provide accress There is a also a product called VMWare which can do this so there are some options. Of course there are Windows users who want to run Linux on top of their Windows OS. You could also be a Windows user who wants to run a protected copy of Windows on top of your “host” Windows to do some experiments without impacting your natively installed copy.</p>
+<center>
+<img src="PICS/xen.png" width="450" />
+</center>
+<div id="virtual-box" class="section level2">
+<h2><span class="header-section-number">2.1</span> Virtual Box</h2>
+<p>There is a free virtualization tool called VirtualBox that can be downloaded for free for use on Windows, Apple, or Linux hardware. It works pretty well and the price is right. Keep in mind that any operating systems you install within Virtual Box will share the hard drive and memory of you desktop or laptop. Also consider that if you wanted to run MS Windows as a guest operating system that you would need to get a license for it. That is, just because you have the ability to run Windows as a guest OS does not mean that it would be free. You are still bound by the license terms that apply to any version of Windows. With Linux of course it’s free.</p>
+<div class="figure">
+<img src="PICS/virtualbox.png" />
+
+</div>
+<p><br />
+Here is a screenshot of my Apple laptop where I used a copy of Virtualbox to host an installation of Mint Linux which is a small version of Linux.</p>
+<br />
+
+<center>
+<img src="PICS/virtualmint.png" />
+</center>
+</div>
+<div id="using-virtualization-farms" class="section level2">
+<h2><span class="header-section-number">2.2</span> Using Virtualization Farms</h2>
+<p>You have probably heard of Amazon. It provides virtualization capabilities at a very large scale as well as many other services that exploit this ability. Both Google and Microsoft also have this capability but Amazon has a head start.</p>
+</div>
+<div id="running-rstudio-on-amazon" class="section level2">
+<h2><span class="header-section-number">2.3</span> Running RStudio on Amazon</h2>
+<p>I’ll assume that you know something about getting into Amazon so I’ll jump right in. For this example I will use the Ubuntu 18 which is the newest although typically one would use a version that has been around for a few years. For Ubuntu that would be version 16 or even 14. The advantage of using something older is that there is more Google information on various problems that might emerge. I’m picking Ubuntu 18 because I wanted to see how it differed, if at all, from the previous versions. There are some oddities but nothing major.</p>
+<div id="why-ubuntu" class="section level3">
+<h3><span class="header-section-number">2.3.1</span> Why Ubuntu ?</h3>
+<p>I’m using Ubuntu because it is the most friendly Linux OS for bioinformatics tools although almost any known version of Linux could be used - it’s just that you might have to use different package managers. CentOS is a popular alternative and there are a number of other “distros”.</p>
+<center>
+<div class="figure">
+<img src="PICS/ublogo.png" width="500" />
+
+</div>
+</center>
+</div>
+<div id="start-an-instance" class="section level3">
+<h3><span class="header-section-number">2.3.2</span> Start An Instance</h3>
+<p>Login to your Amazon AWS account and select something like a t2.medium instance with around 50-100GB of space. This will vary with your project needs but this is just an example.</p>
+<p><img src="PICS/ubuntu.png" /> <img src="PICS/t2med.png" /></p>
+</div>
+<div id="add-some-storage" class="section level3">
+<h3><span class="header-section-number">2.3.3</span> Add Some Storage</h3>
+<p>Add some storage to the instance. If you find yourself wanting to add a lot of storage here then you should consider adding a separate volume. That way when we later create an AMI (Amazon Machine Image) you don’t make an image out of a very large volume which will in turn cost more money.</p>
+<div class="figure">
+<img src="PICS/storage.png" />
+
+</div>
+</div>
+<div id="get-a-key" class="section level3">
+<h3><span class="header-section-number">2.3.4</span> Get A Key</h3>
+<p>As always you will need a key to get into your instance. Either select an existing key or create a new one.</p>
+<div class="figure">
+<img src="PICS/keys.png" />
+
+</div>
+</div>
+<div id="installing-r" class="section level3">
+<h3><span class="header-section-number">2.3.5</span> Installing R</h3>
+<p>Once you have your instance up and running let’s install the latest version of R. Strictly speaking we don’t have to install the absolute latest version. If we make no effort to get the latest version then we will get whatever version of R was current at the time the release was built. You can refer to <a href="https://linuxize.com/post/how-to-install-r-on-ubuntu-18-04/">this page</a> for specific information on how to get the latest R release. With Linux there are a number of supporting packages that you will need to get to install packages like tidyverse. The same is true with the RStudio Server software.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">$</span><span class="st"> </span>sudo apt install apt<span class="op">-</span>transport<span class="op">-</span>https software<span class="op">-</span>properties<span class="op">-</span>common
+
+<span class="op">$</span><span class="st"> </span>sudo apt install build<span class="op">-</span>essential
+
+<span class="op">$</span><span class="st"> </span>sudo apt<span class="op">-</span>key adv <span class="op">--</span>keyserver keyserver.ubuntu.com <span class="op">--</span>recv<span class="op">-</span>keys E298A3A825C0D65DFD57CBB651716619E084DAB9
+
+<span class="op">$</span><span class="st"> </span>sudo add<span class="op">-</span>apt<span class="op">-</span>repository <span class="st">&#39;deb https://cloud.r-project.org/bin/linux/ubuntu bionic-cran35/&#39;</span>
+
+<span class="op">$</span><span class="st"> </span>sudo apt install libcurl4<span class="op">-</span>openssl<span class="op">-</span>dev libssl<span class="op">-</span>dev libxml2<span class="op">-</span>dev
+
+<span class="op">$</span><span class="st"> </span>sudo apt update
+
+<span class="op">$</span><span class="st"> </span>sudo apt install r<span class="op">-</span>base</code></pre></div>
+<p>So for now just accept that you will have to install some packages in support of getting the latest version of R. Knowing something about system administration is a good thing particularly as it relates to the package manager “apt-get”. You don’t have to be an expert but it’s important to know how to add, remove, and update packages.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">$</span><span class="st"> </span>R <span class="op">--</span>version
+R version <span class="fl">3.5</span>.<span class="dv">3</span> (<span class="dv">2019</span><span class="op">-</span><span class="dv">03</span><span class="op">-</span><span class="dv">11</span>) <span class="op">--</span><span class="st"> &quot;Great Truth&quot;</span>
+<span class="kw">Copyright</span> (C) <span class="dv">2019</span> The R Foundation <span class="cf">for</span> Statistical Computing
+Platform<span class="op">:</span><span class="st"> </span>x86_<span class="dv">64</span><span class="op">-</span>pc<span class="op">-</span>linux<span class="op">-</span><span class="kw">gnu</span> (<span class="dv">64</span><span class="op">-</span>bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under the terms of the
+GNU General Public License versions <span class="dv">2</span> or <span class="dv">3</span>.
+For more information about these matters see
+http<span class="op">:</span><span class="er">//</span>www.gnu.org<span class="op">/</span>licenses<span class="op">/</span>.
+
+<span class="co"># Here you can install tidyverse. This will compile the code for tidyverse</span>
+
+<span class="op">$</span><span class="st"> </span>R
+
+<span class="op">&gt;</span><span class="st"> </span><span class="kw">install.packages</span>(<span class="st">&quot;tidyverse&quot;</span>)</code></pre></div>
+</div>
+<div id="installing-rstudio-server" class="section level3">
+<h3><span class="header-section-number">2.3.6</span> Installing RStudio Server</h3>
+<p>The next step involves installing the RStudio server software which requires some supporting files:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">$</span><span class="st"> </span>sudo apt<span class="op">-</span>get <span class="op">-</span>y install gdebi<span class="op">-</span>core</code></pre></div>
+<p>Next we want to go to the <a href="https://www.rstudio.com/products/rstudio/download-server/">Downloads page</a> for RStudio to get a version of RStudio server that is approved for use with Ubuntu 18.</p>
+<div class="figure">
+<img src="PICS/rstudio1.png" />
+
+</div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">$</span><span class="st"> </span>wget https<span class="op">:</span><span class="er">//</span>download2.rstudio.org<span class="op">/</span>rstudio<span class="op">-</span>server<span class="op">-</span><span class="fl">1.1</span>.<span class="dv">463</span><span class="op">-</span>amd64.deb
+
+<span class="op">$</span><span class="st"> </span>sudo gdebi rstudio<span class="op">-</span>server<span class="op">-</span><span class="fl">1.1</span>.<span class="dv">463</span><span class="op">-</span>amd64.deb
+
+Created symlink <span class="op">/</span>etc<span class="op">/</span>systemd<span class="op">/</span>system<span class="op">/</span>multi<span class="op">-</span>user.target.wants<span class="op">/</span>rstudio<span class="op">-</span>server.service → <span class="op">/</span>etc<span class="op">/</span>systemd<span class="op">/</span>system<span class="op">/</span>rstudio<span class="op">-</span>server.service.
+● rstudio<span class="op">-</span>server.service <span class="op">-</span><span class="st"> </span>RStudio Server
+   Loaded<span class="op">:</span><span class="st"> </span><span class="kw">loaded</span> (<span class="op">/</span>etc<span class="op">/</span>systemd<span class="op">/</span>system<span class="op">/</span>rstudio<span class="op">-</span>server.service; enabled; vendor preset<span class="op">:</span><span class="st"> </span>enabled)
+   Active<span class="op">:</span><span class="st"> </span><span class="kw">active</span> (running) since Tue <span class="dv">2019</span><span class="op">-</span><span class="dv">04</span><span class="op">-</span><span class="dv">02</span> <span class="dv">02</span><span class="op">:</span><span class="dv">33</span><span class="op">:</span><span class="dv">57</span> UTC; 1s ago
+  Process<span class="op">:</span><span class="st"> </span><span class="dv">32618</span> ExecStart=<span class="er">/</span>usr<span class="op">/</span>lib<span class="op">/</span>rstudio<span class="op">-</span>server<span class="op">/</span>bin<span class="op">/</span><span class="kw">rserver</span> (<span class="dt">code=</span>exited, <span class="dt">status=</span><span class="dv">0</span><span class="op">/</span>SUCCESS)
+ Main PID<span class="op">:</span><span class="st"> </span><span class="dv">32628</span> (rserver)
+    Tasks<span class="op">:</span><span class="st"> </span><span class="dv">3</span> (limit<span class="op">:</span><span class="st"> </span><span class="dv">4704</span>)
+   CGroup<span class="op">:</span><span class="st"> </span><span class="er">/</span>system.slice<span class="op">/</span>rstudio<span class="op">-</span>server.service
+           └─<span class="dv">32628</span> <span class="op">/</span>usr<span class="op">/</span>lib<span class="op">/</span>rstudio<span class="op">-</span>server<span class="op">/</span>bin<span class="op">/</span>rserver
+
+Apr <span class="dv">02</span> <span class="dv">02</span><span class="op">:</span><span class="dv">33</span><span class="op">:</span><span class="dv">57</span> ip<span class="op">-</span><span class="dv">172</span><span class="op">-</span><span class="dv">30</span><span class="op">-</span><span class="dv">1</span><span class="op">-</span><span class="dv">144</span> systemd[<span class="dv">1</span>]<span class="op">:</span><span class="st"> </span>Starting RStudio Server...
+Apr <span class="dv">02</span> <span class="dv">02</span><span class="op">:</span><span class="dv">33</span><span class="op">:</span><span class="dv">57</span> ip<span class="op">-</span><span class="dv">172</span><span class="op">-</span><span class="dv">30</span><span class="op">-</span><span class="dv">1</span><span class="op">-</span><span class="dv">144</span> systemd[<span class="dv">1</span>]<span class="op">:</span><span class="st"> </span>Started RStudio Server.
+
+<span class="op">$</span><span class="st"> </span>sudo rstudio<span class="op">-</span>server verify<span class="op">-</span>installation</code></pre></div>
+</div>
+</div>
+<div id="accessing-your-instance" class="section level2">
+<h2><span class="header-section-number">2.4</span> Accessing Your Instance</h2>
+<p>If the installation went as expected then fire up your favorite web browser and point it at the public IP number associated with your instance:</p>
+<center>
+<img src="PICS/ips.png" width="450" />
+</center>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">http<span class="op">:</span><span class="er">//</span><span class="fl">18.212</span>.<span class="fl">63.117</span><span class="op">:</span><span class="dv">8787</span></code></pre></div>
+<p>This probably won’t work unless as part of the instance setup you thought to allow inbound connections on port 8787. Most people forget but that’s okay. You can go back and fix this by looking at your instance details and identifying your security group. After that you can change the inbound rules.</p>
+<center>
+<img src="PICS/security.png" width="500" />
+</center>
+<center>
+<img src="PICS/inbound.png" width="500" />
+</center>
+<p>Now you should be able to access the web interface for RStudio with your browser. The question then becomes what userid should you use ? Well you could add one or more userids and create passwords. The installation of RStudio is able to accept userid and password information for users on your system. Let’s change the password on the default <strong>ubuntu</strong> password so we can get in. To do this go back to your terminal where you logged into your instance. Use the <strong>passwd</strong> command to change the password. Afer you do this then you can log into your RStudio instance</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">$</span><span class="st"> </span>sudo passwd ubuntu
+Enter new UNIX password<span class="op">:</span><span class="st"> </span>
+Retype new UNIX password<span class="op">:</span><span class="st"> </span>
+passwd<span class="op">:</span><span class="st"> </span>password updated successfully</code></pre></div>
+<div class="figure">
+<img src="PICS/rstudio2.png" />
+
+</div>
+</div>
+<div id="getting-data-into-your-instance" class="section level2">
+<h2><span class="header-section-number">2.5</span> Getting Data Into Your Instance</h2>
+<p>You now have access to a remote instance of RStudio but you need to figure out how to get data into it. You could use something like the <strong>scp</strong> or <strong>sftp</strong> command to upload data from your laptop into your instance. That’s one way to do this. Let’s say we have a local folder named <strong>test_data</strong> that we want to copy up to our instance.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">$</span><span class="st"> </span>scp <span class="op">-</span>i <span class="op">~</span><span class="er">/</span>.ssh<span class="op">/</span>bios560.pem <span class="op">-</span>r test_data ubuntu<span class="op">@</span><span class="fl">18.212</span>.<span class="fl">63.117</span><span class="op">:</span><span class="er">/</span>home<span class="op">/</span>ubuntu
+bird                                    <span class="dv">100</span>%   <span class="dv">13</span>     <span class="fl">0.</span>5KB<span class="op">/</span>s   <span class="dv">00</span><span class="op">:</span><span class="dv">00</span>    
+cat                                     <span class="dv">100</span>%    <span class="dv">0</span>     <span class="fl">0.</span>0KB<span class="op">/</span>s   <span class="dv">00</span><span class="op">:</span><span class="dv">00</span>    
+dog                                     <span class="dv">100</span>%   <span class="dv">15</span>     <span class="fl">0.</span>6KB<span class="op">/</span>s   <span class="dv">00</span><span class="op">:</span><span class="dv">00</span>    </code></pre></div>
+<center>
+<img src="PICS/test_data.png" width="550" />
+</center>
+</div>
+<div id="accessing-s3-from-ec2-instances" class="section level2">
+<h2><span class="header-section-number">2.6</span> Accessing S3 from EC2 Instances</h2>
+<p>Another way to get data into your instance is by copying it over from your S3 buckets. S3 is object based storage that is very cheap and you can stock pile data over there until you are ready to analyze it. But you need to know how to copy it over. There are a couple of ways to do this. The first is that you could assign a role that would allow your instance to access S3 as you create the instance. Or you could make a change once it is up and running as follows:</p>
+<center>
+<img src="PICS/attach.png" width="550" />
+</center>
+<p><br />
+The idea is to assign a role that will allow your EC2 instance to “read” your S3 buckets.</p>
+<div class="figure">
+<img src="PICS/role.png" />
+
+</div>
+<p>So you can now access your S3 resources using the AWS CLI (Command Line Interface). You can do this from your Terminal window. For the S3 CLI documentation go <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-services-s3-commands.html">here</a></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">$</span><span class="st"> </span>sudo apt<span class="op">-</span>get install awscli
+
+<span class="op">$</span><span class="st"> </span>aws s3 ls
+<span class="dv">2012</span><span class="op">-</span><span class="dv">11</span><span class="op">-</span><span class="dv">04</span> <span class="dv">02</span><span class="op">:</span><span class="dv">23</span><span class="op">:</span><span class="dv">18</span> R_Stuff
+<span class="dv">2014</span><span class="op">-</span><span class="dv">04</span><span class="op">-</span><span class="dv">24</span> <span class="dv">18</span><span class="op">:</span><span class="dv">53</span><span class="op">:</span><span class="dv">17</span> bimcore_final_figures
+<span class="dv">2015</span><span class="op">-</span><span class="dv">04</span><span class="op">-</span><span class="dv">08</span> <span class="dv">18</span><span class="op">:</span><span class="dv">29</span><span class="op">:</span><span class="dv">09</span> cm<span class="op">-</span>89cc48c8931698be927013c2775cf11e
+<span class="dv">2018</span><span class="op">-</span><span class="dv">11</span><span class="op">-</span><span class="dv">30</span> <span class="dv">03</span><span class="op">:</span><span class="dv">31</span><span class="op">:</span><span class="dv">29</span> juniferous
+<span class="dv">2014</span><span class="op">-</span><span class="dv">11</span><span class="op">-</span><span class="dv">03</span> <span class="dv">21</span><span class="op">:</span><span class="dv">44</span><span class="op">:</span><span class="dv">19</span> pittaraujo13
+<span class="dv">2014</span><span class="op">-</span><span class="dv">04</span><span class="op">-</span><span class="dv">24</span> <span class="dv">18</span><span class="op">:</span><span class="dv">39</span><span class="op">:</span><span class="dv">45</span> steviep42bitbucket
+
+<span class="op">$</span><span class="st"> </span>aws s3 ls s3<span class="op">:</span><span class="er">//</span>juniferous
+                           PRE AWSLogs<span class="op">/</span>
+<span class="dv">2018</span><span class="op">-</span><span class="dv">12</span><span class="op">-</span><span class="dv">05</span> <span class="dv">20</span><span class="op">:</span><span class="dv">19</span><span class="op">:</span><span class="dv">04</span>         <span class="dv">97</span> error.html
+<span class="dv">2018</span><span class="op">-</span><span class="dv">12</span><span class="op">-</span><span class="dv">04</span> <span class="dv">21</span><span class="op">:</span><span class="dv">57</span><span class="op">:</span><span class="dv">39</span>         <span class="dv">13</span> healthcheck.html
+<span class="dv">2018</span><span class="op">-</span><span class="dv">12</span><span class="op">-</span><span class="dv">05</span> <span class="dv">20</span><span class="op">:</span><span class="dv">19</span><span class="op">:</span><span class="dv">03</span>        <span class="dv">732</span> index.html
+<span class="dv">2019</span><span class="op">-</span><span class="dv">04</span><span class="op">-</span><span class="dv">01</span> <span class="dv">21</span><span class="op">:</span><span class="dv">37</span><span class="op">:</span><span class="dv">18</span>   <span class="dv">63566904</span> rstudio<span class="op">-</span>server<span class="op">-</span><span class="fl">1.1</span>.<span class="dv">463</span><span class="op">-</span>amd64.deb</code></pre></div>
+</div>
+<div id="shiny-server" class="section level2">
+<h2><span class="header-section-number">2.7</span> Shiny Server</h2>
+<p>You can install Shiny Server also using the directions found <a href="https://www.rstudio.com/products/shiny/download-server/">here</a>. Login to your instance you created previously. The following command will result in lots of messages. It installs the shiny server along with the pre requisites. You might encounter some warning messages.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">$</span><span class="st"> </span>sudo su <span class="op">-</span><span class="st"> </span>\
+<span class="op">-</span>c <span class="st">&quot;R -e </span><span class="ch">\&quot;</span><span class="st">install.packages(&#39;shiny&#39;, repos=&#39;https://cran.rstudio.com/&#39;)</span><span class="ch">\&quot;</span><span class="st">&quot;</span></code></pre></div>
+<p>So now download the actual server code and install it. You should not encounter any errors when doing this. The last thing you should see is a message indicated that the server has started. By default, your server will be running on port 3838 so make sure your instance firewall / security group will allow access on that port.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">$</span><span class="st"> </span>sudo apt<span class="op">-</span>get install gdebi<span class="op">-</span>core
+<span class="op">$</span><span class="st"> </span>wget https<span class="op">:</span><span class="er">//</span>download3.rstudio.org<span class="op">/</span>ubuntu<span class="op">-</span><span class="fl">14.04</span><span class="op">/</span>x86_<span class="dv">64</span><span class="op">/</span>shiny<span class="op">-</span>server<span class="op">-</span><span class="fl">1.5</span>.<span class="fl">9.923</span><span class="op">-</span>amd64.deb
+<span class="op">$</span><span class="st"> </span>sudo gdebi shiny<span class="op">-</span>server<span class="op">-</span><span class="fl">1.5</span>.<span class="fl">9.923</span><span class="op">-</span>amd64.deb</code></pre></div>
+<div class="figure">
+<img src="PICS/testshine.png" />
+
+</div>
+<p>So the default location for the server apps are in <strong>/srv/shiny-server/sample-apps</strong> So point your browser at whatever your IP number is followed by /sample-apps/rmd As an example **<a href="http://3.87.30.168:3838/sample-apps/rmd/**" class="uri">http://3.87.30.168:3838/sample-apps/rmd/**</a></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">$</span><span class="st"> </span>ls <span class="op">-</span>lR
+.<span class="op">:</span>
+total <span class="dv">8</span>
+drwxrwxr<span class="op">-</span>x <span class="dv">2</span> root root <span class="dv">4096</span> Apr  <span class="dv">3</span> <span class="dv">15</span><span class="op">:</span><span class="dv">42</span> hello
+drwxrwxr<span class="op">-</span>x <span class="dv">2</span> root root <span class="dv">4096</span> Apr  <span class="dv">3</span> <span class="dv">15</span><span class="op">:</span><span class="dv">42</span> rmd
+
+.<span class="op">/</span>hello<span class="op">:</span>
+total <span class="dv">8</span>
+<span class="op">-</span>rw<span class="op">-</span>rw<span class="op">-</span>r<span class="op">--</span><span class="st"> </span><span class="dv">1</span> root root <span class="dv">642</span> Sep <span class="dv">11</span>  <span class="dv">2018</span> server.R
+<span class="op">-</span>rw<span class="op">-</span>rw<span class="op">-</span>r<span class="op">--</span><span class="st"> </span><span class="dv">1</span> root root <span class="dv">494</span> Sep <span class="dv">11</span>  <span class="dv">2018</span> ui.R
+
+.<span class="op">/</span>rmd<span class="op">:</span>
+total <span class="dv">4</span>
+<span class="op">-</span>rwxrwxr<span class="op">-</span>x <span class="dv">1</span> root root <span class="dv">484</span> Sep <span class="dv">11</span>  <span class="dv">2018</span> index.Rmd</code></pre></div>
+<div class="figure">
+<img src="PICS/shine2.png" />
+
+</div>
+</div>
+<div id="making-an-ami" class="section level2">
+<h2><span class="header-section-number">2.8</span> Making an AMI</h2>
+<p>One thing you can do to help yourself is to create an AMI (an Amazxon Machine Instance) that will save all the work you have in a way that allows you to share it with others. They can use your image as a reference from which to boot a machine so they don’t have to go through all the headaches you did when setting things up, installing packages, and generally trying to get things to work. This is easy to do.</p>
+<div class="figure">
+<img src="PICS/ci.png" />
+
+</div>
+<p><br />
+So now we need to provide some information about our image</p>
+<div class="figure">
+<img src="PICS/ami1.png" width="500" />
+
+</div>
+<p><br />
+Then we get confirmation</p>
+<div class="figure">
+<img src="PICS/cicon.png" width="500" />
+
+</div>
+<p>After it gets created you can change it’s permissions to public so that others may access it when launching their machine.</p>
+<div class="figure">
+<img src="PICS/mod.png" />
+
+</div>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="dockers-1.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"download": ["Nursing Report.pdf", "Nursing Report.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Chapter 4 Recap | Intro To Research Computing</title>
+  <meta name="description" content="Cloud Computing">
+  <meta name="generator" content="bookdown  and GitBook 2.6.7">
+
+  <meta property="og:title" content="Chapter 4 Recap | Intro To Research Computing" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Cloud Computing" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 4 Recap | Intro To Research Computing" />
+  
+  <meta name="twitter:description" content="Cloud Computing" />
+  
+
+<meta name="author" content="Steve Pittard">
+
+
+<meta name="date" content="2019-04-11">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="dockers-1.html">
+
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Guest Lecture INFO 550</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Computation In Research</a><ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#what-do-the-top-sites-use"><i class="fa fa-check"></i><b>1.1</b> What Do the Top Sites Use ?</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#division-of-labor"><i class="fa fa-check"></i><b>1.2</b> Division of Labor</a><ul>
+<li class="chapter" data-level="1.2.1" data-path="index.html"><a href="index.html#mixing-work-and-pleasure"><i class="fa fa-check"></i><b>1.2.1</b> Mixing Work and Pleasure</a></li>
+<li class="chapter" data-level="1.2.2" data-path="index.html"><a href="index.html#mixing-e-mail-and-research"><i class="fa fa-check"></i><b>1.2.2</b> Mixing E-Mail and Research ?</a></li>
+<li class="chapter" data-level="1.2.3" data-path="index.html"><a href="index.html#youll-do-it-anyway"><i class="fa fa-check"></i><b>1.2.3</b> You’ll Do It Anyway</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#popular-data-science-languages"><i class="fa fa-check"></i><b>1.3</b> Popular Data Science Languages</a></li>
+<li class="chapter" data-level="1.4" data-path="index.html"><a href="index.html#is-windows-good-for-computation"><i class="fa fa-check"></i><b>1.4</b> Is Windows Good For Computation ?</a></li>
+<li class="chapter" data-level="1.5" data-path="index.html"><a href="index.html#whats-wrong-with-windows"><i class="fa fa-check"></i><b>1.5</b> What’s Wrong with Windows ?</a><ul>
+<li class="chapter" data-level="1.5.1" data-path="index.html"><a href="index.html#windows-security-virus-and-performance-issues"><i class="fa fa-check"></i><b>1.5.1</b> Windows Security, Virus, and Performance Issues</a></li>
+<li class="chapter" data-level="1.5.2" data-path="index.html"><a href="index.html#windows-reboots-and-updates"><i class="fa fa-check"></i><b>1.5.2</b> Windows Reboots and Updates</a></li>
+<li class="chapter" data-level="1.5.3" data-path="index.html"><a href="index.html#is-linux-really-better"><i class="fa fa-check"></i><b>1.5.3</b> Is Linux Really Better ?</a></li>
+<li class="chapter" data-level="1.5.4" data-path="index.html"><a href="index.html#cool-things-about-linux"><i class="fa fa-check"></i><b>1.5.4</b> Cool Things About Linux</a></li>
+<li class="chapter" data-level="1.5.5" data-path="index.html"><a href="index.html#linux-is-the-native-environment-for-development."><i class="fa fa-check"></i><b>1.5.5</b> Linux is The Native Environment for Development.</a></li>
+<li class="chapter" data-level="1.5.6" data-path="index.html"><a href="index.html#command-line-knowledge-is-next-level-stuff"><i class="fa fa-check"></i><b>1.5.6</b> Command Line Knowledge is Next Level Stuff</a></li>
+<li class="chapter" data-level="1.5.7" data-path="index.html"><a href="index.html#is-there-hope-for-windows-users"><i class="fa fa-check"></i><b>1.5.7</b> Is There Hope For Windows Users ?</a></li>
+</ul></li>
+<li class="chapter" data-level="1.6" data-path="index.html"><a href="index.html#is-there-a-middle-ground"><i class="fa fa-check"></i><b>1.6</b> Is There a Middle Ground ?</a><ul>
+<li class="chapter" data-level="1.6.1" data-path="index.html"><a href="index.html#virtualized-systems"><i class="fa fa-check"></i><b>1.6.1</b> Virtualized Systems</a></li>
+<li class="chapter" data-level="1.6.2" data-path="index.html"><a href="index.html#dockers"><i class="fa fa-check"></i><b>1.6.2</b> Dockers</a></li>
+<li class="chapter" data-level="1.6.3" data-path="index.html"><a href="index.html#anaconda"><i class="fa fa-check"></i><b>1.6.3</b> Anaconda</a></li>
+</ul></li>
+<li class="chapter" data-level="1.7" data-path="index.html"><a href="index.html#apple-osx-macos"><i class="fa fa-check"></i><b>1.7</b> Apple OSX / macOS ?</a><ul>
+<li class="chapter" data-level="1.7.1" data-path="index.html"><a href="index.html#the-dark-years-of-apple"><i class="fa fa-check"></i><b>1.7.1</b> The Dark Years of Apple</a></li>
+<li class="chapter" data-level="1.7.2" data-path="index.html"><a href="index.html#apple-osx-vs-previous-apple-operating-systems"><i class="fa fa-check"></i><b>1.7.2</b> Apple OSX vs Previous Apple Operating Systems</a></li>
+<li class="chapter" data-level="1.7.3" data-path="index.html"><a href="index.html#lets-go-shopping"><i class="fa fa-check"></i><b>1.7.3</b> Let’s Go Shopping !</a></li>
+<li class="chapter" data-level="1.7.4" data-path="index.html"><a href="index.html#managing-software-locally"><i class="fa fa-check"></i><b>1.7.4</b> Managing Software Locally</a></li>
+<li class="chapter" data-level="1.7.5" data-path="index.html"><a href="index.html#rstudio"><i class="fa fa-check"></i><b>1.7.5</b> RStudio</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="virtualization.html"><a href="virtualization.html"><i class="fa fa-check"></i><b>2</b> Virtualization</a><ul>
+<li class="chapter" data-level="2.1" data-path="virtualization.html"><a href="virtualization.html#virtual-box"><i class="fa fa-check"></i><b>2.1</b> Virtual Box</a></li>
+<li class="chapter" data-level="2.2" data-path="virtualization.html"><a href="virtualization.html#using-virtualization-farms"><i class="fa fa-check"></i><b>2.2</b> Using Virtualization Farms</a></li>
+<li class="chapter" data-level="2.3" data-path="virtualization.html"><a href="virtualization.html#running-rstudio-on-amazon"><i class="fa fa-check"></i><b>2.3</b> Running RStudio on Amazon</a><ul>
+<li class="chapter" data-level="2.3.1" data-path="virtualization.html"><a href="virtualization.html#why-ubuntu"><i class="fa fa-check"></i><b>2.3.1</b> Why Ubuntu ?</a></li>
+<li class="chapter" data-level="2.3.2" data-path="virtualization.html"><a href="virtualization.html#start-an-instance"><i class="fa fa-check"></i><b>2.3.2</b> Start An Instance</a></li>
+<li class="chapter" data-level="2.3.3" data-path="virtualization.html"><a href="virtualization.html#add-some-storage"><i class="fa fa-check"></i><b>2.3.3</b> Add Some Storage</a></li>
+<li class="chapter" data-level="2.3.4" data-path="virtualization.html"><a href="virtualization.html#get-a-key"><i class="fa fa-check"></i><b>2.3.4</b> Get A Key</a></li>
+<li class="chapter" data-level="2.3.5" data-path="virtualization.html"><a href="virtualization.html#installing-r"><i class="fa fa-check"></i><b>2.3.5</b> Installing R</a></li>
+<li class="chapter" data-level="2.3.6" data-path="virtualization.html"><a href="virtualization.html#installing-rstudio-server"><i class="fa fa-check"></i><b>2.3.6</b> Installing RStudio Server</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="virtualization.html"><a href="virtualization.html#accessing-your-instance"><i class="fa fa-check"></i><b>2.4</b> Accessing Your Instance</a></li>
+<li class="chapter" data-level="2.5" data-path="virtualization.html"><a href="virtualization.html#getting-data-into-your-instance"><i class="fa fa-check"></i><b>2.5</b> Getting Data Into Your Instance</a></li>
+<li class="chapter" data-level="2.6" data-path="virtualization.html"><a href="virtualization.html#accessing-s3-from-ec2-instances"><i class="fa fa-check"></i><b>2.6</b> Accessing S3 from EC2 Instances</a></li>
+<li class="chapter" data-level="2.7" data-path="virtualization.html"><a href="virtualization.html#shiny-server"><i class="fa fa-check"></i><b>2.7</b> Shiny Server</a></li>
+<li class="chapter" data-level="2.8" data-path="virtualization.html"><a href="virtualization.html#making-an-ami"><i class="fa fa-check"></i><b>2.8</b> Making an AMI</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="dockers-1.html"><a href="dockers-1.html"><i class="fa fa-check"></i><b>3</b> Dockers</a><ul>
+<li class="chapter" data-level="3.1" data-path="dockers-1.html"><a href="dockers-1.html#scenarios"><i class="fa fa-check"></i><b>3.1</b> Scenarios</a></li>
+<li class="chapter" data-level="3.2" data-path="dockers-1.html"><a href="dockers-1.html#differences-from-vms"><i class="fa fa-check"></i><b>3.2</b> Differences From VMs</a></li>
+<li class="chapter" data-level="3.3" data-path="dockers-1.html"><a href="dockers-1.html#docker-terminology"><i class="fa fa-check"></i><b>3.3</b> Docker Terminology</a><ul>
+<li class="chapter" data-level="3.3.1" data-path="dockers-1.html"><a href="dockers-1.html#images"><i class="fa fa-check"></i><b>3.3.1</b> Images</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="dockers-1.html"><a href="dockers-1.html#rshiny"><i class="fa fa-check"></i><b>3.4</b> RShiny</a></li>
+<li class="chapter" data-level="3.5" data-path="dockers-1.html"><a href="dockers-1.html#making-your-own-image"><i class="fa fa-check"></i><b>3.5</b> Making Your Own Image</a></li>
+<li class="chapter" data-level="3.6" data-path="dockers-1.html"><a href="dockers-1.html#there-is-another-way"><i class="fa fa-check"></i><b>3.6</b> There is Another Way</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="recap.html"><a href="recap.html"><i class="fa fa-check"></i><b>4</b> Recap</a><ul>
+<li class="chapter" data-level="4.1" data-path="recap.html"><a href="recap.html#unstructured-data"><i class="fa fa-check"></i><b>4.1</b> Unstructured Data</a></li>
+<li class="chapter" data-level="4.2" data-path="recap.html"><a href="recap.html#structured-data"><i class="fa fa-check"></i><b>4.2</b> Structured Data</a></li>
+<li class="chapter" data-level="4.3" data-path="recap.html"><a href="recap.html#hybrids"><i class="fa fa-check"></i><b>4.3</b> Hybrids</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Intro To Research Computing</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="recap" class="section level1">
+<h1><span class="header-section-number">Chapter 4</span> Recap</h1>
+<p>In my last lecture I talked about using the <strong>rvest</strong> package to pull data from the Internet. This is useful because there is lots of information out there on the Internet that you could download and analyze.</p>
+<ul>
+<li><p>Every 60 seconds on Facebook: 510,000 comments are posted and 293,000 statused are updated</p></li>
+<li><p>Facebook Photo uploads total 300 million per day</p></li>
+<li><p>Worldwide, there are over 2.32 billion active Facbook users as of December 31, 2018</p></li>
+<li><p>Every second, on average, around 6,000 tweets are tweeted on Twitter</p></li>
+<li><p>1,332,433 Publications in Pubmed for the year 2018</p></li>
+</ul>
+<center>
+<img src="PICS/top6.png" />
+</center>
+<p>Sources:</p>
+<ul>
+<li><a href="https://zephoria.com/top-15-valuable-facebook-statistics/" class="uri">https://zephoria.com/top-15-valuable-facebook-statistics/</a></li>
+<li><a href="http://www.internetlivestats.com/twitter-statistics/" class="uri">http://www.internetlivestats.com/twitter-statistics/</a></li>
+<li><a href="http://dan.corlan.net/cgi-bin/medline-trend?Q" class="uri">http://dan.corlan.net/cgi-bin/medline-trend?Q</a>=</li>
+</ul>
+<div id="unstructured-data" class="section level2">
+<h2><span class="header-section-number">4.1</span> Unstructured Data</h2>
+<p>Much of the text information found in these sources is <strong>unstructured</strong> meaning that the content is a narrative, a collection of phrases, or maybe social media posts that might involve domain specific references or a form of slang. Not surprisingly, it can be hard to get meaningful information from text. Unstructured data is useful in that can capture many contexts or points of views in response to a question or situation. It’s also more “natural” for humans to speak and write in unsrtuctured terms.</p>
+<p>Some <strong>unstructured</strong> text does conform to an ontology, vocabulary, or some form of domain approved terminology that can simplify knowledge extraction but there are always ambiguities. For example consider a body (aka “corpus”) of medical information related to Nephrology. The following terms might be used to refer to the same thing:</p>
+<ul>
+<li>Chronic renal impairment</li>
+<li>Chronic kidney disease</li>
+<li>CKD</li>
+<li>Kidney failure</li>
+<li>Chronid renal failure</li>
+<li>CRF</li>
+<li>Chronic renal failure syndrome</li>
+<li>Renal insufficiency</li>
+<li>eGFR 44</li>
+</ul>
+<p>Source: <a href="http://healtex.org/wp-content/uploads/2016/11/I4H-Healtex-tutorial-part1-optimised.pdf" class="uri">http://healtex.org/wp-content/uploads/2016/11/I4H-Healtex-tutorial-part1-optimised.pdf</a></p>
+<p>Unless someone knows that these all map to the same idea then downstream analysis might lead to confusing or diluted results.</p>
+</div>
+<div id="structured-data" class="section level2">
+<h2><span class="header-section-number">4.2</span> Structured Data</h2>
+<p>Stuctured data is easier to work with in the sense that it is frequently numeric in nature so it lends itself well to statistical analysis and use in building predictive models. Some structured data is standalone meaning you can download it or obtain it as a .CSV file or from a database (e.g. CDC) and begin to work with the data immediately upon receipt.</p>
+<p>However, structured data does NOT have to be numeric. For example, consider demographic information. As long as a patient tracking system conforms to a standard then one’s race (and the label used to describe that) would ususally not change. Lists of personal allegies and medications are ususally structured although they might change over time. Smoking status (“yes” or “no”) is structured. Asking someone to describe their life time struggles with trying to stop smoking would not be structured information.</p>
+</div>
+<div id="hybrids" class="section level2">
+<h2><span class="header-section-number">4.3</span> Hybrids</h2>
+<p>Consider a Pubmed publication. There is a lot of textual information that is supplemented by graphs, tables, and (hopefully) link outs to raw data. Of course the tables themselves represent a form of structured data in aggregate form so you maybe you would want to parse tor extraxt them from the text. Also consider that Clinician notes and letters are ususally in narrative form but might well include structured info also.</p>
+<blockquote>
+<p>The take home info here is that there is by far more <strong>unstructured</strong> data than <strong>structured</strong> but don’t let that stop you from trying to apply text mining methods for understanding collections of documents.</p>
+</blockquote>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="dockers-1.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"download": ["Nursing Report.pdf", "Nursing Report.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
