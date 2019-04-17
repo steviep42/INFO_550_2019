@@ -196,11 +196,10 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="5.4" data-path="twitter-social-media.html"><a href="twitter-social-media.html#accessing-from-r---rtweet"><i class="fa fa-check"></i><b>5.4</b> Accessing From R - rtweet</a></li>
 <li class="chapter" data-level="5.5" data-path="twitter-social-media.html"><a href="twitter-social-media.html#authenticating-from-r"><i class="fa fa-check"></i><b>5.5</b> Authenticating From R</a></li>
 <li class="chapter" data-level="5.6" data-path="twitter-social-media.html"><a href="twitter-social-media.html#some-basic-tips"><i class="fa fa-check"></i><b>5.6</b> Some Basic Tips</a></li>
-<li class="chapter" data-level="5.7" data-path="twitter-social-media.html"><a href="twitter-social-media.html#some-built-in-plots"><i class="fa fa-check"></i><b>5.7</b> Some built in plots</a></li>
-<li class="chapter" data-level="5.8" data-path="twitter-social-media.html"><a href="twitter-social-media.html#looking-for-people-tweeting-about-copd"><i class="fa fa-check"></i><b>5.8</b> Looking for People Tweeting About COPD</a></li>
-<li class="chapter" data-level="5.9" data-path="twitter-social-media.html"><a href="twitter-social-media.html#cleaning-and-tidying"><i class="fa fa-check"></i><b>5.9</b> Cleaning and Tidying</a></li>
-<li class="chapter" data-level="5.10" data-path="twitter-social-media.html"><a href="twitter-social-media.html#make-the-word-cloud"><i class="fa fa-check"></i><b>5.10</b> Make The Word Cloud</a></li>
-<li class="chapter" data-level="5.11" data-path="twitter-social-media.html"><a href="twitter-social-media.html#bi-grams"><i class="fa fa-check"></i><b>5.11</b> Bi-Grams</a></li>
+<li class="chapter" data-level="5.7" data-path="twitter-social-media.html"><a href="twitter-social-media.html#looking-for-people-tweeting-about-copd"><i class="fa fa-check"></i><b>5.7</b> Looking for People Tweeting About COPD</a></li>
+<li class="chapter" data-level="5.8" data-path="twitter-social-media.html"><a href="twitter-social-media.html#cleaning-and-tidying"><i class="fa fa-check"></i><b>5.8</b> Cleaning and Tidying</a></li>
+<li class="chapter" data-level="5.9" data-path="twitter-social-media.html"><a href="twitter-social-media.html#make-the-word-cloud"><i class="fa fa-check"></i><b>5.9</b> Make The Word Cloud</a></li>
+<li class="chapter" data-level="5.10" data-path="twitter-social-media.html"><a href="twitter-social-media.html#bi-grams"><i class="fa fa-check"></i><b>5.10</b> Bi-Grams</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -258,7 +257,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li>User Name: A unique userid</li>
 <li>Time Stamp: When the tweet went out Text: The content of the tweet</li>
 <li>Hashtags: Words prefixed with a # character.</li>
-<li>Links: Hyper links to other web sourcved</li>
+<li>Links: Hyper links to other web sources</li>
 <li>Replies: Replies to a posted tweet</li>
 <li>Retweets: When someone shares a third party tweet with followers</li>
 <li>Favorites: A history of tweets you have liked</li>
@@ -317,7 +316,7 @@ katy_raw_tweets &lt;-<span class="st"> </span>raw_tweets <span class="co"># save
 [<span class="dv">2</span>] <span class="st">&quot;When I was 10, I slept over at my friend&#39;s house and she </span>
 <span class="st">made me watch the Katy Perry movie but little does she know, </span>
 <span class="st">when she fell asleep, I changed it to a JFK conspiracy documentary&quot;</span> </code></pre></div>
-<p>But wait. How can these be worth $86,904 each ? Well these are tweets ABOUT Katy Perry. Let’s get some tweets that she herself actually issued and then see if they are worht that much.</p>
+<p>But wait. How can these be worth $86,904 each ? Well these are tweets ABOUT Katy Perry. Let’s get some tweets that she herself actually issued and then see if they are worth that much.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">kpt &lt;-<span class="st"> </span><span class="kw">get_timeline</span>(<span class="st">&quot;katyperry&quot;</span>,<span class="dt">n=</span><span class="dv">100</span>)
 
 <span class="op">&gt;</span><span class="st"> </span><span class="kw">plain_tweets</span>(kpt<span class="op">$</span>text)[<span class="dv">1</span><span class="op">:</span><span class="dv">9</span>]
@@ -413,25 +412,8 @@ Finished collecting tweets<span class="op">!</span>
 <span class="st">Consolidation and/or restoration began only in </span>
 <span class="st">1923.//t.co/6d9EhAvXz4&quot;</span></code></pre></div>
 </div>
-<div id="some-built-in-plots" class="section level2">
-<h2><span class="header-section-number">5.7</span> Some built in plots</h2>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">rt &lt;-<span class="st"> </span><span class="kw">search_tweets</span>(
-  <span class="st">&quot;notre dame&quot;</span>, <span class="dt">n =</span> <span class="dv">2000</span>, <span class="dt">include_rts =</span> <span class="ot">FALSE</span>,
-   <span class="dt">retryonratelimit =</span> <span class="ot">TRUE</span>
-)
-
-<span class="kw">ts_plot</span>(rt, <span class="st">&quot;3 hours&quot;</span>) <span class="op">+</span>
-<span class="st">  </span>ggplot2<span class="op">::</span><span class="kw">theme_minimal</span>() <span class="op">+</span>
-<span class="st">  </span>ggplot2<span class="op">::</span><span class="kw">theme</span>(<span class="dt">plot.title =</span> ggplot2<span class="op">::</span><span class="kw">element_text</span>(<span class="dt">face =</span> <span class="st">&quot;bold&quot;</span>)) <span class="op">+</span>
-<span class="st">  </span>ggplot2<span class="op">::</span><span class="kw">labs</span>(
-    <span class="dt">x =</span> <span class="ot">NULL</span>, <span class="dt">y =</span> <span class="ot">NULL</span>,
-    <span class="dt">title =</span> <span class="st">&quot;Frequency of #rstats Twitter statuses from past 9 days&quot;</span>,
-    <span class="dt">subtitle =</span> <span class="st">&quot;Twitter status (tweet) counts aggregated using three-hour intervals&quot;</span>,
-    <span class="dt">caption =</span> <span class="st">&quot;</span><span class="ch">\n</span><span class="st">Source: Data collected from Twitter&#39;s REST API via rtweet&quot;</span>
-  )</code></pre></div>
-</div>
 <div id="looking-for-people-tweeting-about-copd" class="section level2">
-<h2><span class="header-section-number">5.8</span> Looking for People Tweeting About COPD</h2>
+<h2><span class="header-section-number">5.7</span> Looking for People Tweeting About COPD</h2>
 <p>Let’s look at something more serious:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">raw_tweets &lt;-<span class="st"> </span><span class="kw">my_search_tweets</span>(<span class="st">&quot;COPD&quot;</span>)
 raw_tweets
@@ -552,7 +534,7 @@ raw_tweets
 [<span class="dv">100</span>] <span class="st">&quot;RespirologyAPSR&quot;</span></code></pre></div>
 </div>
 <div id="cleaning-and-tidying" class="section level2">
-<h2><span class="header-section-number">5.9</span> Cleaning and Tidying</h2>
+<h2><span class="header-section-number">5.8</span> Cleaning and Tidying</h2>
 <p>Tweets are much “dirtier” than the text we saw associated with the candidate speeches. To make a reasonable attempt at analyzing them in any way we will need to eliminate URLs and special characters. Consider this tweet. It’s really messy. The <strong>rtweet</strong> package has a function called <strong>plain_tweets</strong> that allows one to strip out some of the junk</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">[<span class="dv">98</span>] <span class="st">&quot;Work from our own @suryapbhatt and fearless leader @realmdransfield on video </span>
 <span class="st">#telehealth #cardiopulmonary #rehabilitation and reduction in #COPD readmissions. </span><span class="ch">\n\n</span><span class="st">#gamechanger </span>
@@ -633,7 +615,7 @@ tidy_copd_df
 <span class="dv">10</span>     <span class="dv">1</span> addiction  </code></pre></div>
 </div>
 <div id="make-the-word-cloud" class="section level2">
-<h2><span class="header-section-number">5.10</span> Make The Word Cloud</h2>
+<h2><span class="header-section-number">5.9</span> Make The Word Cloud</h2>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">tidy_copd_df_table &lt;-<span class="st"> </span>tidy_copd_df <span class="op">%&gt;%</span>
 <span class="st">  </span><span class="kw">count</span>(word, <span class="dt">sort =</span> <span class="ot">TRUE</span>) 
 tidy_copd_df_table
@@ -658,7 +640,7 @@ tidy_copd_df_table &lt;-<span class="st"> </span>tidy_copd_df_table <span class=
 </center>
 </div>
 <div id="bi-grams" class="section level2">
-<h2><span class="header-section-number">5.11</span> Bi-Grams</h2>
+<h2><span class="header-section-number">5.10</span> Bi-Grams</h2>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">copd_df &lt;-<span class="st"> </span><span class="kw">tibble</span>(<span class="dt">line=</span><span class="dv">1</span><span class="op">:</span><span class="kw">length</span>(clean_tweet),<span class="dt">text=</span>clean_tweet)
 
 <span class="co"># Next we&#39;ll tokenize them</span>
