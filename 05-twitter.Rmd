@@ -582,4 +582,8 @@ library(ggraph)
 ```
 <center>
 ![](./PICS/network.png)
+
+
+![](./PICS/ensif.png)
+
 </center>
