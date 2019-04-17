@@ -46,7 +46,7 @@ https://www.tweetbinder.com/blog/economic-value-tweet/
 * User Name: A unique userid
 * Time Stamp: When the tweet went out Text: The content of the tweet
 * Hashtags: Words prefixed with a # character.
-* Links: Hyper links to other web sourcved
+* Links: Hyper links to other web sources
 * Replies: Replies to a posted tweet
 * Retweets: When someone shares a third party tweet with followers 
 * Favorites: A history of tweets you have liked
@@ -122,7 +122,7 @@ made me watch the Katy Perry movie but little does she know,
 when she fell asleep, I changed it to a JFK conspiracy documentary" 
 ```
 
-But wait. How can these be worth $86,904 each ? Well these are tweets ABOUT Katy Perry. Let's get some tweets that she herself actually issued and then see if they are worht that much.
+But wait. How can these be worth $86,904 each ? Well these are tweets ABOUT Katy Perry. Let's get some tweets that she herself actually issued and then see if they are worth that much.
 
 
 ```{r eval=FALSE}
@@ -226,26 +226,6 @@ refrain. Chichen Itza WAS destroyed and left to ruin;
 Consolidation and/or restoration began only in 
 1923.//t.co/6d9EhAvXz4"
 ```
-
-## Some built in plots
-
-```{r eval=FALSE}
-rt <- search_tweets(
-  "notre dame", n = 2000, include_rts = FALSE,
-   retryonratelimit = TRUE
-)
-
-ts_plot(rt, "3 hours") +
-  ggplot2::theme_minimal() +
-  ggplot2::theme(plot.title = ggplot2::element_text(face = "bold")) +
-  ggplot2::labs(
-    x = NULL, y = NULL,
-    title = "Frequency of #rstats Twitter statuses from past 9 days",
-    subtitle = "Twitter status (tweet) counts aggregated using three-hour intervals",
-    caption = "\nSource: Data collected from Twitter's REST API via rtweet"
-  )
-```
-
 
 ## Looking for People Tweeting About COPD
 
